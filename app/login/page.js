@@ -2,18 +2,18 @@ import React from "react";
 
 function Login() {
   return (
-    <main class="flex flex-col lg:flex-row">
-      <section class="flex flex-col gap-4 p-8 text-white bg-primary lg:order-2 lg:w-1/2 lg:justify-center lg:items-center lg:min-h-screen">
-        <h2 class="text-xl font-bold text-center">فروشگاه گیفت کارت</h2>
-        <p class="leading-loose">
+    <main className="flex flex-col lg:flex-row">
+      <section className="flex flex-col gap-4 p-8 text-white bg-primary lg:order-2 lg:w-1/2 lg:justify-center lg:items-center lg:min-h-screen">
+        <h2 className="text-xl font-bold text-center">فروشگاه گیفت کارت</h2>
+        <p className="leading-loose">
           اولین فروشگاه خرید گیفت کارت اپل، گوگل پلی، استیم، پلی استیشن و ...
         </p>
       </section>
-      <section class="flex flex-col w-full max-w-md gap-8 p-6 mx-auto mb-12 lg:max-w-screen-2xl lg:px-12 xl:px-24 lg:order-1 lg:w-1/2 lg:justify-center">
-        <h4 class="mb-12 font-bold text-center">ورود به حساب کاربری</h4>
-        <form action="" class="flex flex-col gap-8">
-          <div class="relative p-3 px-6 border-[1px] rounded-sm flex items-center gap-2">
-            <label class="absolute -top-4 right-5 bg-[#FAFAFE] p-1 text-sm">
+      <section className="flex flex-col w-full max-w-md gap-8 p-6 mx-auto mb-12 lg:max-w-screen-2xl lg:px-12 xl:px-24 lg:order-1 lg:w-1/2 lg:justify-center">
+        <h4 className="mb-12 font-bold text-center">ورود به حساب کاربری</h4>
+        <form action="" className="flex flex-col gap-8">
+          <div className="relative p-3 px-6 border-[1px] rounded-sm flex items-center gap-2">
+            <label className="absolute -top-4 right-5 bg-[#FAFAFE] p-1 text-sm">
               ایمیل
             </label>
             <svg
@@ -35,11 +35,11 @@ function Login() {
             <input
               type="email"
               placeholder="ایمیل خود را وارد کنید."
-              class="relative w-full bg-transparent outline-none placeholder:text-sm"
+              className="relative w-full bg-transparent outline-none placeholder:text-sm"
             />
           </div>
-          <div class="relative p-3 px-6 border-[1px] rounded-sm flex items-center gap-2">
-            <label class="absolute -top-4 right-5 bg-[#FAFAFE] p-1 text-sm">
+          <div className="relative p-3 px-6 border-[1px] rounded-sm flex items-center gap-2">
+            <label className="absolute -top-4 right-5 bg-[#FAFAFE] p-1 text-sm">
               رمز عبور
             </label>
             <svg
@@ -65,11 +65,11 @@ function Login() {
             <input
               type="password"
               placeholder="رمز خود را وارد کنید."
-              class="relative w-full bg-transparent outline-none placeholder:text-sm"
+              className="relative w-full bg-transparent outline-none placeholder:text-sm"
             />
           </div>
-          <div class="relative p-3 px-6 border-[1px] rounded-sm flex items-center gap-2">
-            <label class="absolute -top-4 right-5 bg-[#FAFAFE] p-1 text-sm">
+          <div className="relative p-3 px-6 border-[1px] rounded-sm flex items-center gap-2">
+            <label className="absolute -top-4 right-5 bg-[#FAFAFE] p-1 text-sm">
               کد امنیتی
             </label>
             <svg
@@ -107,12 +107,12 @@ function Login() {
             <input
               type="text"
               placeholder="کد زیر را به انگلیسی وارد کنید."
-              class="relative w-full bg-transparent outline-none placeholder:text-xs"
+              className="relative w-full bg-transparent outline-none placeholder:text-xs"
             />
           </div>
-          <div class="flex gap-4">
-            <img src="./assets/img/captcha.png" alt="" />
-            <div class="flex items-center gap-2 text-[#717171] text-xs">
+          <div className="flex gap-4">
+            <img src="../public/assets/images/captcha.png" alt="" />
+            <div className="flex items-center gap-2 text-[#717171] text-xs">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -124,9 +124,9 @@ function Login() {
                 <path
                   d="M18.3327 9.99996C18.3327 14.6 14.5993 18.3333 9.99935 18.3333C5.39935 18.3333 2.59102 13.7 2.59102 13.7M2.59102 13.7H6.35768M2.59102 13.7V17.8666M1.66602 9.99996C1.66602 5.39996 5.36602 1.66663 9.99935 1.66663C15.5577 1.66663 18.3327 6.29996 18.3327 6.29996M18.3327 6.29996V2.13329M18.3327 6.29996H14.6327"
                   stroke="#717171"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
               بارگذاری مجدد
@@ -134,18 +134,18 @@ function Login() {
           </div>
           <button
             type="submit"
-            class="p-3 px-12 text-center text-white rounded-sm bg-primary lg:w-3/4 lg:mx-auto"
+            className="p-3 px-12 text-center text-white rounded-sm bg-primary lg:w-3/4 lg:mx-auto"
           >
             ورود به حساب کاربری
           </button>
         </form>
 
-        <a href="#" class="block mt-6 text-secondary">
+        <a href="#" className="block mt-6 text-secondary">
           فراموشی کلمه عبور
         </a>
-        <span class="block">
+        <span className="block">
           حساب کاربری ندارید؟
-          <a href="#" class="text-primary">
+          <a href="#" className="text-primary">
             ساخت حساب کاربری جدید
           </a>
         </span>

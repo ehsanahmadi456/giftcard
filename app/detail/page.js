@@ -6,16 +6,16 @@ function Detail() {
       <header>
         <div
           id="mobile-nav"
-          class="flex justify-center items-center bg-white rounded-t-3xl shadow-[0_-35px_60px_-20px_rgba(0,0,0,0.3)] w-full fixed bottom-0 right-0 z-10 h-16 md:hidden transition-all duration-100 ease-linear overflow-hidden"
+          className="flex justify-center items-center bg-white rounded-t-3xl shadow-[0_-35px_60px_-20px_rgba(0,0,0,0.3)] w-full fixed bottom-0 right-0 z-10 h-16 md:hidden transition-all duration-100 ease-linear overflow-hidden"
         >
-          <div class="grid grid-cols-4 text-lowgray text-xs w-full max-w-sm sm:max-w-lg">
-            <div class="group active flex flex-col justify-center items-center gap-3">
-              <i class="w-5 h-5">
+          <div className="grid grid-cols-4 text-lowgray text-xs w-full max-w-sm sm:max-w-lg">
+            <div className="group active flex flex-col justify-center items-center gap-3">
+              <i className="w-5 h-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 25 25"
                   fill="none"
-                  class="group-[.active]:hidden"
+                  className="group-[.active]:hidden"
                 >
                   <path
                     d="M12.5 18.75C12.09 18.75 11.75 18.41 11.75 18V15C11.75 14.59 12.09 14.25 12.5 14.25C12.91 14.25 13.25 14.59 13.25 15V18C13.25 18.41 12.91 18.75 12.5 18.75Z"
@@ -30,7 +30,7 @@ function Detail() {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 25 25"
                   fill="none"
-                  class="hidden group-[.active]:block"
+                  className="hidden group-[.active]:block"
                 >
                   <path
                     d="M21.33 8.01002L14.78 2.77002C13.5 1.75002 11.5 1.74002 10.23 2.76002L3.67996 8.01002C2.73996 8.76002 2.16996 10.26 2.36996 11.44L3.62996 18.98C3.91996 20.67 5.48996 22 7.19996 22H17.8C19.49 22 21.09 20.64 21.38 18.97L22.64 11.43C22.82 10.26 22.25 8.76002 21.33 8.01002ZM13.25 18C13.25 18.41 12.91 18.75 12.5 18.75C12.09 18.75 11.75 18.41 11.75 18V15C11.75 14.59 12.09 14.25 12.5 14.25C12.91 14.25 13.25 14.59 13.25 15V18Z"
@@ -38,17 +38,17 @@ function Detail() {
                   />
                 </svg>
               </i>
-              <span class="relative flex justify-center before:hidden group-[.active]:before:block before:absolute before:w-[75px] before:h-1 before:bg-[#717171] before:rounded-lg before:-bottom-2">
+              <span className="relative flex justify-center before:hidden group-[.active]:before:block before:absolute before:w-[75px] before:h-1 before:bg-[#717171] before:rounded-lg before:-bottom-2">
                 خانه
               </span>
             </div>
-            <div class="group flex flex-col justify-center items-center gap-3">
-              <i class="w-5 h-5">
+            <div className="group flex flex-col justify-center items-center gap-3">
+              <i className="w-5 h-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 25 25"
                   fill="none"
-                  class="group-[.active]:hidden"
+                  className="group-[.active]:hidden"
                 >
                   <path
                     d="M7.5 10.75H5.5C3.08 10.75 1.75 9.42 1.75 7V5C1.75 2.58 3.08 1.25 5.5 1.25H7.5C9.92 1.25 11.25 2.58 11.25 5V7C11.25 9.42 9.92 10.75 7.5 10.75ZM5.5 2.75C3.92 2.75 3.25 3.42 3.25 5V7C3.25 8.58 3.92 9.25 5.5 9.25H7.5C9.08 9.25 9.75 8.58 9.75 7V5C9.75 3.42 9.08 2.75 7.5 2.75H5.5Z"
@@ -71,7 +71,7 @@ function Detail() {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 25 25"
                   fill="none"
-                  class="hidden group-[.active]:block"
+                  className="hidden group-[.active]:block"
                 >
                   <path
                     d="M7.74 2H5.84C3.65 2 2.5 3.15 2.5 5.33V7.23C2.5 9.41 3.65 10.56 5.83 10.56H7.73C9.91 10.56 11.06 9.41 11.06 7.23V5.33C11.07 3.15 9.92 2 7.74 2Z"
@@ -91,17 +91,17 @@ function Detail() {
                   />
                 </svg>
               </i>
-              <span class="relative flex justify-center before:hidden group-[.active]:before:block before:absolute before:w-[75px] before:h-1 before:bg-[#717171] before:rounded-lg before:-bottom-2">
+              <span className="relative flex justify-center before:hidden group-[.active]:before:block before:absolute before:w-[75px] before:h-1 before:bg-[#717171] before:rounded-lg before:-bottom-2">
                 دسته بندی
               </span>
             </div>
-            <div class="group flex flex-col justify-center items-center gap-3">
-              <i class="w-5 h-5 relative before:content-['0'] before:text-xs before:flex before:justify-center before:items-center before:text-white before:absolute before:w-[14px] before:h-[14px] before:bg-secondary before:rounded-full before:-top-[6px] before:-right-[6px]">
+            <div className="group flex flex-col justify-center items-center gap-3">
+              <i className="w-5 h-5 relative before:content-['0'] before:text-xs before:flex before:justify-center before:items-center before:text-white before:absolute before:w-[14px] before:h-[14px] before:bg-secondary before:rounded-full before:-top-[6px] before:-right-[6px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 25 25"
                   fill="none"
-                  class="group-[.active]:hidden"
+                  className="group-[.active]:hidden"
                 >
                   <path
                     d="M18.94 17.75H8.28999C7.29999 17.75 6.34999 17.33 5.67999 16.6C5.00999 15.87 4.67 14.89 4.75 13.9L5.58 3.94C5.61 3.63 5.49999 3.33001 5.28999 3.10001C5.07999 2.87001 4.79 2.75 4.48 2.75H2.75C2.34 2.75 2 2.41 2 2C2 1.59 2.34 1.25 2.75 1.25H4.49001C5.22001 1.25 5.90999 1.56 6.39999 2.09C6.66999 2.39 6.87 2.74 6.98 3.13H19.47C20.48 3.13 21.41 3.53 22.09 4.25C22.76 4.98 23.1 5.93 23.02 6.94L22.48 14.44C22.37 16.27 20.77 17.75 18.94 17.75ZM7.03 4.62L6.25 14.02C6.2 14.6 6.39 15.15 6.78 15.58C7.17 16.01 7.70999 16.24 8.28999 16.24H18.94C19.98 16.24 20.92 15.36 21 14.32L21.54 6.82001C21.58 6.23001 21.39 5.67001 21 5.26001C20.61 4.84001 20.07 4.60999 19.48 4.60999H7.03V4.62Z"
@@ -124,7 +124,7 @@ function Detail() {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 25 25"
                   fill="none"
-                  class="hidden group-[.active]:block"
+                  className="hidden group-[.active]:block"
                 >
                   <path
                     d="M17 22.5C17.9665 22.5 18.75 21.7165 18.75 20.75C18.75 19.7835 17.9665 19 17 19C16.0335 19 15.25 19.7835 15.25 20.75C15.25 21.7165 16.0335 22.5 17 22.5Z"
@@ -144,17 +144,17 @@ function Detail() {
                   />
                 </svg>
               </i>
-              <span class="relative flex justify-center before:hidden group-[.active]:before:block before:absolute before:w-[75px] before:h-1 before:bg-[#717171] before:rounded-lg before:-bottom-2">
+              <span className="relative flex justify-center before:hidden group-[.active]:before:block before:absolute before:w-[75px] before:h-1 before:bg-[#717171] before:rounded-lg before:-bottom-2">
                 سبد خرید
               </span>
             </div>
-            <div class="group flex flex-col justify-center items-center gap-3">
-              <i class="w-5 h-5">
+            <div className="group flex flex-col justify-center items-center gap-3">
+              <i className="w-5 h-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
-                  class="group-[.active]:hidden"
+                  className="group-[.active]:hidden"
                 >
                   <path
                     d="M12.1605 11.62C12.1305 11.62 12.1105 11.62 12.0805 11.62C12.0305 11.61 11.9605 11.61 11.9005 11.62C9.00055 11.53 6.81055 9.25 6.81055 6.44C6.81055 3.58 9.14055 1.25 12.0005 1.25C14.8605 1.25 17.1905 3.58 17.1905 6.44C17.1805 9.25 14.9805 11.53 12.1905 11.62C12.1805 11.62 12.1705 11.62 12.1605 11.62ZM12.0005 2.75C9.97055 2.75 8.31055 4.41 8.31055 6.44C8.31055 8.44 9.87055 10.05 11.8605 10.12C11.9105 10.11 12.0505 10.11 12.1805 10.12C14.1405 10.03 15.6805 8.42 15.6905 6.44C15.6905 4.41 14.0305 2.75 12.0005 2.75Z"
@@ -169,7 +169,7 @@ function Detail() {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
-                  class="hidden group-[.active]:block"
+                  className="hidden group-[.active]:block"
                 >
                   <path
                     d="M12 2C9.38 2 7.25 4.13 7.25 6.75C7.25 9.32 9.26 11.4 11.88 11.49C11.96 11.48 12.04 11.48 12.1 11.49C12.12 11.49 12.13 11.49 12.15 11.49C12.16 11.49 12.16 11.49 12.17 11.49C14.73 11.4 16.74 9.32 16.75 6.75C16.75 4.13 14.62 2 12 2Z"
@@ -181,23 +181,23 @@ function Detail() {
                   />
                 </svg>
               </i>
-              <span class="relative flex justify-center group-[.active]:text-[#717171] before:hidden group-[.active]:before:block before:absolute before:w-[75px] before:h-1 before:bg-[#717171] before:rounded-lg before:-bottom-2">
+              <span className="relative flex justify-center group-[.active]:text-[#717171] before:hidden group-[.active]:before:block before:absolute before:w-[75px] before:h-1 before:bg-[#717171] before:rounded-lg before:-bottom-2">
                 حساب کاربری
               </span>
             </div>
           </div>
         </div>
 
-        <div class="w-full p-6 mx-auto max-w-screen-2xl lg:px-12 xl:px-24">
-          <div class="flex justify-between">
-            <div class="flex items-center justify-between w-full lg:w-3/5 xl:w-4/6 lg:justify-start lg:gap-4">
-              <div class="flex items-center justify-center gap-1">
-                <span class="rounded-full w-7 h-7 bg-primary"></span>
-                <a href="#" class="text-xl font-bold">
+        <div className="w-full p-6 mx-auto max-w-screen-2xl lg:px-12 xl:px-24">
+          <div className="flex justify-between">
+            <div className="flex items-center justify-between w-full lg:w-3/5 xl:w-4/6 lg:justify-start lg:gap-4">
+              <div className="flex items-center justify-center gap-1">
+                <span className="rounded-full w-7 h-7 bg-primary"></span>
+                <a href="#" className="text-xl font-bold">
                   گیفت کارت
                 </a>
               </div>
-              <div class="flex items-center lg:w-4/6 xl:w-3/4 lg:border lg:rounded lg:p-2 gap-2 max-w-lg border-[#D8D8D8]">
+              <div className="flex items-center lg:w-4/6 xl:w-3/4 lg:border lg:rounded lg:p-2 gap-2 max-w-lg border-[#D8D8D8]">
                 <i>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -217,14 +217,14 @@ function Detail() {
                   </svg>
                 </i>
                 <input
-                  class="hidden bg-transparent outline-none lg:block placeholder:text-sm placeholder:text-lowgray"
+                  className="hidden bg-transparent outline-none lg:block placeholder:text-sm placeholder:text-lowgray"
                   type="text"
                   placeholder="جستجوی محصول..."
                 />
               </div>
             </div>
-            <div class="hidden gap-4 lg:flex">
-              <span class="flex items-center justify-center gap-1 text-sm text-lowgray">
+            <div className="hidden gap-4 lg:flex">
+              <span className="flex items-center justify-center gap-1 text-sm text-lowgray">
                 <i>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -233,7 +233,7 @@ function Detail() {
                     viewBox="0 0 25 25"
                     fill="none"
                   >
-                    <g clip-path="url(#clip0_1359_711)">
+                    <g clipPath="url(#clip0_1359_711)">
                       <path
                         d="M23.575 2.4663C23.385 2.29249 23.1523 2.17238 22.9005 2.1183C22.6488 2.06421 22.3873 2.07811 22.1427 2.15857L1.04014 9.11486C0.465026 9.30443 0.0750263 9.8178 0.0465732 10.4226C0.0181669 11.0275 0.358245 11.5752 0.912964 11.818L6.13179 14.1014L7.70637 21.4043C7.77176 21.7076 7.92574 21.9779 8.25195 22.061C8.5819 22.145 8.81501 21.9647 9.0612 21.7804L12.934 18.8805L17.4616 22.5854C17.7253 22.8013 18.0477 22.9139 18.3763 22.9139C18.5355 22.9138 18.6936 22.8875 18.8444 22.8363C19.3209 22.6747 19.6742 22.2858 19.7893 21.796L24.0065 3.86618C24.0653 3.61554 24.0563 3.35377 23.9805 3.10775C23.9046 2.86173 23.7647 2.64033 23.575 2.4663ZM9.39856 15.4098C9.39598 15.4159 9.39345 15.4228 9.39106 15.431L8.51806 18.4811L7.54381 13.9626L14.243 10.2405L9.55925 15.1379C9.48579 15.2152 9.43085 15.3082 9.39856 15.4098ZM9.67564 19.5594L10.0722 18.174L10.4514 16.8489L11.8104 17.961L9.67564 19.5594ZM22.6344 3.54339L18.4173 21.4732C18.4151 21.4821 18.4123 21.4944 18.3917 21.5013C18.3713 21.5083 18.3613 21.5004 18.3543 21.4946L13.4 17.4404L13.3997 17.4401L11.1042 15.5617L18.4788 7.85088C18.5953 7.72901 18.6643 7.56939 18.6732 7.40099C18.6821 7.2326 18.6303 7.06659 18.5273 6.93311C18.4242 6.79962 18.2767 6.7075 18.1116 6.67348C17.9464 6.63946 17.7745 6.6658 17.6271 6.74772L6.70751 12.8147L1.478 10.5266C1.46206 10.5197 1.45329 10.5158 1.45456 10.4888C1.45582 10.462 1.46492 10.4589 1.48142 10.4535L22.584 3.49722C22.5942 3.49389 22.6057 3.49005 22.6227 3.50552C22.6397 3.52108 22.6369 3.53289 22.6344 3.54339Z"
                         fill="#8B8A92"
@@ -253,7 +253,7 @@ function Detail() {
                 </i>
                 پشتیبانی تلگرام: ۰۹۱۲۳۱۷۹۰۶۰
               </span>
-              <span class="flex items-center justify-center gap-1 text-sm text-lowgray">
+              <span className="flex items-center justify-center gap-1 text-sm text-lowgray">
                 <i>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -262,12 +262,12 @@ function Detail() {
                     viewBox="0 0 23 23"
                     fill="none"
                   >
-                    <g clip-path="url(#clip0_1359_707)">
+                    <g clipPath="url(#clip0_1359_707)">
                       <path
                         d="M5.0289 18.0211C5.09879 18.2819 5.22856 18.5344 5.4216 18.7622C5.61464 18.99 5.84001 19.1936 6.11222 19.3691C6.57202 19.6652 7.03892 19.8429 7.52936 19.9056C8.01256 19.9703 8.50868 19.9383 9.01579 19.8024C9.75472 19.6044 10.4978 19.219 11.2358 18.6408C11.9738 18.0625 12.6788 17.3612 13.3435 16.5386C14.0203 15.6974 14.6329 14.8065 15.1762 13.8735C15.7112 12.9397 16.1746 11.9667 16.5626 10.9629C16.9354 9.97791 17.1922 9.02392 17.3206 8.11213C17.447 7.19309 17.4093 6.35685 17.2075 5.60343C17.0755 5.11081 16.8623 4.66321 16.572 4.27513C16.2797 3.87981 15.8957 3.54789 15.4147 3.28854C14.8288 2.95638 14.2615 2.86768 13.7254 3.01132C13.5226 3.06568 13.3314 3.16349 13.1736 3.29896C13.0085 3.43636 12.8768 3.61141 12.7969 3.8347L11.7509 6.65398C11.6691 6.87003 11.6195 7.06189 11.597 7.23874C11.5726 7.40834 11.5771 7.57018 11.614 7.70782C11.6606 7.88169 11.7579 8.04197 11.904 8.18142C12.0428 8.3228 12.227 8.45979 12.4475 8.58707L13.1514 9.01185C13.2525 9.07019 13.3139 9.15466 13.345 9.27057C13.3605 9.32853 13.3668 9.38118 13.3679 9.44302C13.3617 9.5068 13.3516 9.55609 13.3487 9.60343C13.2824 9.87744 13.1413 10.2491 12.9235 10.7112C12.6984 11.1753 12.4536 11.6524 12.1797 12.1373C11.8914 12.6261 11.6098 13.082 11.3132 13.5109C11.0219 13.9306 10.7686 14.2314 10.5573 14.4278C10.5249 14.452 10.4873 14.4854 10.4424 14.5207C10.3903 14.558 10.3343 14.5807 10.2691 14.5982C10.1459 14.6312 10.0401 14.613 9.93903 14.5546L9.24287 14.1588C9.01323 14.0263 8.80248 13.9352 8.61256 13.8929C8.41876 13.8361 8.23855 13.8301 8.05744 13.8786C7.9198 13.9155 7.78267 13.9833 7.64077 14.0912C7.49886 14.1991 7.35747 14.3379 7.20936 14.5096L5.26762 16.8546C5.1142 17.0354 5.02457 17.2225 4.99341 17.425C4.96949 17.6255 4.97455 17.8182 5.0289 18.0211Z"
                         stroke="#8B8A92"
-                        stroke-width="1.5"
-                        stroke-miterlimit="10"
+                        strokeWidth="1.5"
+                        strokeMiterlimit="10"
                       />
                     </g>
                     <defs>
@@ -286,21 +286,21 @@ function Detail() {
               </span>
             </div>
           </div>
-          <div class="items-center justify-between hidden mt-8 md:flex">
+          <div className="items-center justify-between hidden mt-8 md:flex">
             <nav>
-              <ul class="flex gap-6">
-                <li class="relative group">
+              <ul className="flex gap-6">
+                <li className="relative group">
                   <a
                     href="#"
-                    class="relative flex justify-center items-center font-medium gap-1 after:w-0 after:origin-center after:rounded-full after:bg-primary after:h-[2px] after:absolute after:-bottom-1 group-hover:after:w-[100%] after:transition-all after:ease-linear after:duration-500"
+                    className="relative flex justify-center items-center font-medium gap-1 after:w-0 after:origin-center after:rounded-full after:bg-primary after:h-[2px] after:absolute after:-bottom-1 group-hover:after:w-[100%] after:transition-all after:ease-linear after:duration-500"
                   >
                     خانه
                   </a>
                 </li>
-                <li class="relative group">
+                <li className="relative group">
                   <a
                     href="#"
-                    class="relative flex justify-center items-center font-medium gap-1 after:w-0 after:origin-center after:rounded-full after:bg-primary after:h-[2px] after:absolute after:-bottom-1 group-hover:after:w-[100%] after:transition-all after:ease-linear after:duration-500"
+                    className="relative flex justify-center items-center font-medium gap-1 after:w-0 after:origin-center after:rounded-full after:bg-primary after:h-[2px] after:absolute after:-bottom-1 group-hover:after:w-[100%] after:transition-all after:ease-linear after:duration-500"
                   >
                     دسته بندی محصولات
                     <svg
@@ -313,47 +313,47 @@ function Detail() {
                       <path
                         d="M19.9201 9.44995L13.4001 15.97C12.6301 16.74 11.3701 16.74 10.6001 15.97L4.08008 9.44995"
                         stroke="#0C0A18"
-                        stroke-width="1.5"
-                        stroke-miterlimit="10"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="1.5"
+                        strokeMiterlimit="10"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                   </a>
-                  <div class="transition-all duration-500 opacity-0 group-hover:opacity-100 flex flex-col bg-white min-w-[140%] text-lowgray absolute top-[2.25rem] -right-1">
-                    <a href="#" class="p-2 pb-3 border-b-[1px]">
+                  <div className="transition-all duration-500 opacity-0 group-hover:opacity-100 flex flex-col bg-white min-w-[140%] text-lowgray absolute top-[2.25rem] -right-1">
+                    <a href="#" className="p-2 pb-3 border-b-[1px]">
                       دسته بندی محصولات
                     </a>
-                    <a href="#" class="p-2 pb-3 border-b-[1px]">
+                    <a href="#" className="p-2 pb-3 border-b-[1px]">
                       دسته بندی محصولات
                     </a>
-                    <a href="#" class="p-2 pb-3 border-b-[1px]">
+                    <a href="#" className="p-2 pb-3 border-b-[1px]">
                       دسته بندی محصولات
                     </a>
                   </div>
                 </li>
-                <li class="relative group">
+                <li className="relative group">
                   <a
                     href="#"
-                    class="relative flex justify-center items-center font-medium gap-1 after:w-0 after:origin-center after:rounded-full after:bg-primary after:h-[2px] after:absolute after:-bottom-1 group-hover:after:w-[100%] after:transition-all after:ease-linear after:duration-500"
+                    className="relative flex justify-center items-center font-medium gap-1 after:w-0 after:origin-center after:rounded-full after:bg-primary after:h-[2px] after:absolute after:-bottom-1 group-hover:after:w-[100%] after:transition-all after:ease-linear after:duration-500"
                   >
                     تماس با ما
                   </a>
                 </li>
-                <li class="relative group">
+                <li className="relative group">
                   <a
                     href="#"
-                    class="relative flex justify-center items-center font-medium gap-1 after:w-0 after:origin-center after:rounded-full after:bg-primary after:h-[2px] after:absolute after:-bottom-1 group-hover:after:w-[100%] after:transition-all after:ease-linear after:duration-500"
+                    className="relative flex justify-center items-center font-medium gap-1 after:w-0 after:origin-center after:rounded-full after:bg-primary after:h-[2px] after:absolute after:-bottom-1 group-hover:after:w-[100%] after:transition-all after:ease-linear after:duration-500"
                   >
                     بلاگ
                   </a>
                 </li>
               </ul>
             </nav>
-            <div class="flex items-center justify-center gap-2">
+            <div className="flex items-center justify-center gap-2">
               <a
                 href="#"
-                class="flex items-center justify-center gap-1 p-2 px-4 text-xs font-medium transition-all duration-300 ease-linear bg-gray-100 rounded-lg group text-primary hover:bg-primary hover:text-white"
+                className="flex items-center justify-center gap-1 p-2 px-4 text-xs font-medium transition-all duration-300 ease-linear bg-gray-100 rounded-lg group text-primary hover:bg-primary hover:text-white"
               >
                 <i>
                   <svg
@@ -361,7 +361,7 @@ function Detail() {
                     width="20"
                     height="20"
                     viewBox="0 0 24 24"
-                    class="transition-all duration-300 ease-linear fill-primary group-hover:fill-white"
+                    className="transition-all duration-300 ease-linear fill-primary group-hover:fill-white"
                   >
                     <path d="M12.1596 11.62C12.1296 11.62 12.1096 11.62 12.0796 11.62C12.0296 11.61 11.9596 11.61 11.8996 11.62C8.99957 11.53 6.80957 9.25 6.80957 6.44C6.80957 3.58 9.13957 1.25 11.9996 1.25C14.8596 1.25 17.1896 3.58 17.1896 6.44C17.1796 9.25 14.9796 11.53 12.1896 11.62C12.1796 11.62 12.1696 11.62 12.1596 11.62ZM11.9996 2.75C9.96957 2.75 8.30957 4.41 8.30957 6.44C8.30957 8.44 9.86957 10.05 11.8596 10.12C11.9096 10.11 12.0496 10.11 12.1796 10.12C14.1396 10.03 15.6796 8.42 15.6896 6.44C15.6896 4.41 14.0296 2.75 11.9996 2.75Z" />
                     <path d="M12.1696 22.55C10.2096 22.55 8.23961 22.05 6.74961 21.05C5.35961 20.13 4.59961 18.87 4.59961 17.5C4.59961 16.13 5.35961 14.86 6.74961 13.93C9.74961 11.94 14.6096 11.94 17.5896 13.93C18.9696 14.85 19.7396 16.11 19.7396 17.48C19.7396 18.85 18.9796 20.12 17.5896 21.05C16.0896 22.05 14.1296 22.55 12.1696 22.55ZM7.57961 15.19C6.61961 15.83 6.09961 16.65 6.09961 17.51C6.09961 18.36 6.62961 19.18 7.57961 19.81C10.0696 21.48 14.2696 21.48 16.7596 19.81C17.7196 19.17 18.2396 18.35 18.2396 17.49C18.2396 16.64 17.7096 15.82 16.7596 15.19C14.2696 13.53 10.0696 13.53 7.57961 15.19Z" />
@@ -371,7 +371,7 @@ function Detail() {
               </a>
               <a
                 href="#"
-                class="flex items-center justify-center gap-1 p-2 px-4 text-xs font-medium transition-colors duration-300 ease-linear rounded-lg text-lowgray hover:bg-gray-200"
+                className="flex items-center justify-center gap-1 p-2 px-4 text-xs font-medium transition-colors duration-300 ease-linear rounded-lg text-lowgray hover:bg-gray-200"
               >
                 <i>
                   <svg
@@ -405,19 +405,19 @@ function Detail() {
           </div>
         </div>
       </header>
-      <main class="w-full p-6 mx-auto mt-8 mb-12 max-w-screen-2xl lg:px-12 xl:px-24">
-        <section class="flex flex-col items-center gap-6 mb-16 md:flex-row lg:gap-12">
-          <div class="w-full p-8 bg-white rounded-lg lg:p-0 md:bg-transparent lg:w-max">
+      <main className="w-full p-6 mx-auto mt-8 mb-12 max-w-screen-2xl lg:px-12 xl:px-24">
+        <section className="flex flex-col items-center gap-6 mb-16 md:flex-row lg:gap-12">
+          <div className="w-full p-8 bg-white rounded-lg lg:p-0 md:bg-transparent lg:w-max">
             <img
-              src="./assets/img/detail.png"
-              class="mx-auto lg:mx-0 w-40 lg:w-[350px] xl:w-[400px] md:w-60 max-w-[400px]"
+              src="../public/assets/images/detail.png"
+              className="mx-auto lg:mx-0 w-40 lg:w-[350px] xl:w-[400px] md:w-60 max-w-[400px]"
               alt=""
             />
           </div>
-          <div class="flex flex-col gap-8">
-            <h2 class="text-lg font-bold">گیفت کارت اسپاتیفای</h2>
-            <div class="flex gap-4">
-              <div class="flex gap-1 text-xs text-lowgray">
+          <div className="flex flex-col gap-8">
+            <h2 className="text-lg font-bold">گیفت کارت اسپاتیفای</h2>
+            <div className="flex gap-4">
+              <div className="flex gap-1 text-xs text-lowgray">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="12"
@@ -432,7 +432,7 @@ function Detail() {
                 </svg>
                 ۴ امتیاز
               </div>
-              <div class="flex gap-1 text-xs text-lowgray">
+              <div className="flex gap-1 text-xs text-lowgray">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -440,21 +440,21 @@ function Detail() {
                   viewBox="0 0 20 20"
                   fill="none"
                 >
-                  <g clip-path="url(#clip0_297_2365)">
+                  <g clipPath="url(#clip0_297_2365)">
                     <path
                       d="M7.08317 15.8334H6.6665C3.33317 15.8334 1.6665 15.0001 1.6665 10.8334V6.66675C1.6665 3.33341 3.33317 1.66675 6.6665 1.66675H13.3332C16.6665 1.66675 18.3332 3.33341 18.3332 6.66675V10.8334C18.3332 14.1667 16.6665 15.8334 13.3332 15.8334H12.9165C12.6582 15.8334 12.4082 15.9584 12.2498 16.1667L10.9998 17.8334C10.4498 18.5667 9.54984 18.5667 8.99984 17.8334L7.74984 16.1667C7.6165 15.9834 7.30817 15.8334 7.08317 15.8334Z"
                       stroke="#ACACAC"
-                      stroke-width="1.5"
-                      stroke-miterlimit="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="1.5"
+                      strokeMiterlimit="10"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <path
                       d="M13.3301 9.16675H13.3384M9.99593 9.16675H10.0043M6.6626 9.16675H6.66926"
                       stroke="#ACACAC"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </g>
                   <defs>
@@ -466,12 +466,16 @@ function Detail() {
                 ۱۲ دیدگاه
               </div>
             </div>
-            <div class="flex items-center justify-between text-xs sm:justify-start sm:gap-16">
-              <div class="flex items-center gap-2 text-lowgray">
-                <img src="./assets/img/country.png" class="w-8 h-5" alt="" />
+            <div className="flex items-center justify-between text-xs sm:justify-start sm:gap-16">
+              <div className="flex items-center gap-2 text-lowgray">
+                <img
+                  src="../public/assets/images/country.png"
+                  className="w-8 h-5"
+                  alt=""
+                />
                 <span> کشور: آمریکا </span>
               </div>
-              <div class="flex items-center gap-1 text-secondary">
+              <div className="flex items-center gap-1 text-secondary">
                 <a href="#">تغییر کشور</a>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -487,7 +491,7 @@ function Detail() {
                 </svg>
               </div>
             </div>
-            <p class="text-sm leading-loose text-lowgray">
+            <p className="text-sm leading-loose text-lowgray">
               اسپاتیفای محتوای صوتی ضبط‌شده را با حق نشر دیجیتال ارائه می‌دهد که
               شامل بیش از ۱۰۰ میلیون آهنگ و پنج میلیون پادکست از شرکت‌های ناشر
               موسیقی و شرکت‌های رسانه‌ای است.به عنوان یک سرویس پریمیوم،
@@ -495,63 +499,63 @@ function Detail() {
               که ویژگی‌های اضافی مانند کیفیت پخش بهتر و گوش‌دادن موسیقی به صورت
               آفلاین از طریق پرداخت اشتراک ارائه داده می‌شود.
             </p>
-            <div class="flex gap-2 p-4 text-sm font-medium bg-gray-200 rounded-md">
+            <div className="flex gap-2 p-4 text-sm font-medium bg-gray-200 rounded-md">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></path>
                 <path
                   d="M12 16V12"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></path>
                 <path
                   d="M12 8H12.01"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></path>
               </svg>
               هشدار قبل از خرید به این نکات توجه کنید
             </div>
-            <div class="flex flex-col gap-8">
-              <div class="flex items-center gap-4 lg:gap-8">
+            <div className="flex flex-col gap-8">
+              <div className="flex items-center gap-4 lg:gap-8">
                 <div
                   id="selectBox"
-                  class="group font-medium w-1/2 lg:w-2/5 border-[1px] p-4 flex justify-between items-center relative"
+                  className="group font-medium w-1/2 lg:w-2/5 border-[1px] p-4 flex justify-between items-center relative"
                 >
-                  <span class="text-lowgray">$</span>
+                  <span className="text-lowgray">$</span>
                   <input
                     type="text"
                     pattern="[0-9]+([\.,][0-9]+)?"
-                    class="w-full text-left bg-transparent outline-none placeholder:text-lowgray"
+                    className="w-full text-left bg-transparent outline-none placeholder:text-lowgray"
                     placeholder="0.00-500.00"
                   />
                   <ul
                     id="options"
-                    class="group-[.active]:flex flex-col bg-white absolute w-full text-left top-16 left-0 rounded-md shadow-md hidden"
+                    className="group-[.active]:flex flex-col bg-white absolute w-full text-left top-16 left-0 rounded-md shadow-md hidden"
                   >
-                    <li class="p-2 border-b-[1px] last:border-none hover:bg-gray-200 transition-colors duration-200 ease-linear">
+                    <li className="p-2 border-b-[1px] last:border-none hover:bg-gray-200 transition-colors duration-200 ease-linear">
                       5
                     </li>
-                    <li class="p-2 border-b-[1px] last:border-none hover:bg-gray-200 transition-colors duration-200 ease-linear">
+                    <li className="p-2 border-b-[1px] last:border-none hover:bg-gray-200 transition-colors duration-200 ease-linear">
                       10
                     </li>
                   </ul>
                 </div>
-                <span class="w-1/2 font-medium">۲۸۰٬۰۰۰ تومان</span>
+                <span className="w-1/2 font-medium">۲۸۰٬۰۰۰ تومان</span>
               </div>
-              <div class="flex items-center gap-4">
+              <div className="flex items-center gap-4">
                 <a
                   href="#"
-                  class="flex items-center justify-center w-1/2 gap-2 p-4 text-sm text-white rounded-md bg-primary"
+                  className="flex items-center justify-center w-1/2 gap-2 p-4 text-sm text-white rounded-md bg-primary"
                 >
                   افزودن به سبد خرید
                   <svg
@@ -582,13 +586,13 @@ function Detail() {
                 <a
                   href="#"
                   id="like"
-                  class="flex items-center w-1/2 gap-1 p-2 text-xs rounded-md"
+                  className="flex items-center w-1/2 gap-1 p-2 text-xs rounded-md"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
                     height="20"
-                    class="fill-none stroke-lowgray"
+                    className="fill-none stroke-lowgray"
                     viewBox="0 0 18 18"
                   >
                     <path
@@ -599,7 +603,7 @@ function Detail() {
                   افزودن به علاقه مندی ها
                 </a>
               </div>
-              <div class="flex items-center gap-1 mt-4 text-xs text-lowgray">
+              <div className="flex items-center gap-1 mt-4 text-xs text-lowgray">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -611,9 +615,9 @@ function Detail() {
                   <path
                     d="M22 12C22 17.52 17.52 22 12 22C6.48 22 3.11 16.44 3.11 16.44M3.11 16.44H7.63M3.11 16.44V21.44M2 12C2 6.48 6.44 2 12 2C18.67 2 22 7.56 22 7.56M22 7.56V2.56M22 7.56H17.56"
                     stroke="#13CD64"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
                 تحویل از طریق ایمیل بلافاصله پس از خرید
@@ -621,13 +625,13 @@ function Detail() {
             </div>
           </div>
         </section>
-        <section id="dropdowns" class="flex flex-col gap-6 mb-16">
-          <div class="flex flex-col border-b-[1px] pb-8 gap-8 w-full group">
-            <div class="flex items-center justify-between">
-              <h6 class="text-lg font-medium text-lowgray">نحوه استفاده</h6>
-              <span class="cursor-pointer action-button">
+        <section id="dropdowns" className="flex flex-col gap-6 mb-16">
+          <div className="flex flex-col border-b-[1px] pb-8 gap-8 w-full group">
+            <div className="flex items-center justify-between">
+              <h6 className="text-lg font-medium text-lowgray">نحوه استفاده</h6>
+              <span className="cursor-pointer action-button">
                 <svg
-                  class="hidden group-[.active]:block"
+                  className="hidden group-[.active]:block"
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="20"
@@ -641,7 +645,7 @@ function Detail() {
                   />
                 </svg>
                 <svg
-                  class="group-[.active]:hidden"
+                  className="group-[.active]:hidden"
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="20"
@@ -656,19 +660,21 @@ function Detail() {
                 </svg>
               </span>
             </div>
-            <p class="text-sm text-lowgray leading-loose h-0 hidden group-[.active]:h-max group-[.active]:flex transition-all duration-300 ease-linear">
+            <p className="text-sm text-lowgray leading-loose h-0 hidden group-[.active]:h-max group-[.active]:flex transition-all duration-300 ease-linear">
               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
               استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
               در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
               نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
             </p>
           </div>
-          <div class="swiper--1 overflow-visible flex flex-col gap-8 border-b-[1px] pb-8 w-full group">
-            <div class="flex items-center justify-between">
-              <h6 class="text-lg font-medium text-lowgray">نظرات کاربران</h6>
-              <span class="cursor-pointer action-button">
+          <div className="swiper--1 overflow-visible flex flex-col gap-8 border-b-[1px] pb-8 w-full group">
+            <div className="flex items-center justify-between">
+              <h6 className="text-lg font-medium text-lowgray">
+                نظرات کاربران
+              </h6>
+              <span className="cursor-pointer action-button">
                 <svg
-                  class="hidden group-[.active]:block"
+                  className="hidden group-[.active]:block"
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="20"
@@ -682,7 +688,7 @@ function Detail() {
                   />
                 </svg>
                 <svg
-                  class="group-[.active]:hidden"
+                  className="group-[.active]:hidden"
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="20"
@@ -697,11 +703,11 @@ function Detail() {
                 </svg>
               </span>
             </div>
-            <div class="hidden group-[.active]:flex">
-              <div class="hidden h-0 group-[.active]:h-max lg:group-[.active]:flex flex-col items-center border-[1px] w-1/4 rounded-lg p-4">
-                <div class="flex items-center justify-center gap-1 text-sm">
-                  <span class="text-base font-medium">5</span> از 5 امتیاز
-                  <div class="flex gap-1 mr-2">
+            <div className="hidden group-[.active]:flex">
+              <div className="hidden h-0 group-[.active]:h-max lg:group-[.active]:flex flex-col items-center border-[1px] w-1/4 rounded-lg p-4">
+                <div className="flex items-center justify-center gap-1 text-sm">
+                  <span className="text-base font-medium">5</span> از 5 امتیاز
+                  <div className="flex gap-1 mr-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="13"
@@ -764,20 +770,20 @@ function Detail() {
                     </svg>
                   </div>
                 </div>
-                <div class="flex flex-col items-center justify-center circular"></div>
+                <div className="flex flex-col items-center justify-center circular"></div>
               </div>
-              <div class="swiper-wrapper md:gap-4 md:flex-col h-0 lg:w-3/4 hidden group-[.active]:h-max group-[.active]:flex transition-all duration-300 ease-linear">
-                <article class="swiper-slide flex flex-col p-4 border-[1px] w-3/5 gap-4 rounded-md flex-shrink-0 md:border-0 md:gap-6">
-                  <div class="flex items-center gap-2 text-xs text-lowgray md:gap-4">
+              <div className="swiper-wrapper md:gap-4 md:flex-col h-0 lg:w-3/4 hidden group-[.active]:h-max group-[.active]:flex transition-all duration-300 ease-linear">
+                <article className="swiper-slide flex flex-col p-4 border-[1px] w-3/5 gap-4 rounded-md flex-shrink-0 md:border-0 md:gap-6">
+                  <div className="flex items-center gap-2 text-xs text-lowgray md:gap-4">
                     <img
-                      src="./assets/img/user.png"
-                      class="w-10 h-10 rounded-full md:h-14 md:w-14"
+                      src="../public/assets/images/user.png"
+                      className="w-10 h-10 rounded-full md:h-14 md:w-14"
                       alt=""
                     />
-                    <div class="flex flex-col gap-2">
+                    <div className="flex flex-col gap-2">
                       علیرضا مهران
                       <span>۱۴۰۲/۰۳/۱۶</span>
-                      <div class="flex">
+                      <div className="flex">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="12"
@@ -793,23 +799,23 @@ function Detail() {
                       </div>
                     </div>
                   </div>
-                  <p class="text-sm leading-relaxed">
+                  <p className="text-sm leading-relaxed">
                     پشتیبانی خیلی خوبی دارن و راحت تونستم استفاده کنم. حتما
                     پیشنهاد میکنم! یکی از بهترین سایت های خرید گیفت کارت توی
                     ایران هست.
                   </p>
                 </article>
-                <article class="swiper-slide flex flex-col p-4 border-[1px] w-3/5 gap-4 rounded-md flex-shrink-0 md:border-0 md:gap-6">
-                  <div class="flex items-center gap-2 text-xs text-lowgray md:gap-4">
+                <article className="swiper-slide flex flex-col p-4 border-[1px] w-3/5 gap-4 rounded-md flex-shrink-0 md:border-0 md:gap-6">
+                  <div className="flex items-center gap-2 text-xs text-lowgray md:gap-4">
                     <img
-                      src="./assets/img/user.png"
-                      class="w-10 h-10 rounded-full md:h-14 md:w-14"
+                      src="../public/assets/images/user.png"
+                      className="w-10 h-10 rounded-full md:h-14 md:w-14"
                       alt=""
                     />
-                    <div class="flex flex-col gap-2">
+                    <div className="flex flex-col gap-2">
                       علیرضا مهران
                       <span>۱۴۰۲/۰۳/۱۶</span>
-                      <div class="flex">
+                      <div className="flex">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="12"
@@ -825,23 +831,23 @@ function Detail() {
                       </div>
                     </div>
                   </div>
-                  <p class="text-sm leading-relaxed">
+                  <p className="text-sm leading-relaxed">
                     پشتیبانی خیلی خوبی دارن و راحت تونستم استفاده کنم. حتما
                     پیشنهاد میکنم! یکی از بهترین سایت های خرید گیفت کارت توی
                     ایران هست.
                   </p>
                 </article>
-                <article class="swiper-slide flex flex-col p-4 border-[1px] w-3/5 gap-4 rounded-md flex-shrink-0 md:border-0 md:gap-6">
-                  <div class="flex items-center gap-2 text-xs text-lowgray md:gap-4">
+                <article className="swiper-slide flex flex-col p-4 border-[1px] w-3/5 gap-4 rounded-md flex-shrink-0 md:border-0 md:gap-6">
+                  <div className="flex items-center gap-2 text-xs text-lowgray md:gap-4">
                     <img
-                      src="./assets/img/user.png"
-                      class="w-10 h-10 rounded-full md:h-14 md:w-14"
+                      src="../public/assets/images/user.png"
+                      className="w-10 h-10 rounded-full md:h-14 md:w-14"
                       alt=""
                     />
-                    <div class="flex flex-col gap-2">
+                    <div className="flex flex-col gap-2">
                       علیرضا مهران
                       <span>۱۴۰۲/۰۳/۱۶</span>
-                      <div class="flex">
+                      <div className="flex">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="12"
@@ -857,7 +863,7 @@ function Detail() {
                       </div>
                     </div>
                   </div>
-                  <p class="text-sm leading-relaxed">
+                  <p className="text-sm leading-relaxed">
                     پشتیبانی خیلی خوبی دارن و راحت تونستم استفاده کنم. حتما
                     پیشنهاد میکنم! یکی از بهترین سایت های خرید گیفت کارت توی
                     ایران هست.
@@ -868,44 +874,56 @@ function Detail() {
           </div>
         </section>
 
-        <section id="similar" class="overflow-visible swiper--2">
-          <h4 class="mb-8 text-lg font-bold">محصولات مشابه</h4>
-          <div class="flex items-center swiper-wrapper md:gap-4">
+        <section id="similar" className="overflow-visible swiper--2">
+          <h4 className="mb-8 text-lg font-bold">محصولات مشابه</h4>
+          <div className="flex items-center swiper-wrapper md:gap-4">
             <a
               href="#"
-              class="flex-shrink-0 w-2/5 p-3 text-center transition-all duration-100 ease-linear bg-white rounded-md swiper-slide md:w-1/4 hover:shadow-md"
+              className="flex-shrink-0 w-2/5 p-3 text-center transition-all duration-100 ease-linear bg-white rounded-md swiper-slide md:w-1/4 hover:shadow-md"
             >
-              <img src="./assets/img/product.png" class="rounded-md" alt="" />
-              <p class="mt-3 font-medium text-lowgray">نتفلیکس</p>
+              <img
+                src="../public/assets/images/product.png"
+                className="rounded-md"
+                alt=""
+              />
+              <p className="mt-3 font-medium text-lowgray">نتفلیکس</p>
             </a>
             <a
               href="#"
-              class="flex-shrink-0 w-2/5 p-3 text-center transition-all duration-100 ease-linear bg-white rounded-md swiper-slide md:w-1/4 hover:shadow-md"
+              className="flex-shrink-0 w-2/5 p-3 text-center transition-all duration-100 ease-linear bg-white rounded-md swiper-slide md:w-1/4 hover:shadow-md"
             >
-              <img src="./assets/img/product.png" class="rounded-md" alt="" />
-              <p class="mt-3 font-medium text-lowgray">نتفلیکس</p>
+              <img
+                src="../public/assets/images/product.png"
+                className="rounded-md"
+                alt=""
+              />
+              <p className="mt-3 font-medium text-lowgray">نتفلیکس</p>
             </a>
             <a
               href="#"
-              class="flex-shrink-0 w-2/5 p-3 text-center transition-all duration-100 ease-linear bg-white rounded-md swiper-slide md:w-1/4 hover:shadow-md"
+              className="flex-shrink-0 w-2/5 p-3 text-center transition-all duration-100 ease-linear bg-white rounded-md swiper-slide md:w-1/4 hover:shadow-md"
             >
-              <img src="./assets/img/product.png" class="rounded-md" alt="" />
-              <p class="mt-3 font-medium text-lowgray">نتفلیکس</p>
+              <img
+                src="../public/assets/images/product.png"
+                className="rounded-md"
+                alt=""
+              />
+              <p className="mt-3 font-medium text-lowgray">نتفلیکس</p>
             </a>
           </div>
         </section>
       </main>
-      <footer class="w-full mt-auto bg-white">
-        <div class="grid grid-cols-1 gap-12 p-6 mt-12 lg:grid-cols-3 lg:grid-rows-2 lg:gap-x-16 lg:max-w-screen-2xl lg:mx-auto lg:px-12 xl:px-24">
+      <footer className="w-full mt-auto bg-white">
+        <div className="grid grid-cols-1 gap-12 p-6 mt-12 lg:grid-cols-3 lg:grid-rows-2 lg:gap-x-16 lg:max-w-screen-2xl lg:mx-auto lg:px-12 xl:px-24">
           <div>
-            <div class="flex items-center gap-1 mb-8">
-              <span class="rounded-full w-7 h-7 bg-primary"></span>
-              <a href="#" class="font-bold">
+            <div className="flex items-center gap-1 mb-8">
+              <span className="rounded-full w-7 h-7 bg-primary"></span>
+              <a href="#" className="font-bold">
                 گیفت کارت
               </a>
             </div>
-            <div class="flex flex-col gap-8">
-              <span class="flex items-center gap-1 text-sm text-lowgray">
+            <div className="flex flex-col gap-8">
+              <span className="flex items-center gap-1 text-sm text-lowgray">
                 <i>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -914,7 +932,7 @@ function Detail() {
                     viewBox="0 0 24 24"
                     fill="none"
                   >
-                    <g clip-path="url(#clip0_1359_711)">
+                    <g clipPath="url(#clip0_1359_711)">
                       <path
                         d="M23.575 2.4663C23.385 2.29249 23.1523 2.17238 22.9005 2.1183C22.6488 2.06421 22.3873 2.07811 22.1427 2.15857L1.04014 9.11486C0.465026 9.30443 0.0750263 9.8178 0.0465732 10.4226C0.0181669 11.0275 0.358245 11.5752 0.912964 11.818L6.13179 14.1014L7.70637 21.4043C7.77176 21.7076 7.92574 21.9779 8.25195 22.061C8.5819 22.145 8.81501 21.9647 9.0612 21.7804L12.934 18.8805L17.4616 22.5854C17.7253 22.8013 18.0477 22.9139 18.3763 22.9139C18.5355 22.9138 18.6936 22.8875 18.8444 22.8363C19.3209 22.6747 19.6742 22.2858 19.7893 21.796L24.0065 3.86618C24.0653 3.61554 24.0563 3.35377 23.9805 3.10775C23.9046 2.86173 23.7647 2.64033 23.575 2.4663ZM9.39856 15.4098C9.39598 15.4159 9.39345 15.4228 9.39106 15.431L8.51806 18.4811L7.54381 13.9626L14.243 10.2405L9.55925 15.1379C9.48579 15.2152 9.43085 15.3082 9.39856 15.4098ZM9.67564 19.5594L10.0722 18.174L10.4514 16.8489L11.8104 17.961L9.67564 19.5594ZM22.6344 3.54339L18.4173 21.4732C18.4151 21.4821 18.4123 21.4944 18.3917 21.5013C18.3713 21.5083 18.3613 21.5004 18.3543 21.4946L13.4 17.4404L13.3997 17.4401L11.1042 15.5617L18.4788 7.85088C18.5953 7.72901 18.6643 7.56939 18.6732 7.40099C18.6821 7.2326 18.6303 7.06659 18.5273 6.93311C18.4242 6.79962 18.2767 6.7075 18.1116 6.67348C17.9464 6.63946 17.7745 6.6658 17.6271 6.74772L6.70751 12.8147L1.478 10.5266C1.46206 10.5197 1.45329 10.5158 1.45456 10.4888C1.45582 10.462 1.46492 10.4589 1.48142 10.4535L22.584 3.49722C22.5942 3.49389 22.6057 3.49005 22.6227 3.50552C22.6397 3.52108 22.6369 3.53289 22.6344 3.54339Z"
                         fill="#8B8A92"
@@ -934,7 +952,7 @@ function Detail() {
                 </i>
                 پشتیبانی تلگرام: ۰۹۱۲۳۱۷۹۰۶۰
               </span>
-              <span class="flex items-center gap-1 text-sm text-lowgray">
+              <span className="flex items-center gap-1 text-sm text-lowgray">
                 <i>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -943,12 +961,12 @@ function Detail() {
                     viewBox="0 0 24 24"
                     fill="none"
                   >
-                    <g clip-path="url(#clip0_1359_707)">
+                    <g clipPath="url(#clip0_1359_707)">
                       <path
                         d="M5.0289 18.0211C5.09879 18.2819 5.22856 18.5344 5.4216 18.7622C5.61464 18.99 5.84001 19.1936 6.11222 19.3691C6.57202 19.6652 7.03892 19.8429 7.52936 19.9056C8.01256 19.9703 8.50868 19.9383 9.01579 19.8024C9.75472 19.6044 10.4978 19.219 11.2358 18.6408C11.9738 18.0625 12.6788 17.3612 13.3435 16.5386C14.0203 15.6974 14.6329 14.8065 15.1762 13.8735C15.7112 12.9397 16.1746 11.9667 16.5626 10.9629C16.9354 9.97791 17.1922 9.02392 17.3206 8.11213C17.447 7.19309 17.4093 6.35685 17.2075 5.60343C17.0755 5.11081 16.8623 4.66321 16.572 4.27513C16.2797 3.87981 15.8957 3.54789 15.4147 3.28854C14.8288 2.95638 14.2615 2.86768 13.7254 3.01132C13.5226 3.06568 13.3314 3.16349 13.1736 3.29896C13.0085 3.43636 12.8768 3.61141 12.7969 3.8347L11.7509 6.65398C11.6691 6.87003 11.6195 7.06189 11.597 7.23874C11.5726 7.40834 11.5771 7.57018 11.614 7.70782C11.6606 7.88169 11.7579 8.04197 11.904 8.18142C12.0428 8.3228 12.227 8.45979 12.4475 8.58707L13.1514 9.01185C13.2525 9.07019 13.3139 9.15466 13.345 9.27057C13.3605 9.32853 13.3668 9.38118 13.3679 9.44302C13.3617 9.5068 13.3516 9.55609 13.3487 9.60343C13.2824 9.87744 13.1413 10.2491 12.9235 10.7112C12.6984 11.1753 12.4536 11.6524 12.1797 12.1373C11.8914 12.6261 11.6098 13.082 11.3132 13.5109C11.0219 13.9306 10.7686 14.2314 10.5573 14.4278C10.5249 14.452 10.4873 14.4854 10.4424 14.5207C10.3903 14.558 10.3343 14.5807 10.2691 14.5982C10.1459 14.6312 10.0401 14.613 9.93903 14.5546L9.24287 14.1588C9.01323 14.0263 8.80248 13.9352 8.61256 13.8929C8.41876 13.8361 8.23855 13.8301 8.05744 13.8786C7.9198 13.9155 7.78267 13.9833 7.64077 14.0912C7.49886 14.1991 7.35747 14.3379 7.20936 14.5096L5.26762 16.8546C5.1142 17.0354 5.02457 17.2225 4.99341 17.425C4.96949 17.6255 4.97455 17.8182 5.0289 18.0211Z"
                         stroke="#8B8A92"
-                        stroke-width="1.5"
-                        stroke-miterlimit="10"
+                        strokeWidth="1.5"
+                        strokeMiterlimit="10"
                       />
                     </g>
                     <defs>
@@ -967,10 +985,10 @@ function Detail() {
               </span>
             </div>
           </div>
-          <div class="flex row-span-2 gap-32 lg:justify-around lg:gap-0">
-            <div class="flex flex-col gap-6">
-              <span class="font-medium">خدمات:</span>
-              <ul class="flex flex-col gap-4 text-lowgray font-sm lg:gap-6">
+          <div className="flex row-span-2 gap-32 lg:justify-around lg:gap-0">
+            <div className="flex flex-col gap-6">
+              <span className="font-medium">خدمات:</span>
+              <ul className="flex flex-col gap-4 text-lowgray font-sm lg:gap-6">
                 <li>
                   <a href="#">خانه</a>
                 </li>
@@ -988,9 +1006,9 @@ function Detail() {
                 </li>
               </ul>
             </div>
-            <div class="flex flex-col gap-6">
-              <span class="font-medium">دسترسی سریع:</span>
-              <ul class="flex flex-col gap-4 text-lowgray font-sm lg:gap-6">
+            <div className="flex flex-col gap-6">
+              <span className="font-medium">دسترسی سریع:</span>
+              <ul className="flex flex-col gap-4 text-lowgray font-sm lg:gap-6">
                 <li>
                   <a href="#">خانه</a>
                 </li>
@@ -1009,17 +1027,17 @@ function Detail() {
               </ul>
             </div>
           </div>
-          <div class="flex flex-col gap-6 lg:order-3">
-            <p class="font-medium">در خبرنامه ما عضو شوید:</p>
-            <div class="flex justify-between bg-[#F3F3F3] rounded-md overflow-hidden max-w-xl mx-auto w-full">
+          <div className="flex flex-col gap-6 lg:order-3">
+            <p className="font-medium">در خبرنامه ما عضو شوید:</p>
+            <div className="flex justify-between bg-[#F3F3F3] rounded-md overflow-hidden max-w-xl mx-auto w-full">
               <input
                 type="email"
                 placeholder="ایمیل خود را وارد نمایید"
-                class="p-4 bg-transparent placeholder:text-lowgray placeholder:text-sm"
+                className="p-4 bg-transparent placeholder:text-lowgray placeholder:text-sm"
               />
               <a
                 href="#"
-                class="flex items-center justify-center p-2 px-4 bg-primary"
+                className="flex items-center justify-center p-2 px-4 bg-primary"
               >
                 <i>
                   <svg
@@ -1042,14 +1060,14 @@ function Detail() {
               </a>
             </div>
           </div>
-          <div class="flex flex-col items-center justify-center gap-6 lg:order-2">
-            <p class="hidden font-medium lg:block">
+          <div className="flex flex-col items-center justify-center gap-6 lg:order-2">
+            <p className="hidden font-medium lg:block">
               ما را در شبکه های اجتماعی دنبال کنید:
             </p>
-            <div class="flex items-center justify-center gap-8 lg:order-2">
+            <div className="flex items-center justify-center gap-8 lg:order-2">
               <a
                 href="#"
-                class="bg-[#F3F3F3] rounded-full h-12 w-12 flex justify-center items-center"
+                className="bg-[#F3F3F3] rounded-full h-12 w-12 flex justify-center items-center"
               >
                 <i>
                   <svg
@@ -1068,7 +1086,7 @@ function Detail() {
               </a>
               <a
                 href="#"
-                class="bg-[#F3F3F3] rounded-full h-12 w-12 flex justify-center items-center"
+                className="bg-[#F3F3F3] rounded-full h-12 w-12 flex justify-center items-center"
               >
                 <i>
                   <svg
@@ -1087,7 +1105,7 @@ function Detail() {
               </a>
               <a
                 href="#"
-                class="bg-[#F3F3F3] rounded-full h-12 w-12 flex justify-center items-center"
+                className="bg-[#F3F3F3] rounded-full h-12 w-12 flex justify-center items-center"
               >
                 <i>
                   <svg
@@ -1106,15 +1124,15 @@ function Detail() {
               </a>
             </div>
           </div>
-          <div class="flex items-center justify-center gap-16 lg:order-4">
+          <div className="flex items-center justify-center gap-16 lg:order-4">
             <a href="#">
-              <img src="./assets/img/cert1.png" alt="" />
+              <img src="../public/assets/images/cert1.png" alt="" />
             </a>
             <a href="#">
-              <img src="./assets/img/cert2.png" alt="" />
+              <img src="../public/assets/images/cert2.png" alt="" />
             </a>
             <a href="#">
-              <img src="./assets/img/cert3.png" alt="" />
+              <img src="../public/assets/images/cert3.png" alt="" />
             </a>
           </div>
         </div>

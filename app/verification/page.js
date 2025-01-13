@@ -28,17 +28,17 @@ function Verification() {
                 d="M9.94355 3.19992L3.78605 9.71742C3.55355 9.96492 3.32855 10.4524 3.28355 10.7899L3.00605 13.2199C2.90855 14.0974 3.53855 14.6974 4.40855 14.5474L6.82355 14.1349C7.16105 14.0749 7.63355 13.8274 7.86605 13.5724L14.0235 7.05492C15.0885 5.92992 15.5685 4.64742 13.911 3.07992C12.261 1.52742 11.0085 2.07492 9.94355 3.19992Z"
                 stroke="#F69625"
                 strokeWidth="1.5"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M8.9175 4.2876C9.07473 5.29324 9.56145 6.2182 10.3013 6.91728C11.0411 7.61637 11.9921 8.04999 13.005 8.1501M2.25 17.0001H15.75"
                 stroke="#F69625"
                 strokeWidth="1.5"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
             ویرایش شماره

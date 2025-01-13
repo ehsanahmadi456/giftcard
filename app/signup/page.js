@@ -1,18 +1,18 @@
 function Signup() {
   return (
-    <main class="flex flex-col lg:flex-row">
-      <section class="flex flex-col gap-4 p-8 text-white bg-[url('../public/assets/images/pattern.png')] bg-primary lg:order-2 lg:w-1/2 lg:justify-center lg:items-center lg:min-h-screen">
-        <h2 class="text-xl font-bold text-center">فروشگاه گیفت کارت</h2>
-        <p class="leading-loose">
+    <main className="flex flex-col lg:flex-row">
+      <section className="flex flex-col gap-4 p-8 text-white bg-[url('../public/assets/images/pattern.png')] bg-primary lg:order-2 lg:w-1/2 lg:justify-center lg:items-center lg:min-h-screen">
+        <h2 className="text-xl font-bold text-center">فروشگاه گیفت کارت</h2>
+        <p className="leading-loose">
           اولین فروشگاه خرید گیفت کارت اپل، گوگل پلی، استیم، پلی استیشن و ...
         </p>
       </section>
-      <section class="flex flex-col w-full max-w-md gap-8 p-6 mx-auto lg:max-w-screen-2xl lg:px-12 xl:px-24 lg:order-1 lg:w-1/2 lg:justify-center">
-        <h4 class="mb-8 font-bold text-center">ساخت حساب کاربری جدید</h4>
+      <section className="flex flex-col w-full max-w-md gap-8 p-6 mx-auto lg:max-w-screen-2xl lg:px-12 xl:px-24 lg:order-1 lg:w-1/2 lg:justify-center">
+        <h4 className="mb-8 font-bold text-center">ساخت حساب کاربری جدید</h4>
 
-        <form action="" class="flex flex-col gap-8">
-          <div class="relative p-3 px-6 border-[1px] rounded-sm flex items-center gap-2">
-            <label class="absolute -top-4 right-5 bg-[#FAFAFE] p-1 text-sm">
+        <form action="" className="flex flex-col gap-8">
+          <div className="relative p-3 px-6 border-[1px] rounded-sm flex items-center gap-2">
+            <label className="absolute -top-4 right-5 bg-[#FAFAFE] p-1 text-sm">
               نام و نام خانوادگی
             </label>
             <svg
@@ -34,11 +34,11 @@ function Signup() {
             <input
               type="email"
               placeholder="لطفا به فارسی وارد کنید."
-              class="relative w-full bg-transparent outline-none placeholder:text-sm"
+              className="relative w-full bg-transparent outline-none placeholder:text-sm"
             />
           </div>
-          <div class="relative p-3 px-6 border-[1px] rounded-sm flex items-center gap-2">
-            <label class="absolute -top-4 right-5 bg-[#FAFAFE] p-1 text-sm">
+          <div className="relative p-3 px-6 border-[1px] rounded-sm flex items-center gap-2">
+            <label className="absolute -top-4 right-5 bg-[#FAFAFE] p-1 text-sm">
               ایمیل
             </label>
             <svg
@@ -60,11 +60,11 @@ function Signup() {
             <input
               type="email"
               placeholder="ایمیل خود را وارد کنید."
-              class="relative w-full bg-transparent outline-none placeholder:text-sm"
+              className="relative w-full bg-transparent outline-none placeholder:text-sm"
             />
           </div>
-          <div class="relative p-3 px-6 border-[1px] rounded-sm flex items-center gap-2">
-            <label class="absolute -top-4 right-5 bg-[#FAFAFE] p-1 text-sm">
+          <div className="relative p-3 px-6 border-[1px] rounded-sm flex items-center gap-2">
+            <label className="absolute -top-4 right-5 bg-[#FAFAFE] p-1 text-sm">
               تلفن همراه
             </label>
             <svg
@@ -90,11 +90,11 @@ function Signup() {
             <input
               type="email"
               placeholder="لطفا به انگلیسی وارد کنید."
-              class="relative w-full bg-transparent outline-none placeholder:text-sm"
+              className="relative w-full bg-transparent outline-none placeholder:text-sm"
             />
           </div>
-          <div class="relative p-3 px-6 border-[1px] rounded-sm flex items-center gap-2">
-            <label class="absolute -top-4 right-5 bg-[#FAFAFE] p-1 text-sm">
+          <div className="relative p-3 px-6 border-[1px] rounded-sm flex items-center gap-2">
+            <label className="absolute -top-4 right-5 bg-[#FAFAFE] p-1 text-sm">
               تلفن ثابت
             </label>
             <svg
@@ -112,12 +112,12 @@ function Signup() {
             <input
               type="email"
               placeholder="لطفا به انگلیسی وارد کنید."
-              class="relative w-full bg-transparent outline-none placeholder:text-sm"
+              className="relative w-full bg-transparent outline-none placeholder:text-sm"
             />
           </div>
 
-          <div class="relative p-3 px-6 border-[1px] rounded-sm flex items-center gap-2">
-            <label class="absolute -top-4 right-5 bg-[#FAFAFE] p-1 text-sm">
+          <div className="relative p-3 px-6 border-[1px] rounded-sm flex items-center gap-2">
+            <label className="absolute -top-4 right-5 bg-[#FAFAFE] p-1 text-sm">
               رمز عبور
             </label>
             <svg
@@ -143,11 +143,11 @@ function Signup() {
             <input
               type="password"
               placeholder="رمز خود را وارد کنید."
-              class="relative w-full bg-transparent outline-none placeholder:text-sm"
+              className="relative w-full bg-transparent outline-none placeholder:text-sm"
             />
           </div>
-          <div class="relative p-3 px-6 border-[1px] rounded-sm flex items-center gap-2">
-            <label class="absolute -top-4 right-5 bg-[#FAFAFE] p-1 text-sm">
+          <div className="relative p-3 px-6 border-[1px] rounded-sm flex items-center gap-2">
+            <label className="absolute -top-4 right-5 bg-[#FAFAFE] p-1 text-sm">
               تکرار رمز عبور
             </label>
             <svg
@@ -173,11 +173,11 @@ function Signup() {
             <input
               type="password"
               placeholder="رمز خود را وارد کنید."
-              class="relative w-full bg-transparent outline-none placeholder:text-sm"
+              className="relative w-full bg-transparent outline-none placeholder:text-sm"
             />
           </div>
-          <div class="relative p-3 px-6 border-[1px] rounded-sm flex items-center gap-2">
-            <label class="absolute -top-4 right-5 bg-[#FAFAFE] p-1 text-sm">
+          <div className="relative p-3 px-6 border-[1px] rounded-sm flex items-center gap-2">
+            <label className="absolute -top-4 right-5 bg-[#FAFAFE] p-1 text-sm">
               کد امنیتی
             </label>
             <svg
@@ -215,12 +215,12 @@ function Signup() {
             <input
               type="text"
               placeholder="کد زیر را به انگلیسی وارد کنید."
-              class="relative w-full bg-transparent outline-none placeholder:text-xs"
+              className="relative w-full bg-transparent outline-none placeholder:text-xs"
             />
           </div>
-          <div class="flex gap-4">
-            <img src="./assets/img/captcha.png" alt="" />
-            <div class="flex items-center gap-2 text-[#717171] text-xs">
+          <div className="flex gap-4">
+            <img src="../public/assets/images/captcha.png" alt="" />
+            <div className="flex items-center gap-2 text-[#717171] text-xs">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -232,31 +232,31 @@ function Signup() {
                 <path
                   d="M18.3327 9.99996C18.3327 14.6 14.5993 18.3333 9.99935 18.3333C5.39935 18.3333 2.59102 13.7 2.59102 13.7M2.59102 13.7H6.35768M2.59102 13.7V17.8666M1.66602 9.99996C1.66602 5.39996 5.36602 1.66663 9.99935 1.66663C15.5577 1.66663 18.3327 6.29996 18.3327 6.29996M18.3327 6.29996V2.13329M18.3327 6.29996H14.6327"
                   stroke="#717171"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
               بارگذاری مجدد
             </div>
           </div>
-          <div class="flex items-center">
-            <input type="checkbox" id="rules" class="accent-primary" />
-            <label for="rules" class="p-2 text-sm">
+          <div className="flex items-center">
+            <input type="checkbox" id="rules" className="accent-primary" />
+            <label for="rules" className="p-2 text-sm">
               قوانین و شرایط را می پذیرم.
             </label>
           </div>
           <button
             type="submit"
-            class="p-3 px-12 text-center text-white rounded-sm bg-primary lg:w-3/4 lg:mx-auto"
+            className="p-3 px-12 text-center text-white rounded-sm bg-primary lg:w-3/4 lg:mx-auto"
           >
             ایجاد حساب کاربری
           </button>
         </form>
 
-        <span class="block">
+        <span className="block">
           قبلا ثبت نام کرده اید؟
-          <a href="#" class="text-primary">
+          <a href="#" className="text-primary">
             ورود به حساب کاربری
           </a>
         </span>
