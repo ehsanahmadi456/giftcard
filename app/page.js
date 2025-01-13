@@ -647,8 +647,8 @@ export default function Home() {
           className="flex flex-col justify-center mx-auto md:items-center max-w-screen-2xl"
         >
           <h3 className="hidden mb-20 text-xl font-bold md:block">
-            هدف ما ارائه
-            <span className="text-secondary">خدمات با کیفیت</span> به شماست.
+            هدف ما ارائه <span className="text-secondary">خدمات با کیفیت</span>{" "}
+            به شماست.
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 md:w-full lg:3/5 gap-y-14">
             <div className="flex flex-col items-center justify-center">
@@ -1547,8 +1547,8 @@ export default function Home() {
                     strokeLinejoin="round"
                   />
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M16.6857 2.5H7.31429C4.04762 2.5 2 4.81208 2 8.08516V16.9148C2 20.1879 4.0381 22.5 7.31429 22.5H16.6857C19.9619 22.5 22 20.1879 22 16.9148V8.08516C22 4.81208 19.9619 2.5 16.6857 2.5Z"
                     stroke="#786AC2"
                     strokeWidth="1.5"
@@ -1580,8 +1580,8 @@ export default function Home() {
                     strokeLinejoin="round"
                   />
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M16.6857 2.5H7.31429C4.04762 2.5 2 4.81208 2 8.08516V16.9148C2 20.1879 4.0381 22.5 7.31429 22.5H16.6857C19.9619 22.5 22 20.1879 22 16.9148V8.08516C22 4.81208 19.9619 2.5 16.6857 2.5Z"
                     stroke="#786AC2"
                     strokeWidth="1.5"
@@ -1615,8 +1615,8 @@ export default function Home() {
                     strokeLinejoin="round"
                   />
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M16.6857 2.5H7.31429C4.04762 2.5 2 4.81208 2 8.08516V16.9148C2 20.1879 4.0381 22.5 7.31429 22.5H16.6857C19.9619 22.5 22 20.1879 22 16.9148V8.08516C22 4.81208 19.9619 2.5 16.6857 2.5Z"
                     stroke="#786AC2"
                     strokeWidth="1.5"
@@ -1648,8 +1648,8 @@ export default function Home() {
                     strokeLinejoin="round"
                   />
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M16.6857 2.5H7.31429C4.04762 2.5 2 4.81208 2 8.08516V16.9148C2 20.1879 4.0381 22.5 7.31429 22.5H16.6857C19.9619 22.5 22 20.1879 22 16.9148V8.08516C22 4.81208 19.9619 2.5 16.6857 2.5Z"
                     stroke="#786AC2"
                     strokeWidth="1.5"
