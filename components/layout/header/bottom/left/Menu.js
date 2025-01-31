@@ -1,0 +1,57 @@
+import BagHeader from "@/public/assets/icons/BagHeader";
+import DollarGreen from "@/public/assets/icons/DollarGreen";
+import ExitHeader from "@/public/assets/icons/ExitHeader";
+import HeartHeader from "@/public/assets/icons/HeartHeader";
+import SettingHeader from "@/public/assets/icons/SettingHeader";
+import StarYellow from "@/public/assets/icons/StarYellow";
+
+function Menu() {
+  return (
+    <div className="flex-col p-4 bg-white absolute z-50 left-0 w-64 text-xs hidden group-hover:flex">
+      <div className="flex flex-col gap-4 pb-4 border-b">
+        <div className="flex justify-between items-center">
+          <div className="flex gap-2 items-center">
+            <DollarGreen />
+            <p>موجودی کیف پول</p>
+          </div>
+          <p className="text-lowgray">۲۵۶٬۰۰۰ تومان</p>
+        </div>
+        <div className="flex justify-between items-center">
+          <div className="flex gap-2 items-center">
+            <StarYellow />
+            <p>جایزه ها</p>
+          </div>
+          <p className="text-lowgray">۱۰٬۰۰۰ تومان</p>
+        </div>
+      </div>
+      <div className="flex flex-col gap-4 pt-4">
+        <a href="#" className="flex items-center">
+          <span className="flex gap-1 items-center">
+            <BagHeader />
+            سفارش های من
+          </span>
+        </a>
+        <a href="#" className="flex items-center">
+          <span className="flex gap-1 items-center">
+            <HeartHeader />
+            علاقه مندی ها
+          </span>
+        </a>
+        <a href="#" className="flex items-center">
+          <span className="flex gap-1 items-center">
+            <SettingHeader />
+            تنظیمات
+          </span>
+        </a>
+        <a href="#" className="flex items-center justify-between">
+          <span className="flex gap-1 items-center">
+            <ExitHeader />
+            خروج
+          </span>
+        </a>
+      </div>
+    </div>
+  );
+}
+
+export default Menu;
