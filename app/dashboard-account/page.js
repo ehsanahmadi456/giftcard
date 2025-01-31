@@ -1024,7 +1024,10 @@ function DashboardAccount() {
                       className="hidden peer"
                     />
                     <div className="w-4 h-4 rounded-full border-[1px] border-black mr-4 flex justify-center items-center before:w-3 before:h-3 before:rounded-full peer-checked:border-primary text-primary peer-checked:before:bg-primary"></div>
-                    <label for="toman" className="peer-checked:text-primary">
+                    <label
+                      htmlFor="toman"
+                      className="peer-checked:text-primary"
+                    >
                       رمز یکبار مصرف
                     </label>
                   </div>
@@ -1038,7 +1041,7 @@ function DashboardAccount() {
                   />
 
                   <div className="w-4 h-4 rounded-full border-[1px] border-black mr-4 flex justify-center items-center before:w-3 before:h-3 before:rounded-full peer-checked:border-prtext-primary peer-checked:before:bg-primary"></div>
-                  <label for="dollar" className="peer-checked:text-primary">
+                  <label htmlFor="dollar" className="peer-checked:text-primary">
                     حساب گوگل
                   </label>
                 </div>

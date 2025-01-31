@@ -1,10 +1,5 @@
-import Cards from "./cards";
-import Navigation from "./Navigation";
-import List from "./list";
-
-function BlogPage() {
-  return (
-    <main className="w-full mx-auto mb-12 max-w-screen-2xl">
+function Banner() {
+    return (
       <section
         id="best"
         className="hidden w-full mb-12 max-w-screen-2xl lg:px-12 xl:px-24 mx-auto mt-6 lg:grid grid-cols-4 grid-rows-2 gap-4 rounded-lg text-white lg:h-80 xl:h-96 2xl:h-[430px]"
@@ -35,11 +30,8 @@ function BlogPage() {
           </p>
         </div>
       </section>
-      <Cards />
-      <Navigation />
-      <List />
-    </main>
-  );
-}
-
-export default BlogPage;
+    );
+  }
+  
+  export default Banner;
+  

@@ -11,7 +11,7 @@ function Banner() {
       <div className="flex flex-col gap-8 justify-items-start md:w-2/5">
         <h1 className="text-2xl font-bold leading-loose md:text-4xl md:leading-loose">
           خرید انواع
-          <span className="">گیفت کارت</span>
+          <span className=""> گیفت کارت </span>
           با <br />
           تحویل فوری
         </h1>

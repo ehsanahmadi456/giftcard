@@ -1,0 +1,20 @@
+import Item from "./item";
+import Xbox from "@/public/assets/images/xbox.png";
+
+function Products() {
+  const list = [
+    { name: "گیفت کارت ایکس باکس", length: 2, price: "۴۳۶٬۵۰۰", img: Xbox },
+    { name: "گیفت کارت ایکس باکس", length: 2, price: "۴۳۶٬۵۰۰", img: Xbox },
+    { name: "گیفت کارت ایکس باکس", length: 2, price: "۴۳۶٬۵۰۰", img: Xbox },
+  ];
+
+  return (
+    <>
+      {list.map((item, idx) => (
+        <Item data={item} key={idx} />
+      ))}
+    </>
+  );
+}
+
+export default Products;

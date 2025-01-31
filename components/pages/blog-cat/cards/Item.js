@@ -1,11 +1,10 @@
+import Blog from "@/public/assets/images/blog.png";
+import Image from "next/image";
+
 function Item({ data }) {
   return (
     <article className="flex flex-col gap-4 p-6 overflow-hidden transition-all duration-100 ease-linear sm:rounded-lg sm:bg-white sm:max-w-md sm:p-0 hover:shadow-md">
-      <img
-        src="../public/assets/images/blog.png"
-        className="rounded-lg lg:rounded-none"
-        alt=""
-      />
+      <Image src={Blog} className="rounded-lg lg:rounded-none" alt="" />
       <div className="flex flex-col gap-4 p-4">
         <h6 className="font-medium">{data.head}</h6>
         <p className="hidden text-sm md:block text-lowgray">{data.detail}</p>

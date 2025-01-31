@@ -6,13 +6,15 @@ function Navigation() {
       {Array(4)
         .fill({})
         .map((item, idx) => (
-          <a href="#" className={`
+          <a
+            key={idx}
+            href="#"
+            className={`
             px-4 py-2 rounded-md 
-          ${idx ===0 ?
-            'bg-primary text-white' : 
-            'bg-white text-lowgray'}
-          `}>
-            {idx+1}
+          ${idx === 0 ? "bg-primary text-white" : "bg-white text-lowgray"}
+          `}
+          >
+            {idx + 1}
           </a>
         ))}
     </div>
