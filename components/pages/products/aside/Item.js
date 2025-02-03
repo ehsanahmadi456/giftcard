@@ -67,7 +67,11 @@ function Item({ data }) {
         {data.menu &&
           !!data.menu.length &&
           data.menu.map((item, idx) => (
-            <Link href="#" className="flex items-center justify-between">
+            <Link
+              href="#"
+              key={idx}
+              className="flex items-center justify-between"
+            >
               {item.name}
               <ArrowLeft />
             </Link>
