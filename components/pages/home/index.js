@@ -1,6 +1,7 @@
 import Articles from "./articles";
 import Banner from "./banner";
 import Cards from "./cards";
+import Categories from "./categories";
 import Comments from "./comments";
 import Purpose from "./Purpose";
 import Questions from "./questions";
