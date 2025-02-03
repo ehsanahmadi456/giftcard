@@ -1,5 +1,5 @@
-import BlogPage from "@/components/blog";
 import Layout from "@/components/layout";
+import BlogPage from "@/components/pages/blog";
 
 function Blog() {
   return (

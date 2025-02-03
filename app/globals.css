@@ -47,6 +47,20 @@
   font-style: normal;
 }
 
+.cover-card-home {
+  background: url(../public/assets/images/bg-img-home.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-banner-head {
+  background: url(../public/assets/images/banner-home.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 html {
   font-family: "vazir";
 }

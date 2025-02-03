@@ -1,6 +1,5 @@
 function DollarGreen() {
   return (
-    <i className="w-6 h-6 bg-[#23BAA7] flex justify-center items-center rounded-full">
       <svg
         width="18"
         height="18"
@@ -29,7 +28,6 @@ function DollarGreen() {
           fill="white"
         />
       </svg>
-    </i>
   );
 }
 

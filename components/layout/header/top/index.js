@@ -1,6 +1,5 @@
-import MobileHeader from "@/public/assets/icons/MobileHeader";
 import SearchHeader from "@/public/assets/icons/SearchHeader";
-import TelegramHeader from "@/public/assets/icons/TelegramHeader";
+import Buttons from "./Buttons";
 
 function Top() {
   return (
@@ -21,7 +20,8 @@ function Top() {
           />
         </div>
       </div>
-      <div className="hidden gap-4 lg:flex">
+      <Buttons />
+      {/* <div className="hidden gap-4 lg:flex">
         <span className="flex items-center justify-center gap-1 text-sm text-lowgray">
           <TelegramHeader />
           پشتیبانی تلگرام: ۰۹۱۲۳۱۷۹۰۶۰
@@ -30,7 +30,7 @@ function Top() {
           <MobileHeader />
           تلفن پشتیبانی: ۹۰۰۰۰۲۰۰
         </span>
-      </div>
+      </div> */}
     </div>
   );
 }

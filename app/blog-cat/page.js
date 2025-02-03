@@ -1,5 +1,5 @@
 import Layout from "@/components/layout";
-import BlogCatPage from "@/components/blog-cat";
+import BlogCatPage from "@/components/pages/blog-cat";
 
 function BlogCat() {
   return (

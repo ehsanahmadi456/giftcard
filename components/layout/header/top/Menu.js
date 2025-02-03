@@ -11,14 +11,18 @@ function Menu() {
       <div className="flex flex-col gap-4 pb-4 border-b">
         <div className="flex justify-between items-center">
           <div className="flex gap-2 items-center">
-            <DollarGreen />
+            <i className="w-6 h-6 bg-[#23BAA7] flex justify-center items-center rounded-full">
+              <DollarGreen />
+            </i>
             <p>موجودی کیف پول</p>
           </div>
           <p className="text-lowgray">۲۵۶٬۰۰۰ تومان</p>
         </div>
         <div className="flex justify-between items-center">
           <div className="flex gap-2 items-center">
-            <StarYellow />
+            <i className="w-6 h-6 bg-[#FFC245] flex justify-center items-center rounded-full">
+              <StarYellow />
+            </i>
             <p>جایزه ها</p>
           </div>
           <p className="text-lowgray">۱۰٬۰۰۰ تومان</p>

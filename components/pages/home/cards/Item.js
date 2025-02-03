@@ -34,6 +34,7 @@ function Item({ list }) {
         {list.map((item, idx) => (
           <Link
             href="#"
+            key={idx}
             className="flex-shrink-0 w-2/5 p-3 text-center transition-all duration-100 ease-linear bg-white rounded-md swiper-slide md:w-1/4 md:flex-shrink hover:shadow-md"
           >
             <Image src={item.img} className="rounded-md" alt="" />
