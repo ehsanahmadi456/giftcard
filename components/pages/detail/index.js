@@ -3,8 +3,6 @@ import About from "./about";
 import DropDown from "./dropdown";
 import ProductImg from "@/public/assets/images/product.png";
 import Card from "./Card";
-import Comments from "./dropdown/comments";
-import HowUse from "./dropdown/HowUse";
 
 function DetailPage() {
   const list = [

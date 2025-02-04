@@ -3,12 +3,11 @@ import ImgDetail from "./ImgDetail";
 
 function Banner() {
   return (
-    <section
-      id="hero"
-      className="flex items-stretch gap-[20px] justify-between p-6 mx-auto mt-12 mb-20 max-w-screen-2xl md:mb-24 lg:px-12 xl:px-24"
-    >
-      <ImgDetail />
-      <Cards />
+    <section id="hero" className="bg-[#FAFAFE] p-6 !pb-[48px]">
+      <div className="flex items-stretch gap-[20px] justify-between mx-auto mt-12 max-w-screen-2xl lg:px-12 xl:px-24">
+        <ImgDetail />
+        <Cards />
+      </div>
     </section>
   );
 }

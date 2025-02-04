@@ -61,6 +61,13 @@
   background-size: cover;
 }
 
+.bg-banner-sell {
+  background: url(../public/assets/images/banner-sell.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 html {
   font-family: "vazir";
 }

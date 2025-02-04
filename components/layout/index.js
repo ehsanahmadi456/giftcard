@@ -1,10 +1,10 @@
 import Footer from "./footer";
 import Header from "./header";
 
-function Layout({ children }) {
+function Layout({ children, bgwhite }) {
   return (
     <div>
-      <main>
+      <main className={bgwhite ? "bg-[#FAFAFE]" : ""}>
         <Header />
       </main>
       <section>{children}</section>

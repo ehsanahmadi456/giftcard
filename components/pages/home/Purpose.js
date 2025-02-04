@@ -4,13 +4,9 @@ function Purpose() {
       id="#badges"
       className="flex flex-col justify-center mx-auto md:items-center max-w-screen-2xl"
     >
-      <h3 className="hidden mb-20 text-xl font-bold md:block">
-        هدف ما ارائه <span className="text-secondary">خدمات با کیفیت</span> به
-        شماست.
-      </h3>
       <div className="grid grid-cols-2 md:grid-cols-4 md:w-full lg:3/5 gap-y-14">
         <div className="flex flex-col items-center justify-center">
-          <div className="relative flex items-center justify-center image">
+          <div className="relative bg-[#F0EEF8] p-[12.5px] rounded-full flex items-center justify-center image">
             <i>
               <svg
                 width="30"
@@ -43,7 +39,7 @@ function Purpose() {
           </div>
         </div>
         <div className="flex flex-col items-center justify-center">
-          <div className="relative flex items-center justify-center image">
+          <div className="relative bg-[#FDE8CF] p-[12.5px] rounded-full flex items-center justify-center image">
             <i>
               <svg
                 width="30"
@@ -66,7 +62,7 @@ function Purpose() {
           </div>
         </div>
         <div className="flex flex-col items-center justify-center">
-          <div className="relative flex items-center justify-center image">
+          <div className="relative bg-[#F0EEF8] p-[12.5px] rounded-full flex items-center justify-center image">
             <i>
               <svg
                 width="30"
@@ -97,7 +93,7 @@ function Purpose() {
           </div>
         </div>
         <div className="flex flex-col items-center justify-center">
-          <div className="relative flex items-center justify-center image">
+          <div className="relative bg-[#FDE8CF] p-[12.5px] rounded-full flex items-center justify-center image">
             <i>
               <svg
                 width="30"

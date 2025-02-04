@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Item({ list }) {
   return (
-    <article className="flex flex-col items-center justify-center gap-8 mb-16 overflow-visible swiper--1">
+    <article className="flex flex-col items-center justify-center gap-8 overflow-visible swiper--1">
       <div className="flex items-center justify-between w-full">
         <h4 className="text-lg font-bold md:text-xl">گیفت کارت های موزیک</h4>
         <div className="flex items-center justify-center gap-2">
@@ -30,7 +30,7 @@ function Item({ list }) {
           </i>
         </div>
       </div>
-      <div className="flex w-full swiper-wrapper md:gap-4">
+      <div className="grid grid-cols-4 md:gap-4">
         {list.map((item, idx) => (
           <Link
             href="#"
