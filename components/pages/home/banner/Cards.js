@@ -10,7 +10,7 @@ function Cards() {
   ];
 
   return (
-    <ul className="grid grid-cols-2 gap-x-[20px] gap-y-[18px] min-w-fit">
+    <ul className="hidden lg:grid grid-cols-2 gap-x-[20px] gap-y-[18px] min-w-fit">
       {list.map((item, idx) => (
         <Item data={item} key={idx} />
       ))}
