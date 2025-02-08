@@ -5,9 +5,9 @@ function Articles() {
   return (
     <section
       id="blog"
-      className="p-6 !pb-[110px] !pt-0 mx-auto mt-[40px] max-w-screen-2xl lg:px-12 xl:px-24"
+      className="p-6 !pb-[80px] !pt-0 mx-auto mt-0 md:mt-[10px] lg:mt-[40px] max-w-screen-2xl lg:px-12 xl:px-24"
     >
-      <div className="flex items-center justify-between w-full mb-8">
+      <div className="flex items-center justify-between w-full">
         <h4 className="text-lg font-bold md:text-xl">مقالات جدید</h4>
         <div className="flex items-center justify-center gap-2">
           <a href="#" className="font-medium text-secondary md:text-lg">
@@ -33,7 +33,7 @@ function Articles() {
           </i>
         </div>
       </div>
-      <div className="grid grid-cols-1 gap-12 mt-[55px] lg:grid-cols-2 lg:grid-rows-3">
+      <div className="grid grid-cols-1 gap-12 mt-[20px] md:mt-[37px] lg:mt-[55px] lg:grid-cols-2 lg:grid-rows-3">
         <Right />
         <Left />
         <Left />

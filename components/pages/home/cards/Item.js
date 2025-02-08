@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import Cards from "../bestSeller/Cards";
 
 function Item({ list }) {
   return (
-    <article className="flex flex-col items-center justify-center gap-8 overflow-visible swiper--1">
+    <article className="flex flex-col items-center justify-center gap-[12px] md:gap-[22px] lg:gap-[32px] overflow-visible swiper--1">
       <div className="flex items-center justify-between w-full">
-        <h4 className="text-lg font-bold md:text-xl">گیفت کارت های موزیک</h4>
+        <h4 className="text-[16px] md:text-[18px] lg:text-xl font-bold">
+          گیفت کارت های موزیک
+        </h4>
         <div className="flex items-center justify-center gap-2">
           <a href="#" className="font-medium text-secondary md:text-lg">
             مشاهده همه
@@ -30,18 +33,7 @@ function Item({ list }) {
           </i>
         </div>
       </div>
-      <div className="grid grid-cols-4 md:gap-4">
-        {list.map((item, idx) => (
-          <Link
-            href="#"
-            key={idx}
-            className="flex-shrink-0 w-2/5 p-3 text-center transition-all duration-100 ease-linear bg-white rounded-md swiper-slide md:w-1/4 md:flex-shrink hover:shadow-md"
-          >
-            <Image src={item.img} className="rounded-md" alt="" />
-            <p className="mt-3 font-medium text-lowgray">{item.name}</p>
-          </Link>
-        ))}
-      </div>
+      <Cards list={list} />
     </article>
   );
 }

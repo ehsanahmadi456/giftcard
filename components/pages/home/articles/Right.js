@@ -3,9 +3,9 @@ import Image from "next/image";
 
 function Right() {
   return (
-    <article className="flex flex-col max-w-lg gap-6 mx-auto lg:row-span-3 lg:max-w-none">
+    <article className="flex flex-col max-w-lg gap-[8px] md:gap-[16px] lg:gap-[24px] mx-auto lg:row-span-3 lg:max-w-none">
       <Image src={Blog} className="rounded-lg" alt="" />
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-[16px] md:gap-[20px] lg:gap-[24px]">
         <h6 className="font-medium">بررسی ایکس باکس سری اس مایکروسافت</h6>
         <p className="hidden text-lowgray lg:block">
           مایکروسافت با ایکس باکس سری اس، می‌خواهد تجربه‌ی نسل نهم کنسول‌های
@@ -14,7 +14,7 @@ function Right() {
         </p>
         <div className="flex justify-between">
           <div className="flex gap-4">
-            <span className="flex items-center justify-center gap-1 text-sm text-lowgray">
+            <span className="flex items-center justify-center gap-1 text-[12px] md:text-[13px] lg:text-sm text-lowgray">
               <i>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@ function Right() {
               </i>
               ۱۴۰۲/۰۳/۱۶
             </span>
-            <span className="flex items-center justify-center gap-1 text-sm text-lowgray">
+            <span className="flex items-center justify-center gap-1 text-[12px] md:text-[13px] lg:text-sm text-lowgray">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -87,7 +87,10 @@ function Right() {
               ۱۶۲ بازدید
             </span>
           </div>
-          <a href="#" className="flex items-center justify-center text-primary">
+          <a
+            href="#"
+            className="flex items-center text-[14px] md:text-[15px] lg:text-[16px] justify-center text-primary"
+          >
             متن کامل
             <i>
               <svg

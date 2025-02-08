@@ -4,7 +4,7 @@ function Purpose() {
       id="#badges"
       className="flex flex-col justify-center mx-auto md:items-center max-w-screen-2xl"
     >
-      <div className="grid grid-cols-2 md:grid-cols-4 md:w-full lg:3/5 gap-y-14">
+      <div className="grid grid-cols-2 md:grid-cols-4 md:w-full lg:3/5 gap-y-14 pt-[33px] bg-[#fafafa] lg:bg-transparent">
         <div className="flex flex-col items-center justify-center">
           <div className="relative bg-[#F0EEF8] p-[12.5px] rounded-full flex items-center justify-center image">
             <i>
