@@ -3,6 +3,7 @@ import Field from "../../element/Field";
 import PassReg from "@/public/assets/icons/PassReg";
 import CodeReg from "@/public/assets/icons/CodeReg";
 import RetryReg from "@/public/assets/icons/RetryReg";
+import Link from "next/link";
 
 function LoginPage() {
   return (
@@ -47,9 +48,9 @@ function LoginPage() {
       </a>
       <span className="block">
         حساب کاربری ندارید؟
-        <a href="#" className="text-primary">
+        <Link href="/signup" className="text-primary">
           ساخت حساب کاربری جدید
-        </a>
+        </Link>
       </span>
     </section>
   );

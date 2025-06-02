@@ -1,44 +1,76 @@
+"use client";
+
+import { useState } from "react";
 import Form from "./Form";
+import CodeImg from "./CodeImg";
+import Image from "next/image";
+import Spin from "@/public/assets/icons/spinLoading.svg";
+import { request } from "@/services/response";
 
 function SignupPage() {
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState({
+    name: "ehsan",
+    email: "ehsanahmadi@gmail.com",
+    mobile: "09222648955",
+    landline: "02156592620",
+    pass1: "adminehsan83",
+    pass2: "adminehsan83",
+    code: "",
+    rules: false,
+  });
+
+  const handleChange = (name, value) => setData({ ...data, [name]: value });
+
+  const handleReq = () => {
+    const { name, email, mobile, landline, pass1, pass2, code } = data;
+    setLoading(true);
+    request
+      .signUp(name, email, mobile, landline, pass1, pass2, Number(code))
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        console.log(err.data);
+        setLoading(false);
+      });
+  };
+
   return (
     <section className="flex flex-col w-full max-w-md gap-8 p-6 mx-auto lg:max-w-screen-2xl lg:px-12 xl:px-24 lg:order-1 lg:w-1/2 lg:justify-center">
       <h4 className="mb-8 font-bold text-center">ساخت حساب کاربری جدید</h4>
       <form action="" className="flex flex-col gap-8">
-        <Form />
-        <div className="flex gap-4">
-          <img src="../public/assets/images/captcha.png" alt="" />
-          <div className="flex items-center gap-2 text-[#717171] text-xs">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 20 20"
-              fill="none"
-            >
-              <path d="M2.59102 13.7V17.8666V13.7Z" fill="#717171" />
-              <path
-                d="M18.3327 9.99996C18.3327 14.6 14.5993 18.3333 9.99935 18.3333C5.39935 18.3333 2.59102 13.7 2.59102 13.7M2.59102 13.7H6.35768M2.59102 13.7V17.8666M1.66602 9.99996C1.66602 5.39996 5.36602 1.66663 9.99935 1.66663C15.5577 1.66663 18.3327 6.29996 18.3327 6.29996M18.3327 6.29996V2.13329M18.3327 6.29996H14.6327"
-                stroke="#717171"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            بارگذاری مجدد
-          </div>
-        </div>
+        <Form handleChange={handleChange} data={data} />
+        <CodeImg />
         <div className="flex items-center">
-          <input type="checkbox" id="rules" className="accent-primary" />
+          <input
+            type="checkbox"
+            id="rules"
+            className="accent-primary cursor-pointer"
+            onChange={(e) => {
+              setData({ ...data, rules: e.target.checked });
+            }}
+          />
           <label htmlFor="rules" className="p-2 text-sm">
             قوانین و شرایط را می پذیرم.
           </label>
         </div>
         <button
           type="submit"
-          className="p-3 px-12 text-center text-white rounded-sm bg-primary lg:w-3/4 lg:mx-auto"
+          onClick={(e) => {
+            e.preventDefault();
+            handleReq();
+          }}
+          className="p-3 px-12 flex justify-center items-center text-center text-white rounded-sm bg-primary lg:w-3/4 lg:mx-auto"
         >
-          ایجاد حساب کاربری
+          {loading ? (
+            <Image src={Spin} alt="loading" width={25} height={25} />
+          ) : (
+            "ایجاد حساب کاربری"
+          )}
         </button>
       </form>
 
