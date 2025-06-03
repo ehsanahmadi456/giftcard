@@ -6,37 +6,49 @@ import CodeImg from "./CodeImg";
 import Image from "next/image";
 import Spin from "@/public/assets/icons/spinLoading.svg";
 import { request } from "@/services/response";
+import checkIsError from "./handleError";
 
 function SignupPage() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
-    name: "ehsan",
-    email: "ehsanahmadi@gmail.com",
-    mobile: "09222648955",
-    landline: "02156592620",
-    pass1: "adminehsan83",
-    pass2: "adminehsan83",
-    code: "",
-    rules: false,
+    name: { value: "", error: { valid: false, text: "" } },
+    email: { value: "", error: { valid: false, text: "" } },
+    mobile: { value: "", error: { valid: false, text: "" } },
+    landline: { value: "", error: { valid: false, text: "" } },
+    pass1: { value: "", error: { valid: false, text: "" } },
+    pass2: { value: "", error: { valid: false, text: "" } },
+    code: { value: "", error: { valid: false, text: "" } },
+    rules: { value: false, error: { valid: false, text: "" } },
   });
 
-  const handleChange = (name, value) => setData({ ...data, [name]: value });
+  const handleChange = (name, val) => {
+    // setData({ ...data, [name]: { value: "value", ...data[name] } });
+    setData({
+      ...data,
+      [name]: {
+        ...data[name],
+        value: val,
+      },
+    });
+  };
+
+  console.log(data);
 
   const handleReq = () => {
-    const { name, email, mobile, landline, pass1, pass2, code } = data;
-    setLoading(true);
-    request
-      .signUp(name, email, mobile, landline, pass1, pass2, Number(code))
-      .then((res) => {
-        console.log(res);
-        console.log(res.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-        console.log(err.data);
-        setLoading(false);
-      });
+    setData(checkIsError(data, setData));
+
+    if (true) {
+      const { name, email, mobile, landline, pass1, pass2, code } = data;
+      setLoading(true);
+      request
+        .signUp(name, email, mobile, landline, pass1, pass2, Number(code))
+        .then((res) => {
+          setLoading(false);
+        })
+        .catch((err) => {
+          setLoading(false);
+        });
+    }
   };
 
   return (
@@ -45,18 +57,26 @@ function SignupPage() {
       <form action="" className="flex flex-col gap-8">
         <Form handleChange={handleChange} data={data} />
         <CodeImg />
-        <div className="flex items-center">
-          <input
-            type="checkbox"
-            id="rules"
-            className="accent-primary cursor-pointer"
-            onChange={(e) => {
-              setData({ ...data, rules: e.target.checked });
-            }}
-          />
-          <label htmlFor="rules" className="p-2 text-sm">
-            قوانین و شرایط را می پذیرم.
-          </label>
+        <div className="flex flex-col justify-start items-start gap-1 w-full">
+          <div className="flex items-center">
+            <input
+              type="checkbox"
+              id="rules"
+              className="accent-primary cursor-pointer"
+              onChange={(e) => {
+                setData({
+                  ...data,
+                  rules: { value: e.target.checked, ...data.rules },
+                });
+              }}
+            />
+            <label htmlFor="rules" className="p-2 text-sm">
+              قوانین و شرایط را می پذیرم.
+            </label>
+          </div>
+          {data.rules.error.valid && (
+            <p className="text-sm text-red-500">{data.rules.error.text}</p>
+          )}
         </div>
         <button
           type="submit"

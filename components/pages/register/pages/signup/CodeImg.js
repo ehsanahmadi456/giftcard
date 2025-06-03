@@ -4,7 +4,6 @@ function CodeImg() {
   const [imageSrc, setImageSrc] = useState("https://gift-card.ir/code.php");
 
   const reloadImage = () => {
-    // Durch das Hinzufügen eines Query-Parameters zwingen wir den Browser, das Bild neu zu laden
     const newSrc = `https://gift-card.ir/code.php?reload=${Date.now()}`;
     setImageSrc(newSrc);
   };

@@ -2,8 +2,6 @@ import api from "./api";
 
 export const request = {
   signUp: (name, email, mobile, landline, pass1, pass2, code) => {
-    console.log(name, email, mobile, landline, pass1, pass2, code);
-
     const formData = new URLSearchParams();
     formData.append("name", name);
     formData.append("email", email);
