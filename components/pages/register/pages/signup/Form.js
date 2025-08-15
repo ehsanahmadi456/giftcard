@@ -6,7 +6,7 @@ import PhoneReg from "@/public/assets/icons/PhoneReg";
 import PasswordReg from "@/public/assets/icons/PasswordReg";
 import ScanReg from "@/public/assets/icons/ScanReg";
 
-function Form({ data, handleChange }) {
+function Form({ handleChange }) {
   return (
     <>
       <Field
@@ -15,7 +15,6 @@ function Form({ data, handleChange }) {
         icon={<UserReg />}
         name="name"
         handleChange={handleChange}
-        data={data}
         placeholder="لطفا به فارسی وارد کنید."
       />
       <Field
@@ -25,8 +24,7 @@ function Form({ data, handleChange }) {
         icon={<EmailReg />}
         name="email"
         handleChange={handleChange}
-        data={data}
-        placeholder=".ایمیل خود را وارد کنید"
+        placeholder="ایمیل خود را وارد کنید."
       />
       <Field
         label="تلفن همراه"
@@ -35,8 +33,7 @@ function Form({ data, handleChange }) {
         dir="ltr"
         name="mobile"
         handleChange={handleChange}
-        data={data}
-        placeholder=".لطفا به انگلیسی وارد کنید"
+        placeholder="لطفا به انگلیسی وارد کنید."
       />
       <Field
         label="تلفن ثابت"
@@ -45,8 +42,7 @@ function Form({ data, handleChange }) {
         icon={<PhoneReg />}
         name="landline"
         handleChange={handleChange}
-        data={data}
-        placeholder=".لطفا به انگلیسی وارد کنید"
+        placeholder="لطفا به انگلیسی وارد کنید."
       />
       <Field
         label="رمز عبور"
@@ -55,8 +51,7 @@ function Form({ data, handleChange }) {
         icon={<PasswordReg />}
         name="pass1"
         handleChange={handleChange}
-        data={data}
-        placeholder=".رمز خود را وارد کنید"
+        placeholder="رمز خود را وارد کنید."
       />
       <Field
         label="تکرار رمز عبور"
@@ -65,8 +60,7 @@ function Form({ data, handleChange }) {
         icon={<PasswordReg />}
         name="pass2"
         handleChange={handleChange}
-        data={data}
-        placeholder=".رمز خود را وارد کنید"
+        placeholder="رمز خود را وارد کنید."
       />
       <Field
         label="کد امنیتی"
@@ -75,8 +69,7 @@ function Form({ data, handleChange }) {
         icon={<ScanReg />}
         name="code"
         handleChange={handleChange}
-        data={data}
-        placeholder=".کد زیر را به انگلیسی وارد کنید"
+        placeholder="کد زیر را به انگلیسی وارد کنید."
       />
     </>
   );

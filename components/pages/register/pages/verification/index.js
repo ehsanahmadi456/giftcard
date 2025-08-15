@@ -1,62 +1,75 @@
+"use client";
+
+import { useState, useRef } from "react";
 import OTP from "./OTP";
+import SendOTP from "./SendOTP";
+import CheckCode from "./CheckCode";
 
 function VerificationPage() {
+  const [data, setData] = useState(["", "", "", "", "", "", "", ""]);
+  const [phone, setPhone] = useState("");
+  const inputsRef = useRef([]);
+  const [tokenDetail, setTokenDetail] = useState();
+
+  const handleChange = (idx, val) => {
+    const newData = [...data];
+    newData[idx] = val;
+    setData(newData);
+
+    if (val && idx < inputsRef.current.length - 1) {
+      inputsRef.current[idx + 1].focus();
+    }
+  };
+
+  const handleKeyDown = (idx, e) => {
+    if (e.key === "Backspace" && !data[idx] && idx > 0) {
+      inputsRef.current[idx - 1].focus();
+    }
+  };
+
   return (
     <section className="flex flex-col w-full max-w-md gap-8 p-6 mx-auto lg:max-w-screen-md lg:px-12 xl:px-24 lg:order-1 lg:w-1/2 lg:justify-center">
       <h4 className="mb-8 font-bold text-center">
         کد ارسالی به شماره همراه خود را وارد نمایید.
       </h4>
       <div className="flex items-center justify-between font-medium">
-        ۰۹۰۱۳۵۶۸۸۷۴
-        <a
-          href="#"
-          className="flex items-center gap-2 text-sm font-normal text-secondary"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="19"
-            height="19"
-            viewBox="0 0 19 19"
-            fill="none"
-          >
-            <path
-              d="M9.94355 3.19992L3.78605 9.71742C3.55355 9.96492 3.32855 10.4524 3.28355 10.7899L3.00605 13.2199C2.90855 14.0974 3.53855 14.6974 4.40855 14.5474L6.82355 14.1349C7.16105 14.0749 7.63355 13.8274 7.86605 13.5724L14.0235 7.05492C15.0885 5.92992 15.5685 4.64742 13.911 3.07992C12.261 1.52742 11.0085 2.07492 9.94355 3.19992Z"
-              stroke="#F69625"
-              strokeWidth="1.5"
-              strokeMiterlimit="10"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M8.9175 4.2876C9.07473 5.29324 9.56145 6.2182 10.3013 6.91728C11.0411 7.61637 11.9921 8.04999 13.005 8.1501M2.25 17.0001H15.75"
-              stroke="#F69625"
-              strokeWidth="1.5"
-              strokeMiterlimit="10"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          ویرایش شماره
-        </a>
+        <input
+          type="tel"
+          value={phone}
+          onChange={(e) => {
+            if (e.target.value.length <= 11) {
+              setPhone(e.target.value);
+            }
+          }}
+          maxLength={11}
+          inputMode="numeric"
+          placeholder="09123456789"
+          className="bg-transparent text-center border-2 rounded-md outline-none pt-1 no-spinner"
+        />
+        <SendOTP phone={phone} setTokenDetail={setTokenDetail} />
       </div>
       <form action="" className="flex flex-col gap-8">
-        <div className="flex items-center justify-center gap-4 mt-12 mb-12">
-          <OTP />
-          <OTP />
-          <OTP />
-          <OTP />
-          <OTP />
-          <OTP />
-        </div>
-        <button
-          type="submit"
-          className="p-3 px-12 text-center text-white rounded-sm bg-primary lg:w-3/4 lg:mx-auto"
+        <div
+          dir="ltr"
+          className="flex items-center justify-center gap-4 mt-12 mb-12"
         >
-          بررسی کد
-        </button>
+          {Array(8)
+            .fill("")
+            .map((_, idx) => (
+              <OTP
+                key={idx}
+                idx={idx}
+                data={data}
+                onChange={handleChange}
+                onKeyDown={handleKeyDown}
+                inputRef={(el) => (inputsRef.current[idx] = el)}
+              />
+            ))}
+        </div>
+        <CheckCode phone={phone} data={data} tokenDetail={tokenDetail} />
       </form>
 
-      <span> در صورت عدم دریافت کد با شماره ۹۰۰۰۰۲۰۰-۰۲۱ تماس یگیرید.</span>
+      <span>در صورت عدم دریافت کد با شماره ۹۰۰۰۰۲۰۰-۰۲۱ تماس بگیرید.</span>
     </section>
   );
 }

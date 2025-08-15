@@ -12,6 +12,7 @@ function SendReq({ data }) {
 
   const reqLogin = (time, token, token_sign) => {
     const { email, pass, code } = data;
+
     request
       .login(email, pass, code, time, token, token_sign)
       .then((res) => {

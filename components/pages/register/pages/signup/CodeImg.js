@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function CodeImg() {
-  const [imageSrc, setImageSrc] = useState("https://gift-card.ir/code.php");
+  const [imageSrc, setImageSrc] = useState("");
+
+  useEffect(() => {
+    setImageSrc(`https://gift-card.ir/code.php?reload=${Date.now()}`);
+  }, []);
 
   const reloadImage = () => {
-    const newSrc = `https://gift-card.ir/code.php?reload=${Date.now()}`;
-    setImageSrc(newSrc);
+    setImageSrc(`https://gift-card.ir/code.php?reload=${Date.now()}`);
   };
 
   return (
     <div className="flex gap-4">
-      <img src="https://gift-card.ir/code.php" alt="" />
+      {imageSrc ? <img src={imageSrc} alt="" /> : undefined}
       <button
         onClick={reloadImage}
         className="flex items-center gap-2 text-[#717171] text-xs cursor-pointer"
