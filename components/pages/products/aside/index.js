@@ -1,11 +1,11 @@
 import Item from "./Item";
 
 function Aside({ list }) {
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
   function transformToNestedList(cats) {
     const parents = [];
     const childrenMap = {};
-
-    console.log(cats);
 
     cats.forEach((cat) => {
       const parentId = cat.pid;
@@ -13,7 +13,7 @@ function Aside({ list }) {
         parents.push({
           id: cat.id,
           name: cat.name,
-          icon: `https://gift-card.ir/prod-images/${cat.pid}.jpg`,
+          icon: `${API_URL}/prod-images/${cat.pid}.jpg`,
         });
       }
 
