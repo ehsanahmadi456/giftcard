@@ -1,16 +1,17 @@
 import SearchHeader from "@/public/assets/icons/SearchHeader";
 import Buttons from "./Buttons";
+import Link from "next/link";
 
 function Top() {
   return (
     <div className="flex justify-between">
       <div className="flex items-center justify-between w-full lg:w-3/5 xl:w-4/6 lg:justify-start lg:gap-4">
-        <div className="flex items-center justify-center gap-1">
+        <Link href="/" className="flex items-center justify-center gap-1">
           <span className="rounded-full w-7 h-7 bg-primary"></span>
-          <a href="#" className="text-xl font-bold">
+          <p href="#" className="text-xl font-bold">
             گیفت کارت
-          </a>
-        </div>
+          </p>
+        </Link>
         <div className="flex items-center lg:w-4/6 xl:w-3/4 lg:border lg:rounded lg:p-2 gap-2 max-w-lg border-[#D8D8D8]">
           <SearchHeader />
           <input

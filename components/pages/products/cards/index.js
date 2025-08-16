@@ -1,7 +1,6 @@
 import ArrowBottomHeader from "@/public/assets/icons/ArrowBottomHeader";
 import Menu from "@/public/assets/icons/Menu";
 import Sort from "@/public/assets/icons/Sort";
-import ProductImg from "@/public/assets/images/product.png";
 import Item from "./Item";
 
 function Cards({ prods }) {

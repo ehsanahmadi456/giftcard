@@ -14,7 +14,7 @@ function ImgDetail() {
         پلی، پلی استیشن، استیم و ...
       </p>
       <Link
-        href="#"
+        href="/products"
         className="py-[8px] lg:py-[9px] px-[16px] md:px-[17px] lg:px-[18px] bg-[#786AC2] rounded-[8px] leading-[26px] md:leading-[28px] lg:leading-[30px] text-[#FFF] text-[14px] lg:text-[16px] font-bold"
       >
         مشاهده محصولات

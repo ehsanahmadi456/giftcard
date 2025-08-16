@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 function Item({ data }) {
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
   return (
     <li
       className="bg-[#ECF0F1] gap-[4px] md:gap-[8px] lg:gap-[12px] px-[6px] pt-[31px] md:pt-[33px] lg:pt-[34px] pb-[16px] flex flex-col 
@@ -12,7 +14,7 @@ function Item({ data }) {
         پیشنهاد ویژه
       </p>
       <Image
-        src={data.img}
+        src={`${API_URL}/prod-images/${data.pid}.jpg`}
         width={50}
         height={50}
         alt="steam"
