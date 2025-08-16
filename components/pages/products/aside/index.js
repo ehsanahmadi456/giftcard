@@ -1,36 +1,38 @@
 import GiftCard from "@/public/assets/icons/GiftCard";
 import Item from "./Item";
 
-function Aside() {
-  const list = [
-    {
-      icon: <GiftCard />,
-      name: "گیفت کارت",
-      menu: [
-        { name: "گیفت کارت اپل" },
-        { name: "گیفت کارت اپل" },
-        { name: "گیفت کارت اپل" },
-      ],
-    },
-    {
-      icon: <GiftCard />,
-      name: "گیفت کارت",
-      menu: [
-        { name: "گیفت کارت اپل" },
-        { name: "گیفت کارت اپل" },
-        { name: "گیفت کارت اپل" },
-      ],
-    },
-    {
-      icon: <GiftCard />,
-      name: "گیفت کارت",
-      menu: [
-        { name: "گیفت کارت اپل" },
-        { name: "گیفت کارت اپل" },
-        { name: "گیفت کارت اپل" },
-      ],
-    },
-  ];
+function Aside({ list }) {
+  // const list = [
+  //   {
+  //     icon: <GiftCard />,
+  //     name: "گیفت کارت",
+  //     menu: [
+  //       { name: "گیفت کارت اپل" },
+  //       { name: "گیفت کارت اپل" },
+  //       { name: "گیفت کارت اپل" },
+  //     ],
+  //   },
+  //   {
+  //     icon: <GiftCard />,
+  //     name: "گیفت کارت",
+  //     menu: [
+  //       { name: "گیفت کارت اپل" },
+  //       { name: "گیفت کارت اپل" },
+  //       { name: "گیفت کارت اپل" },
+  //     ],
+  //   },
+  //   {
+  //     icon: <GiftCard />,
+  //     name: "گیفت کارت",
+  //     menu: [
+  //       { name: "گیفت کارت اپل" },
+  //       { name: "گیفت کارت اپل" },
+  //       { name: "گیفت کارت اپل" },
+  //     ],
+  //   },
+  // ];
+
+  console.log(list);
 
   return (
     <aside
@@ -64,9 +66,9 @@ function Aside() {
         </svg>
         دسته بندی ها
       </span>
-      {list.map((item, idx) => (
+      {/* {list.map((item, idx) => (
         <Item data={item} key={idx} />
-      ))}
+      ))} */}
     </aside>
   );
 }
