@@ -7,10 +7,21 @@ import Purpose from "./Purpose";
 import GiftCard from "./GiftCards";
 import BestSeller from "./bestSeller";
 
-function HomePage({ products }) {
+async function getCategories() {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/data.php?op=cat_list&limit=4`,
+    { cache: "no-store" }
+  );
+  const data = await res.json();
+  return data.data || [];
+}
+
+async function HomePage({ products }) {
+  const categories = await getCategories();
+
   return (
     <main className="w-full">
-      <Banner />
+      <Banner cat={categories} />
       <div className="bg-[#F7F6FB]">
         <Categories />
         <GiftCard />

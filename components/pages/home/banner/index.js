@@ -1,7 +1,7 @@
 import Cards from "./Cards";
 import ImgDetail from "./ImgDetail";
 
-function Banner() {
+function Banner({ cat }) {
   return (
     <section
       id="hero"
@@ -9,7 +9,7 @@ function Banner() {
     >
       <div className="flex items-stretch gap-[20px] justify-between mx-auto mt-12 max-w-screen-2xl lg:px-12 xl:px-24">
         <ImgDetail />
-        <Cards />
+        <Cards cat={cat} />
       </div>
     </section>
   );

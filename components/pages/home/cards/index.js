@@ -1,6 +1,15 @@
 import Item from "./Item";
 import Product from "@/public/assets/images/product.png";
 
+async function getCategories() {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/data.php?op=cat_list&limit=4`,
+    { cache: "no-store" }
+  );
+  const data = await res.json();
+  return data.data || [];
+}
+
 function Cards() {
   const list = [
     { img: Product, name: "نتفلیکس" },

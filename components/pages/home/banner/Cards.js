@@ -1,22 +1,11 @@
-import Steam from "@/public/assets/images/steam.png";
 import Item from "./Item";
 
-async function getCategories() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/data.php?op=cat_list&limit=4`,
-    { cache: "no-store" }
-  );
-  const data = await res.json();
-  return data.data || [];
-}
-
-async function Cards() {
-  const categories = await getCategories();
-  console.log(categories);
+async function Cards({ cat }) {
+  const categories = cat.cats.filter((_, idx) => idx < 4);
 
   return (
     <ul className="hidden lg:grid grid-cols-2 gap-x-[20px] gap-y-[18px] min-w-fit">
-      {categories.cats.map((item, idx) => (
+      {categories.map((item, idx) => (
         <Item data={item} key={idx} />
       ))}
     </ul>
