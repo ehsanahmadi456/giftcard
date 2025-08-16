@@ -9,7 +9,7 @@ import BestSeller from "./bestSeller";
 
 async function getCategories() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/data.php?op=cat_list&limit=4`,
+    `${process.env.NEXT_PUBLIC_API_URL}/data.php?op=cat_list`,
     { cache: "no-store" }
   );
   const data = await res.json();
@@ -27,7 +27,7 @@ async function HomePage({ products }) {
         <GiftCard />
         <BestSeller products={products} />
         <BannerSell />
-        <Cards />
+        <Cards cat={categories} />
         <Articles />
         <Purpose />
       </div>

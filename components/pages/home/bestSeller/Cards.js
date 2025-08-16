@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import Product from "@/public/assets/images/product.png";
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 function Cards({ list }) {
   return (
@@ -13,7 +14,13 @@ function Cards({ list }) {
             className="flex-shrink-0 w-[43%] min-w-[23%] lg:!min-w-[25%] p-[7px] md:p-[10px] lg:p-3 text-center transition-all duration-100 ease-linear bg-white rounded-md md:w-1/4 md:flex-shrink hover:shadow-md"
           >
             <div className="w-full flex justify-center items-center">
-              <Image src={Product} className="rounded-md" alt="" />
+              <Image
+                src={`${API_URL}/prod-images/${item.pid}.jpg`}
+                width={273}
+                height={165}
+                className="rounded-md w-full max-h-[165px] object-contain"
+                alt=""
+              />
             </div>
             <p className="mt-[7px] md:mt-[10px] lg:mt-3 font-medium text-[#2F2F2F]">
               {item.name}
