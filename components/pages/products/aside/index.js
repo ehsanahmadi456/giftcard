@@ -1,38 +1,40 @@
-import GiftCard from "@/public/assets/icons/GiftCard";
 import Item from "./Item";
 
 function Aside({ list }) {
-  // const list = [
-  //   {
-  //     icon: <GiftCard />,
-  //     name: "گیفت کارت",
-  //     menu: [
-  //       { name: "گیفت کارت اپل" },
-  //       { name: "گیفت کارت اپل" },
-  //       { name: "گیفت کارت اپل" },
-  //     ],
-  //   },
-  //   {
-  //     icon: <GiftCard />,
-  //     name: "گیفت کارت",
-  //     menu: [
-  //       { name: "گیفت کارت اپل" },
-  //       { name: "گیفت کارت اپل" },
-  //       { name: "گیفت کارت اپل" },
-  //     ],
-  //   },
-  //   {
-  //     icon: <GiftCard />,
-  //     name: "گیفت کارت",
-  //     menu: [
-  //       { name: "گیفت کارت اپل" },
-  //       { name: "گیفت کارت اپل" },
-  //       { name: "گیفت کارت اپل" },
-  //     ],
-  //   },
-  // ];
+  function transformToNestedList(cats) {
+    const parents = [];
+    const childrenMap = {};
 
-  console.log(list);
+    console.log(cats);
+
+    cats.forEach((cat) => {
+      const parentId = cat.pid;
+      if (!cats.some((item) => item.id === parentId)) {
+        parents.push({
+          id: cat.id,
+          name: cat.name,
+          icon: `https://gift-card.ir/prod-images/${cat.pid}.jpg`,
+        });
+      }
+
+      if (!childrenMap[parentId]) {
+        childrenMap[parentId] = [];
+      }
+      childrenMap[parentId].push({
+        name: cat.name,
+      });
+    });
+
+    const result = parents.map((parent) => ({
+      icon: parent.icon,
+      name: parent.name,
+      menu: childrenMap[parent.id] || [],
+    }));
+
+    return result;
+  }
+
+  const transformedData = transformToNestedList(list);
 
   return (
     <aside
@@ -66,9 +68,9 @@ function Aside({ list }) {
         </svg>
         دسته بندی ها
       </span>
-      {/* {list.map((item, idx) => (
+      {transformedData.map((item, idx) => (
         <Item data={item} key={idx} />
-      ))} */}
+      ))}
     </aside>
   );
 }

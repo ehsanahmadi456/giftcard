@@ -17,7 +17,7 @@ function Item({ data }) {
         onClick={() => setActive(!active)}
       >
         <span className="flex gap-1">
-          {data.icon}
+          {/* <Image src={data.icon} width={20} height={20} alt="icon-cart" /> */}
           <Link href="#" className="font-medium text">
             {data.name}
           </Link>
