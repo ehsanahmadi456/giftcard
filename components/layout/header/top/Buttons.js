@@ -2,13 +2,14 @@ import ShopHeader from "@/public/assets/icons/ShopHeader";
 import Xbox from "@/public/assets/images/xbox.png";
 import Image from "next/image";
 import Menu from "./Menu";
+import Link from "next/link";
 
 function Buttons() {
   return (
     <div className="hidden gap-4 lg:flex">
       <div className="relative group">
-        <a
-          href="#"
+        <Link
+          href="/login"
           className="flex items-center justify-center gap-1 p-2 px-4 text-xs font-medium transition-all duration-300 ease-linear bg-gray-100 rounded-lg group text-primary group-hover:bg-primary group-hover:text-white"
         >
           <i>
@@ -24,7 +25,7 @@ function Buttons() {
             </svg>
           </i>
           ورود | ثبت نام
-        </a>
+        </Link>
         <Menu />
       </div>
       <div className="relative group">

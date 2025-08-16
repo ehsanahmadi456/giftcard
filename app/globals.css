@@ -81,3 +81,17 @@ html {
   @apply w-5;
   @apply h-5;
 }
+
+/* remove icon field num */
+
+/* For Chrome, Safari, Edge */
+.no-spinner::-webkit-outer-spin-button,
+.no-spinner::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+.no-spinner {
+  -moz-appearance: textfield;
+}

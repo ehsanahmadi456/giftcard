@@ -7,14 +7,14 @@ import Purpose from "./Purpose";
 import GiftCard from "./GiftCards";
 import BestSeller from "./bestSeller";
 
-function HomePage() {
+function HomePage({ products }) {
   return (
     <main className="w-full">
       <Banner />
       <div className="bg-[#F7F6FB]">
         <Categories />
         <GiftCard />
-        <BestSeller />
+        <BestSeller products={products} />
         <BannerSell />
         <Cards />
         <Articles />

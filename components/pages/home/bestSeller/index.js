@@ -1,19 +1,7 @@
-import Product from "@/public/assets/images/product.png";
 import Head from "./Head";
 import Cards from "./Cards";
 
-function BestSeller() {
-  const list = [
-    { img: Product, name: "نتفلیکس" },
-    { img: Product, name: "نتفلیکس" },
-    { img: Product, name: "نتفلیکس" },
-    { img: Product, name: "نتفلیکس" },
-    { img: Product, name: "نتفلیکس" },
-    { img: Product, name: "نتفلیکس" },
-    { img: Product, name: "نتفلیکس" },
-    { img: Product, name: "نتفلیکس" },
-  ];
-
+function BestSeller({ products }) {
   return (
     <section
       id="#bestseller"
@@ -21,8 +9,8 @@ function BestSeller() {
     >
       <Head />
       <div className="mt-[24px]">
-        <Cards list={list} />
-        <Cards list={list} />
+        <Cards list={products} />
+        <Cards list={products} />
       </div>
     </section>
   );

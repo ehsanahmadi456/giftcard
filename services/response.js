@@ -66,4 +66,5 @@ export const request = {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
     });
   },
+  listCar: () => api.get('data.php?op=cat_list')
 };
