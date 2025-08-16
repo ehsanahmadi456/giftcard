@@ -11,12 +11,6 @@ async function getCategories() {
 }
 
 async function Cards() {
-  const list = [
-    { img: Steam, name: "گیفت کارت استیم" },
-    { img: Steam, name: "گیفت کارت استیم" },
-    { img: Steam, name: "گیفت کارت اسپاتیفای" },
-    { img: Steam, name: "گیفت کارت اپل" },
-  ];
   const categories = await getCategories();
   console.log(categories);
 
