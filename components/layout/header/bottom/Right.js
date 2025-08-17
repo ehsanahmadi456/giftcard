@@ -29,8 +29,13 @@ function Right() {
               {item.name}
               {item.list && !!item.list.length && <ArrowBottomHeader />}
             </Link>
+
             {item.list && !!item.list.length && (
-              <div className="transition-all duration-500 opacity-0 group-hover:opacity-100 flex flex-col bg-white min-w-[140%] text-lowgray absolute top-[2.25rem] -right-1">
+              <div
+                className="absolute top-[2.25rem] -right-1 min-w-[140%] bg-white text-lowgray flex flex-col
+                              opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto
+                              transition-all duration-500"
+              >
                 {item.list.map((i, idx) => (
                   <Link
                     key={idx}

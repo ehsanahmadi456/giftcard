@@ -1,12 +1,8 @@
-import Image from "next/image";
-import Link from "next/link";
 import Cards from "../bestSeller/Cards";
 
 function Item({ list }) {
   const musicIds = ["1", "10", "3", "14"];
   const musicCats = list.cats.filter((cat) => musicIds.includes(cat.id));
-  console.log(musicCats);
-  console.log(list);
 
   return (
     <article className="flex flex-col items-center justify-center gap-[12px] md:gap-[22px] lg:gap-[32px] overflow-visible swiper--1">
