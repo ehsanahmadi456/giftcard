@@ -4,7 +4,7 @@ import DropDown from "./dropdown";
 import ProductImg from "@/public/assets/images/product.png";
 import Card from "./Card";
 
-function DetailPage() {
+function ProductPage() {
   const list = [
     { name: "نتفلیکس", img: ProductImg },
     { name: "نتفلیکس", img: ProductImg },
@@ -27,4 +27,4 @@ function DetailPage() {
   );
 }
 
-export default DetailPage;
+export default ProductPage;

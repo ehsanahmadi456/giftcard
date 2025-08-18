@@ -7,7 +7,7 @@ function Item({ data }) {
 
   return (
     <Link
-      href="#"
+      href={`/product/${data.id}`}
       className="p-3 text-center transition-all duration-100 ease-linear bg-white rounded-md hover:shadow-md"
     >
       <Image
