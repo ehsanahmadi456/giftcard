@@ -2,7 +2,7 @@ import Layout from "@/components/layout";
 import CartPage from "@/components/pages/cart";
 import { cookies } from "next/headers";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_URL = "https://gift-card.ir";
 
 async function req() {
   const cookieStore = cookies();

@@ -9,7 +9,7 @@ import BestSeller from "./bestSeller";
 
 async function getCategories() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/data.php?op=cat_list`,
+    `https://gift-card.ir/data.php?op=cat_list`,
     { cache: "no-store" }
   );
   const data = await res.json();

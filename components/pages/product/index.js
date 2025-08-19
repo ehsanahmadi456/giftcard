@@ -4,7 +4,7 @@ import DropDown from "./dropdown";
 import ProductImg from "@/public/assets/images/product.png";
 import Card from "./Card";
 
-function ProductPage() {
+function ProductPage({ data }) {
   const list = [
     { name: "نتفلیکس", img: ProductImg },
     { name: "نتفلیکس", img: ProductImg },
@@ -17,10 +17,12 @@ function ProductPage() {
       <DropDown />
       <section id="similar" className="overflow-visible swiper--2">
         <h4 className="mb-8 text-lg font-bold">محصولات مشابه</h4>
-        <div className="flex items-center swiper-wrapper md:gap-4">
-          {list.map((item, idx) => (
-            <Card data={item} key={idx} />
-          ))}
+        <div className="">
+          <div className=" swiper-wrapper md:gap-4">
+            {list.map((item, idx) => (
+              <Card data={item} key={idx} />
+            ))}
+          </div>
         </div>
       </section>
     </main>

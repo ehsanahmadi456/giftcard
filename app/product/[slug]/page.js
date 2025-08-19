@@ -17,12 +17,10 @@ async function req(slug) {
 
 async function Product({ params: { slug } }) {
   const data = await req(slug);
-  console.log(slug);
-  console.log(data);
 
   return (
     <Layout>
-      <ProductPage />
+      <ProductPage data={data} />
     </Layout>
   );
 }

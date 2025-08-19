@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 function Item({ data }) {
-  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+  const API_URL = "https://gift-card.ir";
 
   return (
     <Link
