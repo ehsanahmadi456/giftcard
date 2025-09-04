@@ -1,10 +1,10 @@
 import Image from "next/image";
 import CountryImg from "@/public/assets/images/country.png";
 
-function Head() {
+function Head({ data }) {
   return (
     <>
-      <h2 className="text-lg font-bold">گیفت کارت اسپاتیفای</h2>
+      <h2 className="text-lg font-bold">{data.name}</h2>
       <div className="flex gap-4">
         <div className="flex gap-1 text-xs text-lowgray">
           <svg
@@ -76,14 +76,7 @@ function Head() {
           </svg>
         </div>
       </div>
-      <p className="text-sm leading-loose text-lowgray">
-        اسپاتیفای محتوای صوتی ضبط‌شده را با حق نشر دیجیتال ارائه می‌دهد که شامل
-        بیش از ۱۰۰ میلیون آهنگ و پنج میلیون پادکست از شرکت‌های ناشر موسیقی و
-        شرکت‌های رسانه‌ای است.به عنوان یک سرویس پریمیوم، ویژگی‌های اساسی آن
-        همراه با تبلیغات، محدود و رایگان هستند، در حالی که ویژگی‌های اضافی مانند
-        کیفیت پخش بهتر و گوش‌دادن موسیقی به صورت آفلاین از طریق پرداخت اشتراک
-        ارائه داده می‌شود.
-      </p>
+      <p className="text-sm leading-loose text-lowgray">{data.help}</p>
     </>
   );
 }

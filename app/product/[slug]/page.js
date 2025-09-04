@@ -1,26 +1,38 @@
 import Layout from "@/components/layout";
 import ProductPage from "@/components/pages/product";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_URL = process.env.API_URL;
 
 async function req(slug) {
-  const res = await fetch(`${API_URL}/data.php?op=prod_data&id=${slug}`);
-  const text = await res.text();
+  const resProd = await fetch(`${API_URL}/data.php?op=prod_data&id=${slug}`);
+  const textProd = await resProd.text();
 
   try {
-    const data = JSON.parse(text);
-    return data || [];
+    const prod = JSON.parse(textProd);
+    let prods;
+    if (prod && prod.data) {
+      const resProds = await fetch(
+        `${API_URL}/data.php?op=prod_list&cid=${prod.data.cid}`
+      );
+      const textProds = await resProds.text();
+      prods = JSON.parse(textProds);
+    }
+    return {
+      prod: (prod && prod.data) || [],
+      prods: (prods && prods.data) || [],
+    };
   } catch (err) {
     return [];
   }
 }
 
-async function Product({ params: { slug } }) {
+async function Product({ params }) {
+  const { slug } = params;
   const data = await req(slug);
 
   return (
     <Layout>
-      <ProductPage data={data} />
+      <ProductPage prod={data.prod} prods={data.prods} />
     </Layout>
   );
 }

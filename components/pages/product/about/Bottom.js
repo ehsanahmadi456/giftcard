@@ -1,4 +1,4 @@
-function Bottom() {
+function Bottom({ data }) {
   return (
     <>
       <div className="flex gap-2 p-4 text-sm font-medium bg-gray-200 rounded-md">
@@ -52,12 +52,12 @@ function Bottom() {
               </li>
             </ul>
           </div>
-          <span className="w-1/2 font-medium">۲۸۰٬۰۰۰ تومان</span>
+          <span className="w-1/2 font-medium">{data.price} تومان</span>
         </div>
         <div className="flex items-center gap-4">
           <a
             href="#"
-            className="flex items-center justify-center w-1/2 gap-2 p-4 text-sm text-white rounded-md bg-primary"
+            className="flex items-center text-nowrap justify-center w-1/2 gap-2 p-4 text-sm text-white rounded-md bg-primary"
           >
             افزودن به سبد خرید
             <svg

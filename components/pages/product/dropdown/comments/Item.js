@@ -3,7 +3,7 @@ import React from "react";
 
 function Item({ data }) {
   return (
-    <article className="swiper-slide flex flex-col p-4 border-[1px] w-3/5 gap-4 rounded-md flex-shrink-0 md:border-0 md:gap-6">
+    <article className="swiper-slide w-full flex flex-col p-4 border-[1px] w-3/5 gap-4 rounded-md flex-shrink-0 md:border-0 md:gap-6">
       <div className="flex items-center gap-2 text-xs text-lowgray md:gap-4">
         <Image
           src={data.img}

@@ -6,17 +6,24 @@ function Item({ data }) {
   return (
     <div
       onClick={(e) => {
+        console.log(e);
+        console.log(e.target);
+
         e &&
           e.target &&
           e.target.className &&
+          e.target.className.includes &&
           e.target.className.includes("open") &&
           setActive(!active);
       }}
-      className={`cursor-pointer ${data.class} ${active ? "active" : ""}`}
+      className={`${data.class} ${active ? "active" : ""}`}
     >
-      <div className="flex items-center justify-between open">
-        <h6 className="text-lg font-medium text-lowgray">{data.head}</h6>
-        <span className="cursor-pointer action-button">
+      <div className="cursor-pointer flex items-center justify-between open">
+        <h6 className="text-lg font-medium text-lowgray open">{data.head}</h6>
+        <span
+          className="cursor-pointer action-button open"
+          onClick={() => setActive(!active)}
+        >
           <svg
             className="hidden group-[.active]:block"
             xmlns="http://www.w3.org/2000/svg"

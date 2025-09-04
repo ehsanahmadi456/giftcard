@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 function Item({ data }) {
-  const API_URL = "https://gift-card.ir";
+const API_URL = process.env.API_URL;
 
   return (
     <li
@@ -28,7 +28,7 @@ function Item({ data }) {
         {data.name}
       </p>
       <Link
-        href="#"
+        href={`/product/${data.id}`}
         className="flex items-center justify-center gap-[5px] text-[#786AC2]"
       >
         مشاهده محصول

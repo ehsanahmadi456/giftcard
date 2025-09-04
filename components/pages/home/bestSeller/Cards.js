@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const API_URL = "https://gift-card.ir";
+const API_URL = process.env.API_URL;
 
 function Cards({ list }) {
   return (
