@@ -10,8 +10,6 @@ function ProductPage({ prod, prods }) {
     { name: "نتفلیکس", img: ProductImg },
     { name: "نتفلیکس", img: ProductImg },
   ];
-  console.log(prod);
-  console.log(prods);
 
   return (
     <main className="w-full p-6 mx-auto mt-8 mb-12 max-w-screen-2xl lg:px-12 xl:px-24">

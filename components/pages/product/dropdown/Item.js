@@ -6,9 +6,6 @@ function Item({ data }) {
   return (
     <div
       onClick={(e) => {
-        console.log(e);
-        console.log(e.target);
-
         e &&
           e.target &&
           e.target.className &&

@@ -1,13 +1,17 @@
 import Image from "next/image";
 import Blog from "@/public/assets/images/blog.png";
+import Link from "next/link";
+import { formatJalaliDate } from "@/helper";
 
 function CardBlog({ data }) {
   return (
     <article className="flex flex-col gap-4 p-6 overflow-hidden transition-all duration-100 ease-linear sm:rounded-lg sm:bg-white sm:max-w-md sm:p-0 hover:shadow-md">
       <Image src={Blog} className="rounded-lg lg:rounded-none" alt="" />
       <div className="flex flex-col gap-4 p-4">
-        <h6 className="font-medium">{data.head}</h6>
-        <p className="hidden text-sm md:block text-lowgray">{data.detail}</p>
+        <h6 className="font-medium">{data.name}</h6>
+        <p className="hidden text-sm md:block text-lowgray">
+          {data.text?.length > 80 ? `${data.text.slice(0, 80)}...` : data.text}
+        </p>
         <div className="flex justify-between">
           <div className="flex gap-3 text-xs">
             <span className="flex items-center justify-center gap-1 text-lowgray">
@@ -61,7 +65,7 @@ function CardBlog({ data }) {
                   />
                 </svg>
               </i>
-              {data.date}
+              {formatJalaliDate(data.date)}
             </span>
             <span className="flex items-center justify-center gap-1 text-lowgray">
               <i>
@@ -85,8 +89,8 @@ function CardBlog({ data }) {
               {data.view} بازدید
             </span>
           </div>
-          <a
-            href="#"
+          <Link
+            href={`/blog/${data.id}`}
             className="flex items-center justify-center text-xs text-primary lg:justify-start"
           >
             متن کامل
@@ -102,7 +106,7 @@ function CardBlog({ data }) {
                 fill="#786AC2"
               />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </article>

@@ -1,7 +1,7 @@
 import HomePage from "@/components/pages/home";
 import Layout from "@/components/layout";
 
-const API_URL = "https://gift-card.ir";
+const API_URL = process.env.API_URL;
 
 async function req() {
   const limit = 8;

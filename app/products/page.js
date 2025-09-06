@@ -1,7 +1,7 @@
 import Layout from "@/components/layout";
 import ProductsPage from "@/components/pages/products";
 
-const API_URL = "https://gift-card.ir";
+const API_URL = process.env.API_URL;
 
 async function reqCat() {
   const res = await fetch(`${API_URL}/data.php?op=cat_list`);
