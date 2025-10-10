@@ -1,7 +1,7 @@
 function Field({ label, icon, type, dir, placeholder, name, handleChange }) {
   return (
     <div className="relative p-3 px-6 border-[1px] rounded-sm flex items-center gap-2">
-      <label className="absolute -top-4 right-5 bg-[#FAFAFE] p-1 text-sm">
+      <label className="absolute -top-4 right-5 bg-[#F7F6FB] p-1 text-sm">
         {label}
       </label>
       {icon}
