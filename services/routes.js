@@ -274,6 +274,103 @@ const routes = {
       };
     },
   },
+  verify: {
+    /**
+     * ارسال کد تأیید برای شماره موبایل کاربر
+     * (مثلاً برای ورود دو مرحله‌ای یا تأیید شماره جدید)
+     * @param {string} mobile - شماره موبایل
+     */
+    sendMobileCode(mobile) {
+      return {
+        path: "/members/verify.php",
+        method: "POST",
+        query: {
+          op: "send",
+          mobile,
+        },
+      };
+    },
+
+    /**
+     * بررسی و تأیید کد ارسال‌شده برای شماره موبایل
+     * @param {string} mobile - شماره موبایل
+     * @param {string} code - کد تأیید
+     */
+    checkMobileCode(mobile, code) {
+      return {
+        path: "/members/verify.php",
+        method: "POST",
+        query: {
+          op: "check",
+          mobile,
+          code,
+        },
+      };
+    },
+
+    /**
+     * ارسال کد تأیید به ایمیل کاربر
+     * (برای فعال‌سازی یا تغییر ایمیل)
+     * @param {string} email - آدرس ایمیل کاربر
+     */
+    sendEmailCode(email) {
+      return {
+        path: "/members/verifyemail.php",
+        method: "POST",
+        query: {
+          op: "send",
+          email,
+        },
+      };
+    },
+
+    /**
+     * بررسی و تأیید کد ارسال‌شده به ایمیل
+     * @param {string} email - آدرس ایمیل
+     * @param {string} code - کد تأیید
+     */
+    checkEmailCode(email, code) {
+      return {
+        path: "/members/verifyemail.php",
+        method: "POST",
+        query: {
+          op: "check",
+          email,
+          code,
+        },
+      };
+    },
+
+    /**
+     * ثبت شماره شبا برای تأیید
+     * @param {string} sheba - شماره شبا (IRxxxxxxxxxxxx)
+     */
+    addSheba(sheba) {
+      return {
+        path: "/members/verifysheba.php",
+        method: "POST",
+        query: {
+          op: "add",
+          sheba,
+        },
+      };
+    },
+
+    /**
+     * بررسی وضعیت تأیید شماره شبا
+     * @param {string} sheba - شماره شبا
+     */
+    verifyShebaStatus(sheba) {
+      return {
+        path: "/members/verifysheba.php",
+        method: "POST",
+        query: {
+          op: "status",
+          sheba,
+        },
+      };
+    },
+  },
   shop: {
     /**
      * افزودن یا کاهش محصول در سبد خرید
@@ -739,6 +836,84 @@ const routes = {
       };
     },
   },
+  blog: {
+    /**
+     * دریافت لیست دسته‌بندی‌های مقالات
+     */
+    categoryList() {
+      return {
+        path: "/data.php",
+        method: "GET",
+        query: {
+          op: "blog_cat",
+        },
+      };
+    },
+
+    /**
+     * دریافت لیست مقالات (اخبار یا آموزش‌ها)
+     * @param {number} [cid] - شناسه دسته‌بندی (اختیاری)
+     * @param {number} [page] - شماره صفحه (اختیاری)
+     */
+    list(cid, page = 1) {
+      return {
+        path: "/data.php",
+        method: "GET",
+        query: {
+          op: "blog_list",
+          cid,
+          page,
+        },
+      };
+    },
+
+    /**
+     * مشاهده جزئیات یک مقاله خاص
+     * @param {number} id - شناسه مقاله
+     */
+    view(id) {
+      return {
+        path: "/data.php",
+        method: "GET",
+        query: {
+          op: "blog_view",
+          id,
+        },
+      };
+    },
+
+    /**
+     * دریافت لیست مقالات مرتبط با یک مقاله خاص
+     * @param {number} id - شناسه مقاله
+     */
+    related(id) {
+      return {
+        path: "/data.php",
+        method: "GET",
+        query: {
+          op: "blog_related",
+          id,
+        },
+      };
+    },
+
+    /**
+     * جستجوی مقالات بر اساس عنوان یا متن
+     * @param {string} search - عبارت جستجو
+     * @param {number} [page] - شماره صفحه (اختیاری)
+     */
+    search(search, page = 1) {
+      return {
+        path: "/data.php",
+        method: "GET",
+        query: {
+          op: "blog_search",
+          search,
+          page,
+        },
+      };
+    },
+  },
   support: {
     /**
      * دریافت لیست تیکت‌های پشتیبانی کاربر
@@ -856,5 +1031,102 @@ const routes = {
       };
     },
   },
+  misc: {
+    /**
+     * دریافت اطلاعات صفحه "درباره ما"
+     */
+    aboutUs() {
+      return {
+        path: "/data.php",
+        method: "GET",
+        query: {
+          op: "about",
+        },
+      };
+    },
 
+    /**
+     * دریافت قوانین و مقررات سایت
+     */
+    siteRules() {
+      return {
+        path: "/data.php",
+        method: "GET",
+        query: {
+          op: "rules",
+        },
+      };
+    },
+
+    /**
+     * دریافت لیست سوالات متداول کاربران (FAQ)
+     */
+    faqList() {
+      return {
+        path: "/data.php",
+        method: "GET",
+        query: {
+          op: "faq",
+        },
+      };
+    },
+
+    /**
+     * ارسال پیام از طریق فرم تماس با ما
+     * @param {string} name - نام فرستنده
+     * @param {string} email - ایمیل
+     * @param {string} message - متن پیام
+     */
+    contactUs(name, email, message) {
+      return {
+        path: "/data.php",
+        method: "POST",
+        query: {
+          op: "contact",
+          name,
+          email,
+          message,
+        },
+      };
+    },
+
+    /**
+     * دریافت اسلایدرهای اصلی سایت (صفحه اصلی)
+     */
+    sliderMain() {
+      return {
+        path: "/data.php",
+        method: "GET",
+        query: {
+          op: "slider",
+        },
+      };
+    },
+
+    /**
+     * دریافت اطلاعیه‌ها و اخبار کوتاه سیستم (اعلان‌ها)
+     */
+    noticeList() {
+      return {
+        path: "/data.php",
+        method: "GET",
+        query: {
+          op: "notice",
+        },
+      };
+    },
+
+    /**
+     * دریافت آمار عمومی سایت (کاربران، سفارشات، بازدید و ...)
+     */
+    siteStats() {
+      return {
+        path: "/data.php",
+        method: "GET",
+        query: {
+          op: "stats",
+        },
+      };
+    },
+  },
 }
