@@ -1,9 +1,9 @@
 import ArrowLeftPur from "@/public/assets/icons/ArrowLeftPur";
 import Image from "next/image";
 import Link from "next/link";
+import testImg from "@/public/assets/images/banner-home.png"
 
 function Item({ data }) {
-const API_URL = process.env.API_URL;
 
   return (
     <li
@@ -14,7 +14,7 @@ const API_URL = process.env.API_URL;
         پیشنهاد ویژه
       </p>
       <Image
-        src={`${API_URL}/prod-images/${data.pid}.jpg`}
+        src={testImg}
         width={50}
         height={50}
         alt="steam"

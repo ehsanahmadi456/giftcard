@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const Instance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_BASE || "https://api.example.com",
+  // baseURL: process.env.BASE_URL,
+  baseURL: "https://gift-card.ir",
   headers: {
     "Content-Type": "application/json",
   },

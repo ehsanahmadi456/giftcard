@@ -2,10 +2,8 @@
 
 import { useState } from "react";
 
-function Head() {
-  const [active, setActive] = useState(0);
+function Head({ categories, active, setActive }) {
   const changeBtn = (id) => setActive(id);
-  const buttons = ["بازی", "سرگرمی", "موزیک"];
 
   return (
     <div className="flex flex-col sm:flex-row items-start gap-[12px] sm:items-center justify-between">
@@ -13,16 +11,16 @@ function Head() {
         پرفروش ترین گیف کارت ها
       </p>
       <div className="flex items-center justify-end gap-[16px]">
-        {buttons.map((item, idx) => (
+        {categories.map((item, idx) => (
           <button
             key={idx}
-            onClick={() => changeBtn(idx)}
+            onClick={() => changeBtn(item.id)}
             className={`
                 text-[16px] md:text-[18px] lg:text-[20px] bg-[#F5F5F5] font-medium py-[2px] px-[10px] transition-all
                 ${active === idx ? "text-[#F69625]" : "text-[#717171]"}
             `}
           >
-            {item}
+            {item.name}
           </button>
         ))}
       </div>

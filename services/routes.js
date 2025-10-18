@@ -626,34 +626,32 @@ const routes = {
   data: {
     /**
      * دریافت لیست دسته‌بندی محصولات
+     * @param {number} [limit] - لیمیت کردن تعداد رکورد ها
      */
-    categoryList() {
+    categoryList(limit) {
       return {
         path: "/data.php",
         method: "GET",
         query: {
-          op: "category",
+          op: "cat_list",
+          limit
         },
       };
     },
 
     /**
      * دریافت لیست محصولات با فیلترهای مختلف
-     * @param {number} [cid] - شناسه دسته‌بندی (اختیاری)
-     * @param {number} [page] - شماره صفحه (اختیاری)
-     * @param {string} [sort] - نوع مرتب‌سازی (newest|price|sale)
-     * @param {string} [search] - عبارت جستجو (اختیاری)
+     * @param {number} [cid] - شناسه دسته‌بندی (اجباری)
+     * @param {number} [limit] - لیمیت صفحه (اختیاری)
      */
-    productList(cid, page = 1, sort, search) {
+    productListByCatID(cid, limit) {
       return {
         path: "/data.php",
         method: "GET",
         query: {
           op: "prod_list",
           cid,
-          page,
-          sort,
-          search,
+          limit,
         },
       };
     },
@@ -1130,3 +1128,5 @@ const routes = {
     },
   },
 }
+
+export default routes
