@@ -2,9 +2,9 @@ import ArrowLeftPur from "@/public/assets/icons/ArrowLeftPur";
 import Image from "next/image";
 import Link from "next/link";
 import testImg from "@/public/assets/images/banner-home.png"
+import { BasicURL } from "@/components/utils/path";
 
 function Item({ data }) {
-
   return (
     <li
       className="bg-[#ECF0F1] gap-[4px] md:gap-[8px] lg:gap-[12px] px-[6px] pt-[31px] md:pt-[33px] lg:pt-[34px] pb-[16px] flex flex-col 
@@ -14,7 +14,7 @@ function Item({ data }) {
         پیشنهاد ویژه
       </p>
       <Image
-        src={testImg}
+        src={`${BasicURL}/prod-images${data.imgpath}`}
         width={50}
         height={50}
         alt="steam"

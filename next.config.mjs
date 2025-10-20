@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["gift-card.ir"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "gift-card.ir",
+        port: "",
+        pathname: "/**",
+      },
+    ],
   },
 };
 

@@ -1,13 +1,3 @@
-// Icons
-import GameO from "@/public/assets/icons/GameO";
-import GiftO from "@/public/assets/icons/GiftO";
-import HobbyO from "@/public/assets/icons/HobbyO";
-import TravelO from "@/public/assets/icons/TravelO";
-import SimCardO from "@/public/assets/icons/SimCardO";
-import AnimalsO from "@/public/assets/icons/AnimalsO";
-import RestaurantO from "@/public/assets/icons/RestaurantO";
-
-// Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect, useState } from "react";
 import { callApi } from "@/services/callApi";
@@ -15,31 +5,9 @@ import routes from "@/services/routes";
 import Link from "next/link";
 import CategoryItemComponent from "./item";
 
-const IconList = [
-  { Icon: () => <GameO />, value: "game", label: "بازی" },
-  { Icon: () => <TravelO />, value: "travel", label: "سفر" },
-  { Icon: () => <HobbyO />, value: "hobby", label: "سرگرمی" },
-  { Icon: () => <GiftO />, value: "gift", label: "هدیه" },
-  { Icon: () => <SimCardO />, value: "simcard", label: "سیم کارت" },
-  { Icon: () => <RestaurantO />, value: "restaurant", label: "رستوران" },
-  { Icon: () => <RestaurantO />, value: "restaurant", label: "رستوران" },
-  { Icon: () => <AnimalsO />, value: "pets", label: "حیوانات خانگی" },
-  { Icon: () => <AnimalsO />, value: "pets", label: "حیوانات خانگی" },
-  { Icon: () => <SimCardO />, value: "simcard", label: "سیم کارت" },
-  { Icon: () => <GameO />, value: "game", label: "بازی" },
-  { Icon: () => <TravelO />, value: "travel", label: "سفر" },
-  { Icon: () => <HobbyO />, value: "hobby", label: "سرگرمی" },
-  { Icon: () => <GiftO />, value: "gift", label: "هدیه" },
-  { Icon: () => <SimCardO />, value: "simcard", label: "سیم کارت" },
-  { Icon: () => <RestaurantO />, value: "restaurant", label: "رستوران" },
-  { Icon: () => <RestaurantO />, value: "restaurant", label: "رستوران" },
-  { Icon: () => <AnimalsO />, value: "pets", label: "حیوانات خانگی" },
-  { Icon: () => <AnimalsO />, value: "pets", label: "حیوانات خانگی" },
-  { Icon: () => <SimCardO />, value: "simcard", label: "سیم کارت" },
-];
 
 function SlideSort({ swiperRef }) {
-  const [categories, setCategories] = useState(IconList)
+  const [categories, setCategories] = useState([])
 
   useEffect(() => {
     getCategories()
@@ -48,7 +16,9 @@ function SlideSort({ swiperRef }) {
   const getCategories = () => {
     callApi(routes.data.categoryList())
       .then(res => {
-        console.log(res)
+        if (res.status === '1') {
+          setCategories(res.data.cats.sort((a, b) => a.order > b.order ? 1 : -1))
+        }
       })
       .catch(err => {
         console.log(err)

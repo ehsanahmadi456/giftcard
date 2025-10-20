@@ -19,18 +19,11 @@ import routes from "@/services/routes";
 //   return data.data || [];
 // }
 
-const cat = [
-  { id: 1, pid: 1, name: "بازار" },
-  { id: 2, pid: 2, name: "فرض" },
-  { id: 3, pid: 3, name: "موکت" },
-  { id: 4, pid: 4, name: "tet" },
-]
-
 const HomePage = () => {
 
   return (
     <main className="w-full">
-      <Banner cat={cat} />
+      <Banner />
       <div className="bg-[#F7F6FB]">
         <Categories />
         {/* <GiftCard /> */}
