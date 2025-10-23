@@ -1,3 +1,5 @@
+"use client";
+
 import BagHeader from "@/public/assets/icons/BagHeader";
 import DollarGreen from "@/public/assets/icons/DollarGreen";
 import ExitHeader from "@/public/assets/icons/ExitHeader";
@@ -5,13 +7,16 @@ import HeartHeader from "@/public/assets/icons/HeartHeader";
 import SettingHeader from "@/public/assets/icons/SettingHeader";
 import StarYellow from "@/public/assets/icons/StarYellow";
 import { useEffect, useState } from "react";
+import Cookies from "js-cookie";
 
 function Menu() {
   const [user, setUser] = useState({})
 
   useEffect(() => {
+    const cook = Cookies.get("access_token")
+    if (!cook) return
     // setUser({})
-  }, [])
+  },[])
 
   return user.name && (
     <div className="flex-col p-4 bg-white absolute z-50 left-0 w-64 text-xs hidden group-hover:flex">
