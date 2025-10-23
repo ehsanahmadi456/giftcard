@@ -4,9 +4,16 @@ import ExitHeader from "@/public/assets/icons/ExitHeader";
 import HeartHeader from "@/public/assets/icons/HeartHeader";
 import SettingHeader from "@/public/assets/icons/SettingHeader";
 import StarYellow from "@/public/assets/icons/StarYellow";
+import { useEffect, useState } from "react";
 
 function Menu() {
-  return (
+  const [user, setUser] = useState({})
+
+  useEffect(() => {
+    // setUser({})
+  }, [])
+
+  return user.name && (
     <div className="flex-col p-4 bg-white absolute z-50 left-0 w-64 text-xs hidden group-hover:flex">
       <div className="flex flex-col gap-4 pb-4 border-b">
         <div className="flex justify-between items-center">

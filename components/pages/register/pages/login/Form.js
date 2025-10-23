@@ -7,20 +7,10 @@ import Field from "../../element/Field";
 import CodeReg from "@/public/assets/icons/CodeReg";
 import PassReg from "@/public/assets/icons/PassReg";
 import EmailReg from "@/public/assets/icons/EmailReg";
-import CodeImg from "../signup/CodeImg";
-import SendReq from "./SendReq";
 
-function Form() {
-  const [data, setData] = useState({
-    email: "",
-    pass: "",
-    code: "",
-  });
-
-  const handleChange = (name, value) => setData({ ...data, [name]: value });
-
+function Form({ handleChange }) {
   return (
-    <form action="" className="flex flex-col gap-8">
+    <>
       <Field
         label="ایمیل"
         type="email"
@@ -45,16 +35,7 @@ function Form() {
         icon={<CodeReg />}
         placeholder="کد زیر را به انگلیسی وارد کنید."
       />
-      {/* <div className="flex gap-4">
-        <img src="../public/assets/images/captcha.png" alt="" />
-        <div className="flex items-center gap-2 text-[#717171] text-xs">
-          <RetryReg />
-          بارگذاری مجدد
-        </div>
-      </div> */}
-      <CodeImg />
-      <SendReq data={data} />
-    </form>
+    </>
   );
 }
 

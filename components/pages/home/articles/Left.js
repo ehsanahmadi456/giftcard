@@ -7,8 +7,8 @@ function Left({ data }) {
   return (
     <article className="flex flex-col max-w-lg gap-6 mx-auto lg:flex-row lg:row-span-1 lg:max-w-none">
       <Image
-        width={100}
-        height={100}
+        width={140}
+        height={140}
         src={`${BasicURL}/prod-images/blogcat-${data?.id ?? 1}.jpg`}
         className="rounded-lg w-fit lg:w[160px] lg:h-[140px]"
         alt=""
