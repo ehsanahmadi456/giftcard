@@ -4,21 +4,19 @@ import Product from "@/public/assets/images/product.png";
 import { callApi } from "@/services/callApi";
 import routes from "@/services/routes";
 
-function Cards({ cat }) {
-  const [products, setProducts] = useState([
-    { name: "Aydin" }, { name: "phone" }, { name: "laptop" }, { name: "computer" },
-    { name: "Aydin" }, { name: "phone" }, { name: "laptop" }, { name: "computer" },
-    { name: "Aydin" }, { name: "phone" }, { name: "laptop" }, { name: "computer" },
-  ])
+function Cards() {
+  const [products, setProducts] = useState([])
 
   useEffect(() => {
-    getProducts()
+    getProductsHandler()
   }, [])
-  const getProducts = () => {
-    callApi(routes.data.product)
+
+  const getProductsHandler = () => {
+    callApi(routes.data.productListByCatID(10))
       .then(res => {
-        // setProducts()
-        console.log(res)
+        if (res.status === "1") {
+          setProducts(res.data.prods)
+        }
       })
       .catch(err => {
         console.log(err)

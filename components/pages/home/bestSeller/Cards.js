@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import testImg from "@/public/assets/images/banner-home.png"
+import { BasicURL } from "@/components/utils/path";
 
 
 function Cards({ list }) {
@@ -15,8 +15,7 @@ function Cards({ list }) {
           >
             <div className="w-full flex justify-center items-center">
               <Image
-                src={testImg}
-                // src={`${API_URL}/prod-images/${item.pid}.jpg`}
+                src={`${BasicURL}/prod-images${item.imgpath}`}
                 width={273}
                 height={165}
                 className="rounded-md w-full max-h-[165px] object-contain"

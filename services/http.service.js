@@ -1,18 +1,22 @@
 import axios from "axios";
 
-const Instance = axios.create({
-  // baseURL: process.env.BASE_URL,
-  baseURL: "https://gift-card.ir",
-  headers: {
-    "Content-Type": "application/json",
-  },
-});
+const isServer = typeof window === "undefined";
 
-Instance.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    return Promise.reject(error);
-  }
-);
+let Instance = null;
 
-export default Instance;
+if (!isServer) {
+  // فقط تو مرورگر axios بساز
+  Instance = axios.create({
+    baseURL: "https://gift-card.ir",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  Instance.interceptors.response.use(
+    (response) => response,
+    (error) => Promise.reject(error)
+  );
+}
+
+export { Instance, isServer };

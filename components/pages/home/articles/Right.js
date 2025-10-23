@@ -1,16 +1,25 @@
+import { BasicURL } from "@/components/utils/path";
+import { formatJalaliDate } from "@/helper";
 import Blog from "@/public/assets/images/blog.png";
 import Image from "next/image";
 
-function Right() {
+function Right({ data }) {
   return (
     <article className="flex flex-col max-w-lg gap-[8px] md:gap-[16px] lg:gap-[24px] mx-auto lg:row-span-3 lg:max-w-none">
-      <Image src={Blog} className="rounded-lg" alt="" />
+      <Image
+        width={100}
+        height={100}
+        src={`${BasicURL}/prod-images/blogcat-${data?.id ?? 1}.jpg`}
+        className="rounded-lg"
+        alt=""
+      />
       <div className="flex flex-col gap-[16px] md:gap-[20px] lg:gap-[24px]">
-        <h6 className="font-medium">بررسی ایکس باکس سری اس مایکروسافت</h6>
+        <h6 className="font-medium">{data.name}</h6>
         <p className="hidden text-lowgray lg:block">
-          مایکروسافت با ایکس باکس سری اس، می‌خواهد تجربه‌ی نسل نهم کنسول‌های
+          {data.text}
+          {/* مایکروسافت با ایکس باکس سری اس، می‌خواهد تجربه‌ی نسل نهم کنسول‌های
           بازی را در ازای پرداخت مبلغ معقولی، برای کاربر به‌ارمغان آورد. ایکس
-          باکس سری اس لقب ارزان‌ترین کنسول بازی نسل نهم را یدک می‌کشد.
+          باکس سری اس لقب ارزان‌ترین کنسول بازی نسل نهم را یدک می‌کشد. */}
         </p>
         <div className="flex justify-between">
           <div className="flex gap-4">
@@ -65,7 +74,8 @@ function Right() {
                   />
                 </svg>
               </i>
-              ۱۴۰۲/۰۳/۱۶
+              {formatJalaliDate(data.date)}
+              {/* ۱۴۰۲/۰۳/۱۶ */}
             </span>
             <span className="flex items-center justify-center gap-1 text-[12px] md:text-[13px] lg:text-sm text-lowgray">
               <svg
@@ -84,7 +94,7 @@ function Right() {
                   fill="#ACACAC"
                 />
               </svg>
-              ۱۶۲ بازدید
+              9999 بازدید
             </span>
           </div>
           <a
