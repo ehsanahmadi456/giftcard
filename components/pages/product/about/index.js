@@ -2,9 +2,10 @@ import DetailImg from "@/public/assets/images/detail.png";
 import Image from "next/image";
 import Head from "./Head";
 import Bottom from "./Bottom";
+import { BasicURL } from "@/components/utils/path";
 
 function About({ data }) {
-  const API_URL = process.env.API_URL;
+  const API_URL = BasicURL
 
   return (
     <section className="flex flex-col items-center gap-6 mb-16 md:flex-row lg:gap-12">

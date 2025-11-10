@@ -1,7 +1,8 @@
 import Layout from "@/components/layout";
 import ProductPage from "@/components/pages/product";
+import { BasicURL } from "@/components/utils/path";
 
-const API_URL = process.env.API_URL;
+const API_URL = BasicURL;
 
 async function req(slug) {
   const resProd = await fetch(`${API_URL}/data.php?op=prod_data&id=${slug}`);

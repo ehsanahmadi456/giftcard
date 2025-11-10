@@ -1,7 +1,8 @@
 import Layout from "@/components/layout";
 import ProductsPage from "@/components/pages/products";
+import { BasicURL } from "@/components/utils/path";
 
-const API_URL = process.env.API_URL;
+const API_URL = BasicURL;
 
 async function reqCat() {
   const res = await fetch(`${API_URL}/data.php?op=cat_list`);
