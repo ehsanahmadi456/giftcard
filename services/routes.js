@@ -837,13 +837,15 @@ const routes = {
   blog: {
     /**
      * دریافت لیست دسته‌بندی‌های مقالات
+     * @param {number} [limit] - تعداد نمایش (دلخواه)
      */
-    categoryList() {
+    blogCatList(limit) {
       return {
         path: "/data.php",
         method: "GET",
         query: {
-          op: "blog_cat",
+          op: "blog_cat_list",
+          limit
         },
       };
     },
@@ -851,16 +853,18 @@ const routes = {
     /**
      * دریافت لیست مقالات (اخبار یا آموزش‌ها)
      * @param {number} [cid] - شناسه دسته‌بندی (اختیاری)
+     * @param {number} [pageSize] - تعداد رکورد هر صفحه (اختیاری)
      * @param {number} [page] - شماره صفحه (اختیاری)
      */
-    list(cid, page = 1) {
+    list(pageSize, page, cid) {
       return {
         path: "/data.php",
         method: "GET",
         query: {
           op: "blog_list",
-          cid,
+          pp: pageSize,
           page,
+          cid,
         },
       };
     },

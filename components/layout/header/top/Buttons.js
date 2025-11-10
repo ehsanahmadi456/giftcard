@@ -1,10 +1,22 @@
+"use client";
+
 import ShopHeader from "@/public/assets/icons/ShopHeader";
 import Xbox from "@/public/assets/images/xbox.png";
 import Image from "next/image";
 import Menu from "./Menu";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import Cookies from "js-cookie";
 
 function Buttons() {
+  const [user, setUser] = useState({})
+
+  useEffect(() => {
+    const cook = Cookies.get("access_token")
+    if (!cook) return
+    // setUser({})
+  }, [])
+
   return (
     <div className="hidden gap-4 lg:flex">
       <div className="relative group">
@@ -28,42 +40,44 @@ function Buttons() {
         </Link>
         <Menu />
       </div>
-      <div className="relative group">
-        <a
-          href="#"
-          className="flex items-center justify-center gap-1 p-2 px-4 text-xs font-medium transition-colors duration-300 ease-linear rounded-lg text-lowgray group-hover:bg-gray-200"
-        >
-          <ShopHeader />
-          سبد خرید
-        </a>
-        <div className="flex-col p-4 bg-white absolute z-50 left-0 w-64 text-xs hidden group-hover:flex">
-          <article className="flex flex-col gap-4 relative border-b pb-4">
-            <div className="flex items-center gap-2 font-medium">
-              <Image src={Xbox} alt="" className="w-8 h-8 rounded-md" />
-              گیفت کارت ایکس باکس
-            </div>
-            <div className="flex justify-between items-center">
-              <div className="flex border-[1px] rounded-md max-w-max">
-                <span className="p-2 px-3 border-l-[1px] cursor-pointer">
-                  +
-                </span>
-                <span className="p-2 px-3 border-l-[1px]">2</span>
-                <span className="p-2 px-3 cursor-pointer">-</span>
+      {user.name &&
+        <div className="relative group">
+          <a
+            href="#"
+            className="flex items-center justify-center gap-1 p-2 px-4 text-xs font-medium transition-colors duration-300 ease-linear rounded-lg text-lowgray group-hover:bg-gray-200"
+          >
+            <ShopHeader />
+            سبد خرید
+          </a>
+          <div className="flex-col p-4 bg-white absolute z-50 left-0 w-64 text-xs hidden group-hover:flex">
+            <article className="flex flex-col gap-4 relative border-b pb-4">
+              <div className="flex items-center gap-2 font-medium">
+                <Image src={Xbox} alt="" className="w-8 h-8 rounded-md" />
+                گیفت کارت ایکس باکس
               </div>
-              <span>۴۳۶٬۵۰۰ تومان</span>
+              <div className="flex justify-between items-center">
+                <div className="flex border-[1px] rounded-md max-w-max">
+                  <span className="p-2 px-3 border-l-[1px] cursor-pointer">
+                    +
+                  </span>
+                  <span className="p-2 px-3 border-l-[1px]">2</span>
+                  <span className="p-2 px-3 cursor-pointer">-</span>
+                </div>
+                <span>۴۳۶٬۵۰۰ تومان</span>
+              </div>
+            </article>
+            <div className="flex justify-between items-center pt-4">
+              <a
+                href="#"
+                className="p-2 bg-primary text-white font-medium rounded-md w-max hover:bg-[#6352B8] transition-all duration-300 ease-linear"
+              >
+                ادامه فرآیند خرید
+              </a>
+              <span> ۴۳۶٬۵۰۰ تومان </span>
             </div>
-          </article>
-          <div className="flex justify-between items-center pt-4">
-            <a
-              href="#"
-              className="p-2 bg-primary text-white font-medium rounded-md w-max hover:bg-[#6352B8] transition-all duration-300 ease-linear"
-            >
-              ادامه فرآیند خرید
-            </a>
-            <span> ۴۳۶٬۵۰۰ تومان </span>
           </div>
         </div>
-      </div>
+      }
     </div>
   );
 }

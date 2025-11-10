@@ -15,6 +15,7 @@ function CodeImg() {
     <div className="flex gap-4">
       {imageSrc ? <img src={imageSrc} alt="" /> : undefined}
       <button
+        type="button"
         onClick={reloadImage}
         className="flex items-center gap-2 text-[#717171] text-xs cursor-pointer"
       >

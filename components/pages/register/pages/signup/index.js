@@ -54,10 +54,17 @@ function SignupPage() {
     });
   };
 
+  const onSubmitHandler = (e) => {
+    if (!isFormValid(data)) return
+
+    e.preventDefault();
+    handleReq();
+  }
+
   return (
     <section className="flex flex-col w-full max-w-md gap-8 p-6 mx-auto lg:max-w-screen-2xl lg:px-12 xl:px-24 lg:order-1 lg:w-1/2 lg:justify-center">
       <h4 className="mb-8 font-bold text-center">ساخت حساب کاربری جدید</h4>
-      <form className="flex flex-col gap-8">
+      <form className="flex flex-col gap-8" action="" onSubmit={onSubmitHandler}>
         <Form handleChange={handleChange} data={data} />
         <CodeImg />
         <div className="flex items-center">
@@ -76,10 +83,7 @@ function SignupPage() {
         <button
           type="submit"
           disabled={!isFormValid(data)}
-          onClick={(e) => {
-            e.preventDefault();
-            handleReq();
-          }}
+          onClick={onSubmitHandler}
           className={`p-3 px-12 flex justify-center items-center text-center text-white rounded-sm lg:w-3/4 lg:mx-auto
             ${isFormValid(data) ? "bg-primary" : "bg-[#bcbcbc]"}`}
         >

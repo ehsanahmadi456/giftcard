@@ -12,7 +12,7 @@ function Banner() {
   }, [])
 
   const getProductsHandler = () => {
-    callApi(routes.data.productListByCatID(1))
+    callApi(routes.data.productListByCatID(1, 4))
       .then(res => {
         if (res.status === "1") {
           setProducts(res.data.prods)

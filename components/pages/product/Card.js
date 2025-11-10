@@ -7,7 +7,7 @@ const API_URL = BasicURL;
 function Card({ data }) {
   return (
     <Link
-      href="#"
+      href={`/product/${data.id}`}
       className="flex-shrink-0 w-2/5 p-3 text-center transition-all duration-100 ease-linear bg-white rounded-md swiper-slide md:w-1/4 hover:shadow-md"
     >
       <Image

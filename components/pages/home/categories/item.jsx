@@ -18,6 +18,7 @@ const CategoryItemComponent = ({ item }) => {
         w-[40px] h-[40px] max-w-[40px] max-h-[40px]
         md:w-[45px] md:h-[45px] md:max-w-[45px] md:max-h-[45px]
         lg:w-[50px] lg:h-[50px] lg:max-w-[50px] lg:max-h-[50px]
+        rounded
         "
         />
         :
