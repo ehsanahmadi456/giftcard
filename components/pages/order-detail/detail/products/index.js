@@ -1,5 +1,5 @@
-import Item from "./item";
 import Xbox from "@/public/assets/images/xbox.png";
+import Item from "./Item";
 
 function Products() {
   const list = [

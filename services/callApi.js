@@ -10,7 +10,7 @@ export async function callApi(route, body, extraQuery) {
 
   try {
     if (isServer) {
-      // وقتی تو سروریم → با fetch بفرست
+  
       const queryParams = new URLSearchParams(config.params).toString();
       const url = `${"https://gift-card.ir"}${config.url}${
         queryParams ? "?" + queryParams : ""
@@ -20,13 +20,13 @@ export async function callApi(route, body, extraQuery) {
         method: config.method,
         headers: { "Content-Type": "application/json" },
         body: config.method !== "GET" ? JSON.stringify(config.data) : undefined,
-        cache: "no-store", // برای SSR و ISR بهتره
+        cache: "no-store", 
       });
 
       const data = await res.json();
       return data;
     } else {
-      // وقتی تو مرورگریم → با axios بفرست
+
       const res = await Instance.request(config);
       return res.data;
     }

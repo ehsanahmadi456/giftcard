@@ -1,17 +1,26 @@
 import Layout from "@/components/layout";
 import BlogSubcatPage from "@/components/pages/blog-subcat";
 
-const API_URL = process.env.API_URL;
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://gift-card.ir";
+
+export const dynamic = 'force-dynamic';
 
 async function req() {
-  const res = await fetch(`${API_URL}/data.php?op=blog_list`);
-  const text = await res.text();
-
   try {
+    const res = await fetch(`${API_URL}/data.php?op=blog_list`, {
+      next: { revalidate: 60 }
+    });
+    
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+    
+    const text = await res.text();
     const data = JSON.parse(text);
-    return data.data || [];
+    return data.data || { posts: [] };
   } catch (err) {
-    return [];
+    console.error('Error fetching blog subcategory data:', err);
+    return { posts: [] };
   }
 }
 

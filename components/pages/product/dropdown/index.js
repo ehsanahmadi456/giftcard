@@ -3,8 +3,12 @@
 import HowUse from "./HowUse";
 import Comments from "./comments";
 import Item from "./Item";
+import { useParams } from "next/navigation";
 
 function DropDown() {
+  const params = useParams();
+  const slug = params.slug;
+
   const dropdowns = [
     {
       head: "نحوه استفاده",
@@ -13,7 +17,7 @@ function DropDown() {
     },
     {
       head: "نظرات کاربران",
-      description: <Comments />,
+      description: <Comments productId={slug} />,
       class:
         "swiper--1 overflow-visible flex flex-col gap-8 border-b-[1px] pb-8 w-full group",
     },

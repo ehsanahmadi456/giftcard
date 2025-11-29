@@ -17,7 +17,7 @@ async function req(slug) {
       );
       const textProds = await resProds.text();
       prods = JSON.parse(textProds);
-    }
+    }    
     return {
       prod: (prod && prod.data) || [],
       prods: (prods && prods.data) || [],
@@ -30,6 +30,8 @@ async function req(slug) {
 async function Product({ params }) {
   const { slug } = params;
   const data = await req(slug);
+  console.log('producttt',data);
+  
 
   return (
     <Layout>

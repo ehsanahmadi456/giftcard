@@ -5,7 +5,6 @@ const isServer = typeof window === "undefined";
 let Instance = null;
 
 if (!isServer) {
-  // فقط تو مرورگر axios بساز
   Instance = axios.create({
     baseURL: "https://gift-card.ir",
     headers: {

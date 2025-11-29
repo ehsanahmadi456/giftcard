@@ -1,38 +1,24 @@
+"use client";
 import React from "react";
-import Item from "./Item";
+import CardBlog from "@/components/elements/CardBlog";
 
-function Cards() {
-  const list = [
-    {
-      head: "بررسی ایکس باکس سری اس مایکروسافت",
-      detail:
-        "مایکروسافت با ایکس باکس سری اس، می‌خواهد تجربه‌ی نسل نهم کنسول‌های بازی را در ازای پرداخت مبلغ...",
-      date: " ۱۴۰۲/۰۳/۱۶",
-      view: "۱۶۲",
-    },
-    {
-      head: "بررسی ایکس باکس سری اس مایکروسافت",
-      detail:
-        "مایکروسافت با ایکس باکس سری اس، می‌خواهد تجربه‌ی نسل نهم کنسول‌های بازی را در ازای پرداخت مبلغ...",
-      date: " ۱۴۰۲/۰۳/۱۶",
-      view: "۱۶۲",
-    },
-    {
-      head: "بررسی ایکس باکس سری اس مایکروسافت",
-      detail:
-        "مایکروسافت با ایکس باکس سری اس، می‌خواهد تجربه‌ی نسل نهم کنسول‌های بازی را در ازای پرداخت مبلغ...",
-      date: " ۱۴۰۲/۰۳/۱۶",
-      view: "۱۶۲",
-    },
-  ];
+function Cards({ data = [] }) {
+  if (!Array.isArray(data)) return <div className="p-6 text-center text-red-500">خطا: دیتا به صورت آرایه نیست!</div>;
+  if (data.length === 0) return <div className="p-6 text-center text-gray-500">هیچ پستی برای نمایش وجود ندارد</div>;
 
   return (
-    <section
-      id="all-blog"
-      className="grid grid-cols-1 p-6 sm:grid-cols-2 lg:grid-cols-3 sm:gap-4 lg:px-12 xl:px-24"
-    >
-      {list.map((item, idx) => (
-        <Item data={item} key={idx} />
+    <section className="grid grid-cols-1 p-6 sm:grid-cols-2 lg:grid-cols-3 sm:gap-4 lg:px-12 xl:px-24">
+      {data.map((item, index) => (
+        <CardBlog
+          key={item.id || index}
+          data={{
+            id: item.id,
+            head: item.name || item.title || "بدون عنوان",
+            text: item.text || item.excerpt || "",
+            date: item.date,
+            view: item.view || 0,
+          }}
+        />
       ))}
     </section>
   );

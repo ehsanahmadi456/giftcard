@@ -1,94 +1,73 @@
-import Image from "next/image";
-import React from "react";
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
+import { FaShoppingCart, FaTrash } from "react-icons/fa";
 
-function Item({ data }) {
+function Item({ data, onRemove }) {
+  const router = useRouter();
+  const handleAddToCart = async () => {
+    try {
+      const accessToken = Cookies.get("access_token");
+
+      if (!accessToken) {
+        alert("لطفا ابتدا وارد شوید");
+        return;
+      }
+
+      const myHeaders = new Headers();
+      myHeaders.append("Cookie", `AStoken=${accessToken}`);
+
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/members/cart.php?op=add&id=${data.pid}&act=a`,
+        {
+          method: "GET",
+          headers: myHeaders,
+          credentials: "include",
+        }
+      );
+
+      const result = await response.json();
+
+      if (result.status === "1") {
+        alert("محصول به سبد خرید اضافه شد");
+      } else {
+        alert("خطا در افزودن به سبد خرید");
+      }
+    } catch (error) {
+      console.error("Error adding to cart:", error);
+      alert("خطا در ارتباط با سرور");
+    } finally {
+      router.refresh();
+    }
+  };
+
   return (
     <div className="bg-white flex flex-col gap-4 p-4 w-full shadow-md rounded-md text-center md:gap-4 md:bg-transparent md:shadow-none md:flex-row md:items-center md:justify-between md:py-0">
-      <div className="flex items-center justify-center gap-2 md:w-4/12 md:gap-4">
-        <Image alt="" src={data.img} className="w-10 h-10 lg:w-12 lg:h-12" />
-        <p className="font-semibold">{data.name}</p>
-      </div>
-      <div className="flex gap-2 md:justify-center text-sm md:w-1/12">
-        <p className="text-lowgray md:hidden">کشور:</p>
-        <p>{data.country}</p>
-      </div>
-      <div className="flex gap-2 md:justify-center text-sm md:w-1/12">
-        <p className="text-lowgray md:hidden">مقدار:</p>
-        <p>{data.price} دلار</p>
-      </div>
       <div className="flex gap-2 md:justify-center text-sm md:w-2/12">
-        <p className="text-lowgray md:hidden">مبلغ:</p>
-        <p>{data.priceIr} تومان</p>
+        <p className="text-lowgray md:hidden">شناسه:</p>
+        <p className="font-medium">{data.pid}</p>
       </div>
-      <div className="flex items-center justify-evenly mt-2 md:mt-0 mm:justify-center mm:gap-2 sm:gap-4 md:w-5/12">
-        <a
-          href="#"
-          className="flex items-center gap-2 p-2 px-4 bg-transparent border-[1px] border-primary text-primary font-medium rounded-sm w-max hover:bg-[#6352B8] transition-all duration-300 ease-linear md:border-none"
+
+      <div className="flex gap-2 md:justify-center text-sm md:w-6/12">
+        <p className="text-lowgray md:hidden">محصول:</p>
+        <p className="text-right">{data.prod_name}</p>
+      </div>
+
+      <div className="flex items-center justify-evenly mt-2 md:mt-0 mm:justify-center mm:gap-2 sm:gap-4 md:w-4/12">
+        <button
+          onClick={handleAddToCart}
+          className="flex items-center gap-2 p-2 px-4 bg-transparent border-[1px] border-primary text-primary font-medium rounded-sm w-max hover:bg-primary hover:text-white transition-all duration-300 ease-linear"
         >
-          <span>افزودن به سبد خرید</span>
-          <i className="hidden mm:block md:hidden">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M18.19 17.75H7.53999C6.54999 17.75 5.59999 17.33 4.92999 16.6C4.25999 15.87 3.92 14.89 4 13.9L4.83 3.94C4.86 3.63 4.74999 3.33001 4.53999 3.10001C4.32999 2.87001 4.04 2.75 3.73 2.75H2C1.59 2.75 1.25 2.41 1.25 2C1.25 1.59 1.59 1.25 2 1.25H3.74001C4.47001 1.25 5.15999 1.56 5.64999 2.09C5.91999 2.39 6.12 2.74 6.23 3.13H18.72C19.73 3.13 20.66 3.53 21.34 4.25C22.01 4.98 22.35 5.93 22.27 6.94L21.73 14.44C21.62 16.27 20.02 17.75 18.19 17.75ZM6.28 4.62L5.5 14.02C5.45 14.6 5.64 15.15 6.03 15.58C6.42 16.01 6.95999 16.24 7.53999 16.24H18.19C19.23 16.24 20.17 15.36 20.25 14.32L20.79 6.82001C20.83 6.23001 20.64 5.67001 20.25 5.26001C19.86 4.84001 19.32 4.60999 18.73 4.60999H6.28V4.62Z"
-                fill="#786AC2"
-              />
-              <path
-                d="M16.25 22.75C15.15 22.75 14.25 21.85 14.25 20.75C14.25 19.65 15.15 18.75 16.25 18.75C17.35 18.75 18.25 19.65 18.25 20.75C18.25 21.85 17.35 22.75 16.25 22.75ZM16.25 20.25C15.97 20.25 15.75 20.47 15.75 20.75C15.75 21.03 15.97 21.25 16.25 21.25C16.53 21.25 16.75 21.03 16.75 20.75C16.75 20.47 16.53 20.25 16.25 20.25Z"
-                fill="#786AC2"
-              />
-              <path
-                d="M8.25 22.75C7.15 22.75 6.25 21.85 6.25 20.75C6.25 19.65 7.15 18.75 8.25 18.75C9.35 18.75 10.25 19.65 10.25 20.75C10.25 21.85 9.35 22.75 8.25 22.75ZM8.25 20.25C7.97 20.25 7.75 20.47 7.75 20.75C7.75 21.03 7.97 21.25 8.25 21.25C8.53 21.25 8.75 21.03 8.75 20.75C8.75 20.47 8.53 20.25 8.25 20.25Z"
-                fill="#786AC2"
-              />
-              <path
-                d="M21 8.75H9C8.59 8.75 8.25 8.41 8.25 8C8.25 7.59 8.59 7.25 9 7.25H21C21.41 7.25 21.75 7.59 21.75 8C21.75 8.41 21.41 8.75 21 8.75Z"
-                fill="#786AC2"
-              />
-            </svg>
-          </i>
-        </a>
-        <a
-          href="#"
-          className="flex items-center gap-2 p-2 px-4 bg-transparent border-[1px] border-lowgray text-lowgray font-medium rounded-sm w-max hover:bg-[#6352B8] transition-all duration-300 ease-linear md:border-none"
+          <span>افزودن به سبد</span>
+          <FaShoppingCart className="w-4 h-4" />
+        </button>
+
+        <button
+          onClick={onRemove}
+          className="flex items-center gap-2 p-2 px-4 bg-transparent border-[1px] border-red-500 text-red-500 font-medium rounded-sm w-max hover:bg-red-500 hover:text-white transition-all duration-300 ease-linear"
         >
-          <i className="hidden mm:block">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M17.5001 5.60839C17.4834 5.60839 17.4584 5.60839 17.4334 5.60839C13.0251 5.16673 8.62505 5.00006 4.26672 5.44173L2.56672 5.60839C2.21672 5.64173 1.90839 5.39173 1.87505 5.04173C1.84172 4.69173 2.09172 4.39173 2.43339 4.35839L4.13339 4.19173C8.56672 3.74173 13.0584 3.91673 17.5584 4.35839C17.9001 4.39173 18.1501 4.70006 18.1167 5.04173C18.0917 5.36673 17.8167 5.60839 17.5001 5.60839Z"
-                fill="#8B8A92"
-              />
-              <path
-                d="M7.08338 4.7665C7.05005 4.7665 7.01672 4.7665 6.97505 4.75817C6.64172 4.69984 6.40838 4.37484 6.46672 4.0415L6.65005 2.94984C6.78338 2.14984 6.96671 1.0415 8.90838 1.0415H11.0917C13.0417 1.0415 13.225 2.1915 13.35 2.95817L13.5334 4.0415C13.5917 4.38317 13.3584 4.70817 13.025 4.75817C12.6834 4.8165 12.3584 4.58317 12.3084 4.24984L12.125 3.1665C12.0084 2.4415 11.9834 2.29984 11.1 2.29984H8.91672C8.03338 2.29984 8.01672 2.4165 7.89172 3.15817L7.70005 4.2415C7.65005 4.54984 7.38338 4.7665 7.08338 4.7665Z"
-                fill="#8B8A92"
-              />
-              <path
-                d="M12.675 18.9582H7.325C4.41666 18.9582 4.3 17.3498 4.20833 16.0498L3.66666 7.65815C3.64166 7.31649 3.90833 7.01649 4.25 6.99149C4.6 6.97482 4.89166 7.23315 4.91666 7.57482L5.45833 15.9665C5.55 17.2332 5.58333 17.7082 7.325 17.7082H12.675C14.425 17.7082 14.4583 17.2332 14.5417 15.9665L15.0833 7.57482C15.1083 7.23315 15.4083 6.97482 15.75 6.99149C16.0917 7.01649 16.3583 7.30815 16.3333 7.65815L15.7917 16.0498C15.7 17.3498 15.5833 18.9582 12.675 18.9582Z"
-                fill="#8B8A92"
-              />
-              <path
-                d="M11.3833 14.375H8.60828C8.26661 14.375 7.98328 14.0917 7.98328 13.75C7.98328 13.4083 8.26661 13.125 8.60828 13.125H11.3833C11.7249 13.125 12.0083 13.4083 12.0083 13.75C12.0083 14.0917 11.7249 14.375 11.3833 14.375Z"
-                fill="#8B8A92"
-              />
-              <path
-                d="M12.0833 11.0415H7.91663C7.57496 11.0415 7.29163 10.7582 7.29163 10.4165C7.29163 10.0748 7.57496 9.7915 7.91663 9.7915H12.0833C12.425 9.7915 12.7083 10.0748 12.7083 10.4165C12.7083 10.7582 12.425 11.0415 12.0833 11.0415Z"
-                fill="#8B8A92"
-              />
-            </svg>
-          </i>
-          <span className="md:hidden">حدف</span>
-        </a>
+          <span>حذف</span>
+          <FaTrash className="w-4 h-4" />
+        </button>
       </div>
     </div>
   );
