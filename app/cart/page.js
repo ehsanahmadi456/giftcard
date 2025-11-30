@@ -2,11 +2,13 @@ import Layout from "@/components/layout";
 import CartPage from "@/components/pages/cart";
 import { cookies } from "next/headers";
 
-const API_URL = "https://gift-card.ir";
-
-async function req() {
+async function getCartData() {
   const cookieStore = cookies();
-  const accessToken = cookieStore.get("access_token")?.value;
+  const accessToken = cookieStore.get("AStoken")?.value;
+
+  if (!accessToken) {
+    return [];
+  }
 
   const myHeaders = new Headers();
   myHeaders.append("Cookie", `AStoken=${accessToken}`);
@@ -14,19 +16,28 @@ async function req() {
   const requestOptions = {
     method: "GET",
     headers: myHeaders,
-    redirect: "follow",
+    cache: 'no-store'
   };
 
   try {
-    const res = await fetch(`${API_URL}/members/cart.php`, requestOptions);
-    const text = await res.text();
+    const res = await fetch(
+      `https://gift-card.ir/members/cart.php?op=query`,
+      requestOptions
+    );
 
-    try {
-      const data = JSON.parse(text);
-      return data || [];
-    } catch {
-      return [];
+    const data = await res.json();
+
+    if (data.status === "1" && data.data) {
+  
+      return data.data.map(item => ({
+        id: item[0],
+        count: item[1],
+        totalPrice: item[2]
+      }));
     }
+    // ✔✔✔✔
+
+    return [];
   } catch (err) {
     console.error("Cart API error:", err);
     return [];
@@ -34,11 +45,11 @@ async function req() {
 }
 
 export default async function Cart() {
-  const cart = await req();
-
+  const cartData = await getCartData();
+  
   return (
     <Layout>
-      <CartPage data={cart} />
+      <CartPage initialData={cartData} />
     </Layout>
   );
 }

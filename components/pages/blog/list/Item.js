@@ -1,19 +1,37 @@
 import Image from "next/image";
+import Link from "next/link";
+import BlogPlaceholder from "@/public/assets/images/blog.png";
+import { formatJalaliDate } from "@/helper";
 
 function Item({ data }) {
+  const imageSrc = data?.img || data?.image || BlogPlaceholder;
+  
   return (
-    <article className="flex items-center px-3 py-4 transition-all duration-100 bg-white rounded-md gap-4 cursor-pointer hover:shadow-md">
-      <Image src={data.img} className="w-20 rounded-md lg:w-24" alt="" />
-      <div className="flex flex-col gap-4">
-        <h4 className="text-sm font-medium">{data.head}</h4>
-        <div className="flex gap-2 md:gap-4">
-          <span className="flex items-center gap-1 text-[10px] text-lowgray">
-            تاریخ انتشار: {data.date}
+    <article className="flex items-center gap-4">
+      {imageSrc && (
+        <Image 
+          src={imageSrc} 
+          alt={data?.head || data?.name || "Blog post"}
+          className="w-20 rounded-md lg:w-24"
+          width={96}
+          height={96}
+        />
+      )}
+      
+      <div className="flex flex-col gap-2">
+        <Link 
+          href={`/blog/${data?.id}`}
+          className="text-sm font-medium hover:text-primary"
+        >
+          {data?.head || data?.name || 'بدون عنوان'}
+        </Link>
+        
+        {data?.date && (
+          <span className="text-xs text-lowgray">
+            
+            {formatJalaliDate(data.date)}
           </span>
-          <span className="flex items-center gap-1 text-[10px] text-lowgray">
-            تعداد بازدید: {data.view}
-          </span>
-        </div>
+        )}
       </div>
     </article>
   );

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BasicURL } from "@/components/utils/path";
 
-const API_URL = process.env.API_URL;
 
 function Cards({ list }) {
   return (
@@ -15,7 +15,7 @@ function Cards({ list }) {
           >
             <div className="w-full flex justify-center items-center">
               <Image
-                src={`${API_URL}/prod-images/${item.pid}.jpg`}
+                src={`${BasicURL}/prod-images${item.imgpath}`}
                 width={273}
                 height={165}
                 className="rounded-md w-full max-h-[165px] object-contain"

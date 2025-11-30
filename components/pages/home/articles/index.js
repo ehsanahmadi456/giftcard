@@ -1,7 +1,29 @@
+import { useEffect, useState } from "react";
 import Left from "./Left";
 import Right from "./Right";
+import routes from "@/services/routes";
+import { callApi } from "@/services/callApi";
 
 function Articles() {
+  const [blogs, setBlogs] = useState([])
+
+  useEffect(() => {
+    getBlogs()
+  }, [])
+
+  const getBlogs = () => {
+    callApi(routes.blog.list(5, 1))
+      .then(res => {
+        if (res.status === '1') {
+          setBlogs(res.data.posts)
+        }
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    // .finally(() => {})
+  }
+
   return (
     <section
       id="blog"
@@ -34,10 +56,10 @@ function Articles() {
         </div>
       </div>
       <div className="grid grid-cols-1 gap-12 mt-[20px] md:mt-[37px] lg:mt-[55px] lg:grid-cols-2 lg:grid-rows-3">
-        <Right />
-        <Left />
-        <Left />
-        <Left />
+        <Right data={blogs[0] ?? {}} />
+        {blogs.length > 0 && blogs.slice(1).map((blog, idx) =>
+          <Left data={blog} key={idx} />
+        )}
       </div>
     </section>
   );

@@ -1,12 +1,13 @@
+import { BasicURL } from "@/components/utils/path";
 import Image from "next/image";
 import Link from "next/link";
 
-const API_URL = process.env.API_URL;
+const API_URL = BasicURL;
 
 function Card({ data }) {
   return (
     <Link
-      href="#"
+      href={`/product/${data.id}`}
       className="flex-shrink-0 w-2/5 p-3 text-center transition-all duration-100 ease-linear bg-white rounded-md swiper-slide md:w-1/4 hover:shadow-md"
     >
       <Image

@@ -9,13 +9,49 @@ import Item from "./Item";
 
 function Menu() {
   const list = [
-    { name: "حساب من", icon: <AccountA />, menu: true },
-    { name: "سفارش ها", icon: <OrderA />, menu: true },
-    { name: "احراز هویت", icon: <AccountLoginA />, menu: true },
-    { name: "کیف پول", icon: <MoneyA />, menu: true },
-    { name: "علاقه مندی ها", icon: <HeartA />, menu: true },
-    { name: "پشتیبانی", icon: <ServiceA />, menu: true },
-    { name: "خروج", icon: <ExitA />, menu: false },
+    { 
+      name: "حساب من", 
+      icon: <AccountA />, 
+      menu: true,
+      href: "/dashboard-account"
+    },
+    { 
+      name: "سفارش ها", 
+      icon: <OrderA />, 
+      menu: true,
+      href: "/dashboard-orders"
+    },
+    { 
+      name: "احراز هویت", 
+      icon: <AccountLoginA />, 
+      menu: true,
+      href: "/dashboard-identity"
+    },
+    { 
+      name: "کیف پول", 
+      icon: <MoneyA />, 
+      menu: true,
+      href: "/dashboard-wallet"
+    },
+    { 
+      name: "علاقه مندی ها", 
+      icon: <HeartA />, 
+      menu: true,
+      href: "/dashboard-wishlist"
+    },
+    { 
+      name: "پشتیبانی", 
+      icon: <ServiceA />, 
+      menu: true,
+      href: "#"
+    },
+    { 
+      name: "خروج", 
+      icon: <ExitA />, 
+      menu: false,
+      href: null,
+      isLogout: true
+    },
   ];
 
   return (

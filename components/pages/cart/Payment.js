@@ -1,91 +1,57 @@
-function Payment() {
+'use client'
+import LoadingSvg from "@/public/assets/icons/LoadingSvg";
+import { useState } from "react";
+
+function PaymentMethod({ onCheckout, isLoading, hasItems }) {
+  const [selectedMethod, setSelectedMethod] = useState('online');
+
   return (
-    <section
-      id="pay-type"
-      className="flex flex-col gap-6 pb-8 border-b-[1px] lg:border-[1px] lg:order-2 lg:p-8 lg:bg-white rounded-md h-max lg:pb-16 lg:w-2/5 lg:gap-8"
-    >
+    <section className="flex flex-col gap-6 pb-8 border-b lg:border lg:order-2 lg:p-8 lg:bg-white rounded-md h-max lg:pb-16 lg:w-2/5 lg:gap-8">
       <h4 className="font-medium lg:font-bold lg:text-xl">انتخاب روش پرداخت</h4>
-      <div className="flex items-center gap-2">
-        <input
-          type="radio"
-          name="pay-type"
-          id="online"
-          className="hidden peer"
-        />
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          className="fill-[#000] peer-checked:fill-secondary"
-        >
-          <path d="M3.93012 16.6301C3.74012 16.6301 3.55012 16.5601 3.40012 16.4101C3.11012 16.1201 3.11012 15.6401 3.40012 15.3501L15.3501 3.40012C15.6401 3.11012 16.1201 3.11012 16.4101 3.40012C16.7001 3.69012 16.7001 4.17012 16.4101 4.46012L4.46012 16.4201C4.32012 16.5601 4.12012 16.6301 3.93012 16.6301Z" />
-          <path d="M11.1 19.03C10.91 19.03 10.72 18.96 10.57 18.81C10.28 18.52 10.28 18.04 10.57 17.75L11.77 16.55C12.06 16.26 12.54 16.26 12.83 16.55C13.12 16.84 13.12 17.32 12.83 17.61L11.63 18.81C11.49 18.95 11.3 19.03 11.1 19.03Z" />
-          <path d="M13.7905 16.3399C13.6005 16.3399 13.4105 16.2699 13.2605 16.1199C12.9705 15.8299 12.9705 15.3499 13.2605 15.0599L15.6505 12.6699C15.9405 12.3799 16.4205 12.3799 16.7105 12.6699C17.0005 12.9599 17.0005 13.4399 16.7105 13.7299L14.3205 16.1199C14.1805 16.2599 13.9805 16.3399 13.7905 16.3399Z" />
-          <path d="M11.0999 22.7499C10.1199 22.7499 9.13991 22.1499 7.94991 20.9599L3.03991 16.0499C0.649914 13.6599 0.659914 12.1199 3.06991 9.70991L9.70991 3.06991C12.1199 0.659914 13.6599 0.649914 16.0499 3.03991L20.9599 7.94991C23.3499 10.3399 23.3399 11.8799 20.9299 14.2899L14.2899 20.9299C13.0799 22.1399 12.0899 22.7499 11.0999 22.7499ZM12.8999 2.74991C12.3799 2.74991 11.7199 3.17991 10.7699 4.12991L4.12991 10.7699C3.17991 11.7199 2.74991 12.3799 2.74991 12.8899C2.74991 13.4099 3.14991 14.0399 4.09991 14.9899L9.00991 19.8999C9.95991 20.8499 10.5799 21.2499 11.0999 21.2499C11.0999 21.2499 11.0999 21.2499 11.1099 21.2499C11.6299 21.2499 12.2799 20.8199 13.2299 19.8699L19.8699 13.2299C20.8199 12.2799 21.2499 11.6199 21.2499 11.1099C21.2499 10.5899 20.8499 9.95991 19.8999 9.00991L14.9899 4.09991C14.0499 3.14991 13.4199 2.74991 12.8999 2.74991Z" />
-          <path d="M22 22.75H2C1.59 22.75 1.25 22.41 1.25 22C1.25 21.59 1.59 21.25 2 21.25H22C22.41 21.25 22.75 21.59 22.75 22C22.75 22.41 22.41 22.75 22 22.75Z" />
-        </svg>
-        <label htmlFor="online" className="peer-checked:text-secondary">
-          پرداخت آنلاین
-        </label>
-        <div className="w-4 h-4 rounded-full border-[1px] border-black mr-4 flex justify-center items-center before:w-3 before:h-3 before:rounded-full peer-checked:border-secondary peer-checked:before:bg-secondary"></div>
+      
+      <div className="space-y-4">
+        {[
+          { id: 'online', label: 'پرداخت آنلاین' },
+          { id: 'wallet-rial', label: 'کیف پول', extra: '(ریال)' },
+          { id: 'wallet-dollar', label: 'کیف پول', extra: '(دلار)' }
+        ].map((method) => (
+          <div key={method.id} className="flex items-center gap-2">
+            <input
+              type="radio"
+              name="pay-type"
+              id={method.id}
+              checked={selectedMethod === method.id}
+              onChange={(e) => setSelectedMethod(e.target.id)}
+              className="hidden peer"
+            />
+            <label
+              htmlFor={method.id}
+              className="flex-1 cursor-pointer peer-checked:text-secondary font-medium"
+            >
+              {method.label} {method.extra && <span className="text-xs">{method.extra}</span>}
+            </label>
+            <div className="w-5 h-5 rounded-full border-2 border-gray-400 flex justify-center items-center peer-checked:border-secondary transition-colors">
+              <div className="w-2.5 h-2.5 rounded-full peer-checked:bg-secondary transition-colors"></div>
+            </div>
+          </div>
+        ))}
       </div>
-      <div className="flex items-center gap-2">
-        <input
-          type="radio"
-          name="pay-type"
-          id="toman"
-          className="hidden peer"
-        />
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          className="fill-black peer-checked:fill-secondary"
-        >
-          <path d="M17.74 23.25H6.26C3.77 23.25 1.75 21.23 1.75 18.74V12.01C1.75 9.52001 3.77 7.5 6.26 7.5H17.74C20.23 7.5 22.25 9.52001 22.25 12.01V13.45C22.25 13.86 21.91 14.2 21.5 14.2H19.48C19.13 14.2 18.81 14.33 18.58 14.57L18.57 14.58C18.29 14.85 18.16 15.22 18.19 15.6C18.25 16.26 18.88 16.79 19.6 16.79H21.5C21.91 16.79 22.25 17.13 22.25 17.54V18.73C22.25 21.23 20.23 23.25 17.74 23.25ZM6.26 9C4.6 9 3.25 10.35 3.25 12.01V18.74C3.25 20.4 4.6 21.75 6.26 21.75H17.74C19.4 21.75 20.75 20.4 20.75 18.74V18.3H19.6C18.09 18.3 16.81 17.18 16.69 15.74C16.61 14.92 16.91 14.11 17.51 13.52C18.03 12.99 18.73 12.7 19.48 12.7H20.75V12.01C20.75 10.35 19.4 9 17.74 9H6.26Z" />
-          <path d="M2.5 13.66C2.09 13.66 1.75 13.32 1.75 12.91V8.34006C1.75 6.85006 2.69 5.50001 4.08 4.97001L12.02 1.97001C12.84 1.66001 13.75 1.77005 14.46 2.27005C15.18 2.77005 15.6 3.58005 15.6 4.45005V8.25003C15.6 8.66003 15.26 9.00003 14.85 9.00003C14.44 9.00003 14.1 8.66003 14.1 8.25003V4.45005C14.1 4.07005 13.92 3.72003 13.6 3.50003C13.28 3.28003 12.9 3.23003 12.54 3.37003L4.6 6.37003C3.79 6.68003 3.24 7.47006 3.24 8.34006V12.91C3.25 13.33 2.91 13.66 2.5 13.66Z" />
-          <path d="M19.6005 18.2999C18.0905 18.2999 16.8105 17.1799 16.6905 15.7399C16.6105 14.9099 16.9105 14.0999 17.5105 13.5099C18.0205 12.9899 18.7205 12.7 19.4705 12.7H21.5505C22.5405 12.73 23.3005 13.5099 23.3005 14.4699V16.53C23.3005 17.49 22.5405 18.2699 21.5805 18.2999H19.6005ZM21.5305 14.2H19.4805C19.1305 14.2 18.8105 14.3299 18.5805 14.5699C18.2905 14.8499 18.1505 15.2299 18.1905 15.6099C18.2505 16.2699 18.8805 16.7999 19.6005 16.7999H21.5605C21.6905 16.7999 21.8105 16.68 21.8105 16.53V14.4699C21.8105 14.3199 21.6905 14.21 21.5305 14.2Z" />
-          <path d="M14 13.25H7C6.59 13.25 6.25 12.91 6.25 12.5C6.25 12.09 6.59 11.75 7 11.75H14C14.41 11.75 14.75 12.09 14.75 12.5C14.75 12.91 14.41 13.25 14 13.25Z" />
-        </svg>
-        <label htmlFor="toman" className="peer-checked:text-secondary">
-          کیف پول <span className="text-xs">(ریال)</span>
-        </label>
-        <div className="w-4 h-4 rounded-full border-[1px] border-black mr-4 flex justify-center items-center before:w-3 before:h-3 before:rounded-full peer-checked:border-secondary peer-checked:before:bg-secondary"></div>
-      </div>
-      <div className="flex items-center gap-2">
-        <input
-          type="radio"
-          name="pay-type"
-          id="dollar"
-          className="hidden peer"
-        />
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          className="fill-black peer-checked:fill-secondary"
-        >
-          <path d="M17.74 23.25H6.26C3.77 23.25 1.75 21.23 1.75 18.74V12.01C1.75 9.52001 3.77 7.5 6.26 7.5H17.74C20.23 7.5 22.25 9.52001 22.25 12.01V13.45C22.25 13.86 21.91 14.2 21.5 14.2H19.48C19.13 14.2 18.81 14.33 18.58 14.57L18.57 14.58C18.29 14.85 18.16 15.22 18.19 15.6C18.25 16.26 18.88 16.79 19.6 16.79H21.5C21.91 16.79 22.25 17.13 22.25 17.54V18.73C22.25 21.23 20.23 23.25 17.74 23.25ZM6.26 9C4.6 9 3.25 10.35 3.25 12.01V18.74C3.25 20.4 4.6 21.75 6.26 21.75H17.74C19.4 21.75 20.75 20.4 20.75 18.74V18.3H19.6C18.09 18.3 16.81 17.18 16.69 15.74C16.61 14.92 16.91 14.11 17.51 13.52C18.03 12.99 18.73 12.7 19.48 12.7H20.75V12.01C20.75 10.35 19.4 9 17.74 9H6.26Z" />
-          <path d="M2.5 13.66C2.09 13.66 1.75 13.32 1.75 12.91V8.34006C1.75 6.85006 2.69 5.50001 4.08 4.97001L12.02 1.97001C12.84 1.66001 13.75 1.77005 14.46 2.27005C15.18 2.77005 15.6 3.58005 15.6 4.45005V8.25003C15.6 8.66003 15.26 9.00003 14.85 9.00003C14.44 9.00003 14.1 8.66003 14.1 8.25003V4.45005C14.1 4.07005 13.92 3.72003 13.6 3.50003C13.28 3.28003 12.9 3.23003 12.54 3.37003L4.6 6.37003C3.79 6.68003 3.24 7.47006 3.24 8.34006V12.91C3.25 13.33 2.91 13.66 2.5 13.66Z" />
-          <path d="M19.6005 18.2999C18.0905 18.2999 16.8105 17.1799 16.6905 15.7399C16.6105 14.9099 16.9105 14.0999 17.5105 13.5099C18.0205 12.9899 18.7205 12.7 19.4705 12.7H21.5505C22.5405 12.73 23.3005 13.5099 23.3005 14.4699V16.53C23.3005 17.49 22.5405 18.2699 21.5805 18.2999H19.6005ZM21.5305 14.2H19.4805C19.1305 14.2 18.8105 14.3299 18.5805 14.5699C18.2905 14.8499 18.1505 15.2299 18.1905 15.6099C18.2505 16.2699 18.8805 16.7999 19.6005 16.7999H21.5605C21.6905 16.7999 21.8105 16.68 21.8105 16.53V14.4699C21.8105 14.3199 21.6905 14.21 21.5305 14.2Z" />
-          <path d="M14 13.25H7C6.59 13.25 6.25 12.91 6.25 12.5C6.25 12.09 6.59 11.75 7 11.75H14C14.41 11.75 14.75 12.09 14.75 12.5C14.75 12.91 14.41 13.25 14 13.25Z" />
-        </svg>
-        <label htmlFor="dollar" className="peer-checked:text-secondary">
-          کیف پول <span className="text-xs">(دلار)</span>
-        </label>
-        <div className="w-4 h-4 rounded-full border-[1px] border-black mr-4 flex justify-center items-center before:w-3 before:h-3 before:rounded-full peer-checked:border-secondary peer-checked:before:bg-secondary"></div>
-      </div>
-      <a
-        href=""
-        className="sticky hidden w-full p-4 mt-4 text-center text-white rounded-md bg-primary bottom-5 lg:block"
+
+      <button
+        onClick={() => onCheckout(selectedMethod)}
+        disabled={isLoading || !hasItems}
+        className="w-full p-4 mt-4 text-center text-white rounded-md bg-primary hover:bg-primary/90 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
       >
-        ادامه فرآیند خرید
-      </a>
+        {isLoading ? (
+          <>
+            <LoadingSvg className="w-5 h-5 animate-spin" />
+            در حال پردازش...
+          </>
+        ) : (
+          'ادامه فرآیند خرید'
+        )}
+      </button>
     </section>
   );
 }
-
-export default Payment;
+export default PaymentMethod

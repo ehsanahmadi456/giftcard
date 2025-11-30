@@ -17,7 +17,7 @@ function ProductPage({ prod, prods }) {
       <DropDown />
       <section id="similar" className="overflow-visible swiper--2">
         <h4 className="mb-8 text-lg font-bold">محصولات مشابه</h4>
-        <div className="">
+        <div className="overflow-auto">
           <div className=" swiper-wrapper md:gap-4">
             {prods?.prods?.map((item, idx) => (
               <Card data={item} key={idx} />

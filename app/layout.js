@@ -25,7 +25,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#F7F6FB]`}
       >
-        <ToastContainer />
+        <ToastContainer
+          position="bottom-left"
+        />
         {children}
       </body>
     </html>

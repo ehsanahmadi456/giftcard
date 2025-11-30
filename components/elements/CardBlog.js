@@ -4,11 +4,13 @@ import Link from "next/link";
 import { formatJalaliDate } from "@/helper";
 
 function CardBlog({ data }) {
+  console.log('cardblogdat',data);
+  
   return (
     <article className="flex flex-col gap-4 p-6 overflow-hidden transition-all duration-100 ease-linear sm:rounded-lg sm:bg-white sm:max-w-md sm:p-0 hover:shadow-md">
       <Image src={Blog} className="rounded-lg lg:rounded-none" alt="" />
       <div className="flex flex-col gap-4 p-4">
-        <h6 className="font-medium">{data.name}</h6>
+        <h6 className="font-medium">{data.head}</h6>
         <p className="hidden text-sm md:block text-lowgray">
           {data.text?.length > 80 ? `${data.text.slice(0, 80)}...` : data.text}
         </p>

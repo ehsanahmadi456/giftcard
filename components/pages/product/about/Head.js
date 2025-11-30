@@ -1,58 +1,22 @@
 import Image from "next/image";
 import CountryImg from "@/public/assets/images/country.png";
+import { FaStar, FaComment, FaChevronLeft } from "react-icons/fa";
 
 function Head({ data }) {
+  const rating = parseFloat(data.rate) || 0;
+  const reviewCount = parseInt(data.number_comment);
+
   return (
     <>
       <h2 className="text-lg font-bold">{data.name}</h2>
       <div className="flex gap-4">
-        <div className="flex gap-1 text-xs text-lowgray">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="12"
-            height="12"
-            viewBox="0 0 12 12"
-            fill="none"
-          >
-            <path
-              d="M11.9686 4.5341C11.9301 4.41022 11.8576 4.30087 11.7601 4.21961C11.6626 4.13836 11.5443 4.08878 11.4201 4.07703L7.95604 3.74886L6.58704 0.404284C6.48595 0.158559 6.25598 0 5.99999 0C5.74401 0 5.51394 0.158559 5.41351 0.404284L4.04451 3.74886L0.579941 4.07703C0.325946 4.10149 0.110881 4.28101 0.031427 4.5341C-0.00728901 4.65808 -0.0103006 4.79119 0.0227653 4.91694C0.0558312 5.04269 0.123522 5.15556 0.217452 5.24156L2.83599 7.63752L2.06393 11.186C2.00744 11.4469 2.10447 11.7167 2.31194 11.8732C2.42061 11.9557 2.55156 12.0001 2.68594 12C2.80113 12 2.91416 11.9674 3.01297 11.9056L5.99999 10.0419L8.98648 11.9056C9.09361 11.9725 9.21721 12.0051 9.34193 11.9993C9.46665 11.9936 9.58701 11.9497 9.68806 11.8732C9.89551 11.7167 9.99257 11.4469 9.93608 11.186L9.164 7.63755L11.7825 5.24158C11.8765 5.15559 11.9442 5.04272 11.9772 4.91697C12.0103 4.79122 12.0073 4.6581 11.9686 4.53412V4.5341Z"
-              fill="#FFC107"
-            />
-          </svg>
-          ۴ امتیاز
+        <div className="flex items-center gap-1 text-xs text-lowgray">
+          <FaStar className="text-yellow-400" />
+          <span>{rating.toFixed(1)} امتیاز</span>
         </div>
-        <div className="flex gap-1 text-xs text-lowgray">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 20 20"
-            fill="none"
-          >
-            <g clipPath="url(#clip0_297_2365)">
-              <path
-                d="M7.08317 15.8334H6.6665C3.33317 15.8334 1.6665 15.0001 1.6665 10.8334V6.66675C1.6665 3.33341 3.33317 1.66675 6.6665 1.66675H13.3332C16.6665 1.66675 18.3332 3.33341 18.3332 6.66675V10.8334C18.3332 14.1667 16.6665 15.8334 13.3332 15.8334H12.9165C12.6582 15.8334 12.4082 15.9584 12.2498 16.1667L10.9998 17.8334C10.4498 18.5667 9.54984 18.5667 8.99984 17.8334L7.74984 16.1667C7.6165 15.9834 7.30817 15.8334 7.08317 15.8334Z"
-                stroke="#ACACAC"
-                strokeWidth="1.5"
-                strokeMiterlimit="10"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M13.3301 9.16675H13.3384M9.99593 9.16675H10.0043M6.6626 9.16675H6.66926"
-                stroke="#ACACAC"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </g>
-            <defs>
-              <clipPath id="clip0_297_2365">
-                <rect width="20" height="20" fill="white" />
-              </clipPath>
-            </defs>
-          </svg>
-          ۱۲ دیدگاه
+        <div className="flex items-center gap-1 text-xs text-lowgray">
+          <FaComment className="text-gray-400" />
+          <span>{reviewCount} دیدگاه</span>
         </div>
       </div>
       <div className="flex items-center justify-between text-xs sm:justify-start sm:gap-16">
@@ -62,18 +26,7 @@ function Head({ data }) {
         </div>
         <div className="flex items-center gap-1 text-secondary">
           <a href="#">تغییر کشور</a>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 25 25"
-            fill="none"
-          >
-            <path
-              d="M14.9998 21.17C14.8098 21.17 14.6198 21.1 14.4698 20.95L7.94979 14.43C6.88979 13.37 6.88979 11.63 7.94979 10.57L14.4698 4.05002C14.7598 3.76002 15.2398 3.76002 15.5298 4.05002C15.8198 4.34002 15.8198 4.82002 15.5298 5.11002L9.00979 11.63C8.52979 12.11 8.52979 12.89 9.00979 13.37L15.5298 19.89C15.8198 20.18 15.8198 20.66 15.5298 20.95C15.3798 21.09 15.1898 21.17 14.9998 21.17Z"
-              fill="#F69625"
-            />
-          </svg>
+          <FaChevronLeft className="text-xs" />
         </div>
       </div>
       <p className="text-sm leading-loose text-lowgray">{data.help}</p>

@@ -1,10 +1,10 @@
 import ArrowLeftPur from "@/public/assets/icons/ArrowLeftPur";
 import Image from "next/image";
 import Link from "next/link";
+import testImg from "@/public/assets/images/banner-home.png"
+import { BasicURL } from "@/components/utils/path";
 
 function Item({ data }) {
-const API_URL = process.env.API_URL;
-
   return (
     <li
       className="bg-[#ECF0F1] gap-[4px] md:gap-[8px] lg:gap-[12px] px-[6px] pt-[31px] md:pt-[33px] lg:pt-[34px] pb-[16px] flex flex-col 
@@ -14,7 +14,7 @@ const API_URL = process.env.API_URL;
         پیشنهاد ویژه
       </p>
       <Image
-        src={`${API_URL}/prod-images/${data.pid}.jpg`}
+        src={`${BasicURL}/prod-images${data.imgpath}`}
         width={50}
         height={50}
         alt="steam"
