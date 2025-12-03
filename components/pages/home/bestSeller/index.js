@@ -70,7 +70,6 @@ function BestSeller() {
       <Head categories={categories} active={activeCategory} setActive={setActiveCategory} />
       <div className="mt-[24px]">
         <Cards list={products} />
-        <Cards list={products} />
       </div>
     </section>
   );
