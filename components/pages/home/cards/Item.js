@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Cards from "../bestSeller/Cards";
 
 function Item({ list }) {
@@ -11,9 +12,9 @@ function Item({ list }) {
           گیفت کارت های موزیک
         </h4>
         <div className="flex items-center justify-center gap-2">
-          <a href="#" className="font-medium text-secondary md:text-lg">
+          <Link href="/products" className="font-medium text-secondary md:text-lg">
             مشاهده همه
-          </a>
+          </Link>
           <i>
             <svg
               xmlns="http://www.w3.org/2000/svg"

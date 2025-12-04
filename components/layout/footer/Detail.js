@@ -1,15 +1,18 @@
 function Detail() {
   return (
-    <div>
+    <div className="w-full">
       <div className="flex items-center gap-1 mb-8">
         <span className="rounded-full w-7 h-7 bg-primary"></span>
-        <a href="#" className="font-bold">
+        <a href="/" className="font-bold text-base sm:text-lg">
           گیفت کارت
         </a>
       </div>
-      <div className="flex flex-col gap-8">
-        <span className="flex items-center gap-1 text-sm text-lowgray">
-          <i>
+      <div className="flex flex-col gap-6 sm:gap-8">
+        <a 
+          href="https://t.me/+989123179060" 
+          className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-800 transition-colors"
+        >
+          <i className="flex-shrink-0">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -35,10 +38,13 @@ function Detail() {
               </defs>
             </svg>
           </i>
-          پشتیبانی تلگرام: ۰۹۱۲۳۱۷۹۰۶۰
-        </span>
-        <span className="flex items-center gap-1 text-sm text-lowgray">
-          <i>
+          <span className="break-all">پشتیبانی تلگرام: ۰۹۱۲۳۱۷۹۰۶۰</span>
+        </a>
+        <a 
+          href="tel:90000200" 
+          className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-800 transition-colors"
+        >
+          <i className="flex-shrink-0">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -66,8 +72,8 @@ function Detail() {
               </defs>
             </svg>
           </i>
-          تلفن پشتیبانی: ۹۰۰۰۰۲۰۰
-        </span>
+          <span>تلفن پشتیبانی: ۹۰۰۰۰۲۰۰</span>
+        </a>
       </div>
     </div>
   );
