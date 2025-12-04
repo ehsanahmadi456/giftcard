@@ -23,9 +23,18 @@ function BestSeller() {
   const [categories, setCategories] = useState(IconList.filter((_, i) => i < 3))
   const [activeCategory, setActiveCategory] = useState(0)
   const [products, setProducts] = useState([
-    { name: "Aydin" }, { name: "phone" }, { name: "laptop" }, { name: "computer" },
-    { name: "Aydin" }, { name: "phone" }, { name: "laptop" }, { name: "computer" },
-    { name: "Aydin" }, { name: "phone" }, { name: "laptop" }, { name: "computer" },
+    { id: 1, name: "Aydin" }, 
+    { id: 2, name: "phone" }, 
+    { id: 3, name: "laptop" }, 
+    { id: 4, name: "computer" },
+    { id: 5, name: "Aydin" }, 
+    { id: 6, name: "phone" }, 
+    { id: 7, name: "laptop" }, 
+    { id: 8, name: "computer" },
+    { id: 9, name: "Aydin" }, 
+    { id: 10, name: "phone" }, 
+    { id: 11, name: "laptop" }, 
+    { id: 12, name: "computer" },
   ])
 
   useEffect(() => {

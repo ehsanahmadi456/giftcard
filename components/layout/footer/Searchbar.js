@@ -1,16 +1,31 @@
+'use client'
+import { useState } from "react";
+
 function Searchbar() {
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = () => {
+    if (email) {
+      console.log('Email submitted:', email);
+      alert('ایمیل شما ثبت شد: ' + email);
+      setEmail('');
+    }
+  };
+
   return (
-    <div className="flex flex-col gap-6 lg:order-3">
-      <p className="font-medium">در خبرنامه ما عضو شوید:</p>
+    <div className="flex flex-col gap-6 lg:order-3 w-full">
+      <p className="font-medium text-base">در خبرنامه ما عضو شوید:</p>
       <div className="flex justify-between bg-[#F3F3F3] rounded-md overflow-hidden max-w-xl mx-auto w-full">
         <input
           type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           placeholder="ایمیل خود را وارد نمایید"
-          className="p-4 bg-transparent placeholder:text-lowgray placeholder:text-sm"
+          className="p-3 sm:p-4 bg-transparent placeholder:text-gray-500 placeholder:text-sm flex-1 outline-none min-w-0"
         />
-        <a
-          href="#"
-          className="flex items-center justify-center p-2 px-4 bg-primary"
+        <button
+          onClick={handleSubmit}
+          className="flex items-center justify-center p-2 px-3 sm:px-4 bg-blue-600 hover:bg-blue-700 transition-colors flex-shrink-0"
         >
           <i>
             <svg
@@ -30,7 +45,7 @@ function Searchbar() {
               />
             </svg>
           </i>
-        </a>
+        </button>
       </div>
     </div>
   );

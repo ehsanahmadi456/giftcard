@@ -2,26 +2,57 @@ import Image from "next/image";
 import Link from "next/link";
 import { BasicURL } from "@/components/utils/path";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 function Cards({ list }) {
   return (
-    <div className="flex gap-x-3 md:gap-x-4 md:gap-y-6 w-full overflow-x-auto hidden-scroll">
-      {list?.map((item) => (
-        <Link
-          href={`/product/${item.id}`}
-          key={item.id}
-          className="flex-shrink-0 w-[43%] min-w-[23%] lg:!min-w-[25%] p-[10px] bg-white rounded-md hover:shadow-md transition-all"
-        >
-          <Image
-            src={`${BasicURL}/prod-images${item.imgpath}`}
-            width={200}
-            height={200}
-            className="w-full h-[165px] object-contain rounded-md"
-            alt={item.name}
-          />
-          <p className="text-[#2F2F2F] mt-2 font-medium">{item.name}</p>
-        </Link>
+    <Swiper
+      modules={[Navigation, Pagination, Autoplay]}
+      spaceBetween={12}     
+      slidesPerView={2.3} 
+      breakpoints={{
+        640: {
+          slidesPerView: 3.5,
+          spaceBetween: 16,
+        },
+        768: {
+          slidesPerView: 4.2, 
+          spaceBetween: 16,
+        },
+        1024: {
+          slidesPerView: 4.5,
+          spaceBetween: 16,
+        },
+      }}
+      loop={list?.length > 5}
+      grabCursor={true}
+      className="w-full !pb-4"
+    >
+      {list?.map((item, index) => (
+        <SwiperSlide key={item.id || index}>
+          <Link
+            href={`/product/${item.id || index}`}
+            className="flex flex-col p-[10px] bg-white rounded-md transition-all h-full"
+          >
+            <Image
+              src={`${BasicURL}/prod-images${item.imgpath || "/placeholder.jpg"}`}
+              width={200}
+              height={200}
+              className="w-full h-[165px] object-contain rounded-md"
+              alt={item.name || "محصول"}
+            />
+            <p className="text-[#2F2F2F] mt-2 font-medium text-center">
+              {item.name}
+            </p>
+          </Link>
+        </SwiperSlide>
       ))}
-    </div>
+    </Swiper>
   );
 }
 

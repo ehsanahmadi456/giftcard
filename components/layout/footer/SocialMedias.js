@@ -1,13 +1,16 @@
 function SocialMedias() {
   return (
-    <div className="flex flex-col items-center justify-center gap-6 lg:order-2">
-      <p className="hidden font-medium lg:block">
+    <div className="flex flex-col items-center justify-center gap-6 lg:order-2 w-full">
+      <p className="hidden font-medium lg:block text-base">
         ما را در شبکه های اجتماعی دنبال کنید:
       </p>
-      <div className="flex items-center justify-center gap-8 lg:order-2">
+      <div className="flex items-center justify-center gap-6 sm:gap-8 lg:order-2">
         <a
-          href="#"
-          className="bg-[#F3F3F3] rounded-full h-12 w-12 flex justify-center items-center"
+          href="https://twitter.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-[#F3F3F3] rounded-full h-12 w-12 flex justify-center items-center hover:bg-gray-300 transition-colors"
+          aria-label="توییتر"
         >
           <i>
             <svg
@@ -25,8 +28,11 @@ function SocialMedias() {
           </i>
         </a>
         <a
-          href="#"
-          className="bg-[#F3F3F3] rounded-full h-12 w-12 flex justify-center items-center"
+          href="https://facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-[#F3F3F3] rounded-full h-12 w-12 flex justify-center items-center hover:bg-gray-300 transition-colors"
+          aria-label="فیسبوک"
         >
           <i>
             <svg
@@ -44,8 +50,11 @@ function SocialMedias() {
           </i>
         </a>
         <a
-          href="#"
-          className="bg-[#F3F3F3] rounded-full h-12 w-12 flex justify-center items-center"
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-[#F3F3F3] rounded-full h-12 w-12 flex justify-center items-center hover:bg-gray-300 transition-colors"
+          aria-label="لینکدین"
         >
           <i>
             <svg

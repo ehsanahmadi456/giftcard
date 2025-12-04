@@ -1,35 +1,51 @@
 import { BasicURL } from "@/components/utils/path";
 import { formatJalaliDate } from "@/helper";
-import Blog from "@/public/assets/images/blog.png";
 import Image from "next/image";
-import Link from "next/link";
+import { useState } from "react";
 
 function Left({ data }) {
-  const link = `/blog/${data?.slug || data?.id}`;
+  const [imageError, setImageError] = useState(false);
 
   return (
-    <article className="flex flex-col max-w-lg gap-6 mx-auto lg:flex-row lg:row-span-1 lg:max-w-none">
-      <Link href={link}>
-        <Image
-          width={140}
-          height={140}
-          src={`${BasicURL}/prod-images/blogcat-${data?.id ?? 1}.jpg`}
-          className="rounded-lg w-fit lg:w[160px] lg:h-[140px]"
-          alt=""
-        />
-      </Link>
-      <div className="flex flex-col gap-6">
-        <Link href={link}>
-          <h6 className="font-medium">{data.name}</h6>
-        </Link>{" "}
-        <div className="flex justify-between lg:flex-col lg:gap-6">
-          <div className="flex gap-4">
-            <span className="flex items-center justify-center gap-1 text-sm text-lowgray">
-              <i>
+    <article className="flex flex-col max-w-lg gap-4 sm:gap-6 mx-auto lg:flex-row lg:row-span-1 lg:max-w-none">
+      <div className="relative w-full h-[200px] sm:h-[180px] sm:w-[180px] lg:w-[160px] lg:h-[140px] rounded-lg overflow-hidden flex-shrink-0">
+        {!imageError && data?.id ? (
+          <Image
+            fill
+            src={`${BasicURL}/prod-images/blogcat-${data.id}.jpg`}
+            className="rounded-lg object-cover"
+            alt={data.name || ""}
+            onError={() => setImageError(true)}
+          />
+        ) : (
+          <div className="w-full h-full rounded-lg bg-gradient-to-br from-purple-400/20 via-blue-400/20 to-pink-400/20 backdrop-blur-xl flex items-center justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="text-gray-400"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+          </div>
+        )}
+      </div>
+      <div className="flex flex-col gap-4 sm:gap-6">
+        <h6 className="font-medium text-sm sm:text-base">{data?.name || "عنوان مقاله"}</h6>
+        <div className="flex flex-col gap-4 sm:flex-row sm:justify-between lg:flex-col lg:gap-6">
+          <div className="flex gap-3 sm:gap-4">
+            <span className="flex items-center justify-center gap-1 text-xs sm:text-sm text-lowgray">
+              <i className="flex-shrink-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
+                  width="18"
+                  height="18"
                   viewBox="0 0 24 24"
                   fill="none"
                 >
@@ -75,15 +91,16 @@ function Left({ data }) {
                   />
                 </svg>
               </i>
-              {formatJalaliDate(data.date)}
+              <span className="truncate">{data?.date ? formatJalaliDate(data.date) : "تاریخ"}</span>
             </span>
-            <span className="flex items-center justify-center gap-1 text-sm text-lowgray">
+            <span className="flex items-center justify-center gap-1 text-xs sm:text-sm text-lowgray">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
+                width="18"
+                height="18"
                 viewBox="0 0 24 24"
                 fill="none"
+                className="flex-shrink-0"
               >
                 <path
                   d="M11.9999 16.83C9.60992 16.83 7.66992 14.89 7.66992 12.5C7.66992 10.11 9.60992 8.16998 11.9999 8.16998C14.3899 8.16998 16.3299 10.11 16.3299 12.5C16.3299 14.89 14.3899 16.83 11.9999 16.83ZM11.9999 9.66998C10.4399 9.66998 9.16992 10.94 9.16992 12.5C9.16992 14.06 10.4399 15.33 11.9999 15.33C13.5599 15.33 14.8299 14.06 14.8299 12.5C14.8299 10.94 13.5599 9.66998 11.9999 9.66998Z"
@@ -94,16 +111,14 @@ function Left({ data }) {
                   fill="#ACACAC"
                 />
               </svg>
-              999 بازدید
+              <span className="whitespace-nowrap">999 بازدید</span>
             </span>
           </div>
           <a
             href="#"
-            className="flex items-center justify-center text-primary lg:justify-start"
+            className="flex items-center justify-center text-sm sm:text-base text-primary lg:justify-start"
           >
-            <Link href={link} className="text-primary">
-              متن کامل
-            </Link>{" "}
+            متن کامل
             <i>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
