@@ -5,7 +5,7 @@ import { formatJalaliDate } from "@/helper";
 
 function Item({ data }) {
   const imageSrc = data?.img || data?.image || BlogPlaceholder;
-  
+
   return (
     <article className="flex items-center gap-4">
       {imageSrc && (
@@ -17,7 +17,7 @@ function Item({ data }) {
           height={96}
         />
       )}
-      
+
       <div className="flex flex-col gap-2">
         <Link 
           href={`/blog/${data?.id}`}
@@ -25,10 +25,9 @@ function Item({ data }) {
         >
           {data?.head || data?.name || 'بدون عنوان'}
         </Link>
-        
+
         {data?.date && (
           <span className="text-xs text-lowgray">
-            
             {formatJalaliDate(data.date)}
           </span>
         )}

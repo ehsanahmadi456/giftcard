@@ -2,32 +2,25 @@ import Image from "next/image";
 import Link from "next/link";
 import { BasicURL } from "@/components/utils/path";
 
-
 function Cards({ list }) {
   return (
-    <div className="w-full max-w-full overflow-x-auto hidden-scroll !m-0">
-      <div className="flex gap-x-3 md:gap-x-4 md:gap-y-6">
-        {list.map((item, idx) => (
-          <Link
-            href="#"
-            key={idx}
-            className="flex-shrink-0 w-[43%] min-w-[23%] lg:!min-w-[25%] p-[7px] md:p-[10px] lg:p-3 text-center transition-all duration-100 ease-linear bg-white rounded-md md:w-1/4 md:flex-shrink hover:shadow-md"
-          >
-            <div className="w-full flex justify-center items-center">
-              <Image
-                src={`${BasicURL}/prod-images${item.imgpath}`}
-                width={273}
-                height={165}
-                className="rounded-md w-full max-h-[165px] object-contain"
-                alt=""
-              />
-            </div>
-            <p className="mt-[7px] md:mt-[10px] lg:mt-3 font-medium text-[#2F2F2F]">
-              {item.name}
-            </p>
-          </Link>
-        ))}
-      </div>
+    <div className="flex gap-x-3 md:gap-x-4 md:gap-y-6 w-full overflow-x-auto hidden-scroll">
+      {list?.map((item) => (
+        <Link
+          href={`/product/${item.id}`}
+          key={item.id}
+          className="flex-shrink-0 w-[43%] min-w-[23%] lg:!min-w-[25%] p-[10px] bg-white rounded-md hover:shadow-md transition-all"
+        >
+          <Image
+            src={`${BasicURL}/prod-images${item.imgpath}`}
+            width={200}
+            height={200}
+            className="w-full h-[165px] object-contain rounded-md"
+            alt={item.name}
+          />
+          <p className="text-[#2F2F2F] mt-2 font-medium">{item.name}</p>
+        </Link>
+      ))}
     </div>
   );
 }

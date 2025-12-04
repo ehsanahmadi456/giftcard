@@ -2,19 +2,26 @@ import { BasicURL } from "@/components/utils/path";
 import { formatJalaliDate } from "@/helper";
 import Blog from "@/public/assets/images/blog.png";
 import Image from "next/image";
+import Link from "next/link";
 
 function Right({ data }) {
+  const link = `/blog/${data?.slug || data?.id}`;
+
   return (
     <article className="flex flex-col max-w-lg gap-[8px] md:gap-[16px] lg:gap-[24px] mx-auto lg:row-span-3 lg:max-w-none">
-      <Image
-        width={100}
-        height={100}
-        src={`${BasicURL}/prod-images/blogcat-${data?.id ?? 1}.jpg`}
-        className="rounded-lg"
-        alt=""
-      />
+      <Link href={link}>
+        <Image
+          width={100}
+          height={100}
+          src={`${BasicURL}/prod-images/blogcat-${data?.id ?? 1}.jpg`}
+          className="rounded-lg"
+          alt=""
+        />
+      </Link>
       <div className="flex flex-col gap-[16px] md:gap-[20px] lg:gap-[24px]">
-        <h6 className="font-medium">{data.name}</h6>
+        <Link href={link}>
+          <h6 className="font-medium">{data.name}</h6>
+        </Link>{" "}
         <p className="hidden text-lowgray lg:block">
           {data.text}
           {/* مایکروسافت با ایکس باکس سری اس، می‌خواهد تجربه‌ی نسل نهم کنسول‌های
@@ -101,7 +108,9 @@ function Right({ data }) {
             href="#"
             className="flex items-center text-[14px] md:text-[15px] lg:text-[16px] justify-center text-primary"
           >
-            متن کامل
+            <Link href={link} className="text-primary">
+              متن کامل
+            </Link>{" "}
             <i>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

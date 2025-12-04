@@ -2,19 +2,26 @@ import { BasicURL } from "@/components/utils/path";
 import { formatJalaliDate } from "@/helper";
 import Blog from "@/public/assets/images/blog.png";
 import Image from "next/image";
+import Link from "next/link";
 
 function Left({ data }) {
+  const link = `/blog/${data?.slug || data?.id}`;
+
   return (
     <article className="flex flex-col max-w-lg gap-6 mx-auto lg:flex-row lg:row-span-1 lg:max-w-none">
-      <Image
-        width={140}
-        height={140}
-        src={`${BasicURL}/prod-images/blogcat-${data?.id ?? 1}.jpg`}
-        className="rounded-lg w-fit lg:w[160px] lg:h-[140px]"
-        alt=""
-      />
+      <Link href={link}>
+        <Image
+          width={140}
+          height={140}
+          src={`${BasicURL}/prod-images/blogcat-${data?.id ?? 1}.jpg`}
+          className="rounded-lg w-fit lg:w[160px] lg:h-[140px]"
+          alt=""
+        />
+      </Link>
       <div className="flex flex-col gap-6">
-        <h6 className="font-medium">{data.name}</h6>
+        <Link href={link}>
+          <h6 className="font-medium">{data.name}</h6>
+        </Link>{" "}
         <div className="flex justify-between lg:flex-col lg:gap-6">
           <div className="flex gap-4">
             <span className="flex items-center justify-center gap-1 text-sm text-lowgray">
@@ -94,7 +101,9 @@ function Left({ data }) {
             href="#"
             className="flex items-center justify-center text-primary lg:justify-start"
           >
-            متن کامل
+            <Link href={link} className="text-primary">
+              متن کامل
+            </Link>{" "}
             <i>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

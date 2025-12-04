@@ -3,8 +3,6 @@ import Item from "./Item";
 
 function List({ data = [] }) {
   if (!data.length) return null;
-  console.log('list',data);
-  
 
   return (
     <aside className="p-6 mt-12 lg:px-12 xl:px-24">
@@ -14,6 +12,7 @@ function List({ data = [] }) {
           <Item
             key={item.id}
             data={{
+              id: item.id,
               head: item.name,
               date: item.date,
               view: item.view,
