@@ -11,6 +11,7 @@ import {
   FaTrash,
 } from "react-icons/fa";
 import Cookies from "js-cookie";
+import { toast } from "react-toastify";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -92,7 +93,7 @@ function Bottom({ data }) {
       const accessToken = Cookies.get("access_token");
 
       if (!accessToken) {
-        alert("لطفا ابتدا وارد شوید");
+        toast.warning("لطفا ابتدا وارد شوید");
         return;
       }
 
@@ -116,20 +117,20 @@ function Bottom({ data }) {
         await fetchCartData();
 
         if (action === "a") {
-          alert("تعداد محصول افزایش یافت");
+          toast.success("تعداد محصول افزایش یافت");
         } else if (action === "m") {
           if (result.data && parseInt(result.data.quantity) === 0) {
-            alert("محصول از سبد خرید حذف شد");
+            toast.success("محصول از سبد خرید حذف شد");
           } else {
-            alert("تعداد محصول کاهش یافت");
+            toast.success("تعداد محصول کاهش یافت");
           }
         }
       } else {
-        alert("خطا در به روزرسانی سبد خرید");
+        toast.error(error.data ?? "خطا در به روزرسانی سبد خرید");
       }
     } catch (error) {
       console.error("Error updating cart:", error);
-      alert("خطا در ارتباط با سرور");
+      toast.error(error.data ?? "خطا در ارتباط با سرور");
     } finally {
       setCartLoading(false);
     }
@@ -165,7 +166,7 @@ function Bottom({ data }) {
       const accessToken = Cookies.get("access_token");
 
       if (!accessToken) {
-        alert("لطفا ابتدا وارد شوید");
+        toast.warning("لطفا ابتدا وارد شوید");
         return;
       }
 
@@ -192,13 +193,13 @@ function Bottom({ data }) {
 
       if (result.status === "1") {
         setIsFavorite(true);
-        alert("به علاقه‌مندی‌ها اضافه شد");
+        toast.success("به علاقه‌مندی‌ها اضافه شد");
       } else {
-        alert("خطا در افزودن به علاقه‌مندی‌ها");
+        toast.success("خطا در افزودن به علاقه‌مندی‌ها");
       }
     } catch (error) {
       console.error("Error adding to favorite:", error);
-      alert("خطا در ارتباط با سرور");
+      toast.error(error.data ?? "خطا در ارتباط با سرور");
     } finally {
       setFavoriteLoading(false);
     }
@@ -209,7 +210,7 @@ function Bottom({ data }) {
       const accessToken = Cookies.get("access_token");
 
       if (!accessToken) {
-        alert("لطفا ابتدا وارد شوید");
+        toast.warning("لطفا ابتدا وارد شوید");
         return;
       }
 
@@ -231,13 +232,13 @@ function Bottom({ data }) {
 
       if (result.status === "1") {
         setIsFavorite(false);
-        alert("از علاقه‌مندی‌ها حذف شد");
+        toast.success("از علاقه‌مندی‌ها حذف شد");
       } else {
-        alert("خطا در حذف از علاقه‌مندی‌ها");
+        toast.success("خطا در حذف از علاقه‌مندی‌ها");
       }
     } catch (error) {
       console.error("Error removing from favorite:", error);
-      alert("خطا در ارتباط با سرور");
+      toast.error(error.data ?? "خطا در ارتباط با سرور");
     } finally {
       setFavoriteLoading(false);
     }

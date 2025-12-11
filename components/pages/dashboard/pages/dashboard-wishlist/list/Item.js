@@ -1,6 +1,7 @@
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 import { FaShoppingCart, FaTrash } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 function Item({ data, onRemove }) {
   const router = useRouter();
@@ -9,7 +10,7 @@ function Item({ data, onRemove }) {
       const accessToken = Cookies.get("access_token");
 
       if (!accessToken) {
-        alert("لطفا ابتدا وارد شوید");
+        toast.warning("لطفا ابتدا وارد شوید");
         return;
       }
 
@@ -28,13 +29,13 @@ function Item({ data, onRemove }) {
       const result = await response.json();
 
       if (result.status === "1") {
-        alert("محصول به سبد خرید اضافه شد");
+        toast.success("محصول به سبد خرید اضافه شد");
       } else {
-        alert("خطا در افزودن به سبد خرید");
+        toast.error("خطا در افزودن به سبد خرید");
       }
     } catch (error) {
       console.error("Error adding to cart:", error);
-      alert("خطا در ارتباط با سرور");
+      toast.error(error.data ?? "خطا در ارتباط با سرور");
     } finally {
       router.refresh();
     }
