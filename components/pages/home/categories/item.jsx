@@ -4,7 +4,7 @@ import GiftO from "@/public/assets/icons/GiftO";
 import Image from "next/image";
 
 const CategoryItemComponent = ({ item }) => {
-  const categoryLink = `/product/${item.id}`;
+  const categoryLink = `/prod-id-name/${item.id}`;
 
   return (
     <Link

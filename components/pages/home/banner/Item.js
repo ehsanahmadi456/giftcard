@@ -28,7 +28,7 @@ function Item({ data }) {
         {data.name}
       </p>
       <Link
-        href={`/product/${data.id}`}
+        href={`/prod-id-name/${data.id}`}
         className="flex items-center justify-center gap-[5px] text-[#786AC2]"
       >
         مشاهده محصول
