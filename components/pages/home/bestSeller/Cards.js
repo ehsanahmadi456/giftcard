@@ -36,7 +36,7 @@ function Cards({ list }) {
       {list?.map((item, index) => (
         <SwiperSlide key={item.id || index}>
           <Link
-            href={`/product/${item.id || index}`}
+            href={`/prod-id-name/${item.id || index}`}
             className="flex flex-col p-[10px] bg-white rounded-md transition-all h-full"
           >
             <Image
