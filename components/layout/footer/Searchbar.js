@@ -1,5 +1,6 @@
 'use client'
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 function Searchbar() {
   const [email, setEmail] = useState('');
@@ -7,7 +8,7 @@ function Searchbar() {
   const handleSubmit = () => {
     if (email) {
       console.log('Email submitted:', email);
-      alert('ایمیل شما ثبت شد: ' + email);
+      toast.success('ایمیل شما ثبت شد: ' + email);
       setEmail('');
     }
   };

@@ -72,11 +72,11 @@ function List() {
       if (result.status === "1") {
         fetchWishlist();
       } else {
-        alert("خطا در حذف محصول");
+        toast.error("خطا در حذف محصول");
       }
     } catch (err) {
       console.error("Error removing from wishlist:", err);
-      alert("خطا در حذف محصول");
+      toast.error(err.data ?? "خطا در حذف محصول");
     }
   };
 

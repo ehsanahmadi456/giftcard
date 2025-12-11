@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { FaStar, FaRegStar, FaUserCircle } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 import Cookies from "js-cookie";
+import { toast } from "react-toastify";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -46,12 +47,12 @@ function Comments({ productId }) {
     try {
       const accessToken = Cookies.get("access_token");
       if (!accessToken) {
-        alert("لطفا ابتدا وارد شوید");
+        toast.warning("لطفا ابتدا وارد شوید");
         return;
       }
 
       if (!newComment.comment.trim()) {
-        alert("لطفا متن نظر خود را وارد کنید");
+        toast.warning("لطفا متن نظر خود را وارد کنید");
         return;
       }
 
@@ -80,15 +81,15 @@ function Comments({ productId }) {
         setShowModal(false);
         setNewComment({ rate: 5, comment: "" });
         fetchComments();
-        alert("نظر شما با موفقیت ثبت شد");
+        toast.success("نظر شما با موفقیت ثبت شد");
       } else {
         const errorMsg = result.data ? result.data.join(" ") : result.msg || "خطا در ثبت نظر";
-        alert(errorMsg);
+        toast.error(errorMsg);
         console.error("API Error:", result);
       }
     } catch (error) {
       console.error("Error adding comment:", error);
-      alert("خطا در ارتباط با سرور");
+      toast.error(error.data ?? "خطا در ارتباط با سرور");
     } finally {
       setSubmitting(false);
     }
